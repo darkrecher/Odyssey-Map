@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.43"
+   sodipodi:docbase="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth"
+   sodipodi:docname="gnap.svg"
+   inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+   inkscape:export-xdpi="18.450001"
+   inkscape:export-ydpi="18.450001">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5"
+     inkscape:cx="424.47333"
+     inkscape:cy="530.54302"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="726"
+     inkscape:window-height="539"
+     inkscape:window-x="8"
+     inkscape:window-y="56" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       transform="matrix(1.141399,0,0,1.160285,-28.49427,-75.08297)"
+       d="M 495.04201 467.31253 A 21.455309 18.838808 0 1 1  452.13139,467.31253 A 21.455309 18.838808 0 1 1  495.04201 467.31253 z"
+       sodipodi:ry="18.838808"
+       sodipodi:rx="21.455309"
+       sodipodi:cy="467.31253"
+       sodipodi:cx="473.5867"
+       id="path2188"
+       style="opacity:1;color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3.47583305;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+       sodipodi:type="arc"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       d="M 490.85562 473.06882 A 7.3262033 6.8029032 0 1 1  476.20322,473.06882 A 7.3262033 6.8029032 0 1 1  490.85562 473.06882 z"
+       sodipodi:ry="6.8029032"
+       sodipodi:rx="7.3262033"
+       sodipodi:cy="473.06882"
+       sodipodi:cx="483.52942"
+       id="path2192"
+       style="opacity:1;color:#000000;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+       sodipodi:type="arc"
+       transform="translate(41.30352,-5.898682)"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       sodipodi:nodetypes="csscc"
+       id="path2227"
+       d="M 475.13395,461.81397 C 487.27444,424.92309 486.25028,405.4442 480.65229,393.4821 C 478.576,389.04538 466.1187,375.1306 452.6218,389.33487 C 435.97661,406.85246 425.48648,430.3769 424.49482,443.94652 C 446.64382,442.41697 461.4359,448.22023 475.13395,461.81397 z "
+       style="fill:#d57500;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       style="fill:#fdf748;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 471.42857,628.79808 C 622.80763,513.04695 511.79771,369.26325 325.71429,469.04756 C 249.2044,510.07478 221.99922,583.15406 294.28572,624.80431 C 362.39779,664.04933 412.64747,673.74471 471.42857,628.79808 z "
+       id="path1307"
+       sodipodi:nodetypes="csss"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 519.11383,500.80374 C 486.21498,504.76783 453.178,531.41681 428.05958,561.50657 C 402.32199,592.33806 401.89457,614.88319 420.73339,630.5822 C 444.92092,650.73847 472.01681,628.489 472.01681,628.489 C 472.01681,628.489 527.48663,590.81138 538.99924,537.43476 C 541.94325,523.78524 539.31206,498.36999 519.11383,500.80374 z "
+       id="path2184"
+       sodipodi:nodetypes="csscss"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       sodipodi:type="arc"
+       style="opacity:1;color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3.47583305;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+       id="path2186"
+       sodipodi:cx="473.5867"
+       sodipodi:cy="467.31253"
+       sodipodi:rx="21.455309"
+       sodipodi:ry="18.838808"
+       d="M 495.04201 467.31253 A 21.455309 18.838808 0 1 1  452.13139,467.31253 A 21.455309 18.838808 0 1 1  495.04201 467.31253 z"
+       transform="matrix(1.141399,0,0,1.160285,-63.82473,-71.76361)"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       sodipodi:type="arc"
+       style="opacity:1;color:#000000;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+       id="path2190"
+       sodipodi:cx="483.52942"
+       sodipodi:cy="473.06882"
+       sodipodi:rx="7.3262033"
+       sodipodi:ry="6.8029032"
+       d="M 490.85562 473.06882 A 7.3262033 6.8029032 0 1 1  476.20322,473.06882 A 7.3262033 6.8029032 0 1 1  490.85562 473.06882 z"
+       transform="translate(3.70029,2.960232)"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 488.76241,559.41337 L 493.99542,508.12994 C 493.99542,508.12994 475.15661,511.26975 468.87701,524.87556 C 475.15661,535.34156 488.76241,559.41337 488.76241,559.41337 z "
+       id="path2194"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       sodipodi:nodetypes="cccc"
+       id="path2196"
+       d="M 517.02062,553.13377 C 517.02062,553.13377 531.64022,525.27304 538.99924,511.26974 C 537.42934,505.25179 523.30024,493.47754 514.92743,503.94355 C 514.76901,519.05563 517.02062,553.13377 517.02062,553.13377 z "
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <rect
+       inkscape:export-ydpi="18.450001"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       transform="matrix(0.538367,0.842711,-0.574676,0.818381,0,0)"
+       y="-156.43452"
+       x="859.8974"
+       height="42.745392"
+       width="42.814487"
+       id="rect2229"
+       style="opacity:1;color:#000000;fill:#24fcff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4.15928268;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible" />
+    <path
+       style="color:#000000;fill:#24e8ff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+       d="M 554.23488,595.69086 L 577.28476,631.77107 L 547.46233,639.04568 L 554.23488,595.69086 z "
+       id="rect2202"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       sodipodi:nodetypes="cccc"
+       id="path2205"
+       d="M 550.86278,667.18502 L 575.4238,632.23631 L 545.60137,639.51092 L 550.86278,667.18502 z "
+       style="color:#000000;fill:#24c4ff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <rect
+       style="opacity:1;color:#000000;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.15928275;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+       id="rect2198"
+       width="42.814449"
+       height="42.745392"
+       x="859.89667"
+       y="-156.43452"
+       transform="matrix(0.538367,0.842711,-0.574676,0.818381,0,0)"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       style="color:#000000;fill:#24d9ff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4.15928268;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+       d="M 551.79326,666.25453 L 529.81135,631.60806 L 546.53185,638.58044 L 551.79326,666.25453 z "
+       id="path2207"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 564.17566,598.1556 L 575.49035,580.75532 L 575.49035,580.75532 L 575.49035,580.75532"
+       id="path2209"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       sodipodi:nodetypes="cccc"
+       id="path2211"
+       d="M 576.59189,617.7583 L 602.02032,604.30883 L 602.02032,604.30883 L 602.02032,604.30883"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 579.05903,643.8793 L 602.10547,657.16069 L 602.10547,657.16069 L 602.10547,657.16069"
+       id="path2213"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       sodipodi:nodetypes="cccc"
+       id="path2215"
+       d="M 539.70039,600.15003 L 526.85816,582.17815 L 526.85816,582.17815 L 526.85816,582.17815"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 523.60251,622.47568 L 500.94652,613.95158 L 500.94652,613.95158 L 500.94652,613.95158"
+       id="path2217"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       sodipodi:nodetypes="cccc"
+       id="path2219"
+       d="M 526.96559,644.3922 L 506.04629,653.9912 L 506.04629,653.9912 L 506.04629,653.9912"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 540.77839,665.66131 L 527.83424,684.34071 L 527.83424,684.34071 L 527.83424,684.34071"
+       id="path2221"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       sodipodi:nodetypes="cccc"
+       id="path2223"
+       d="M 563.86808,665.35904 L 573.974,684.03843 L 573.974,684.03843 L 573.974,684.03843"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       style="fill:#ff9514;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 418.67661,454.20255 C 404.61158,418.00168 391.44415,403.61088 379.52088,397.93066 C 375.09856,395.82388 356.63785,392.99411 355.24076,412.53831 C 353.51779,436.64141 360.3644,461.47216 368.22056,472.58066 C 384.35209,457.32643 399.46178,452.40904 418.67661,454.20255 z "
+       id="path2225"
+       sodipodi:nodetypes="csscc"
+       inkscape:export-filename="/Users/recherpsychotrope/Documents/recher/projets/Wesnoth/gnap.png"
+       inkscape:export-xdpi="18.450001"
+       inkscape:export-ydpi="18.450001" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 546.65775,638.76325 L 553.17112,599.2178"
+       id="path2231"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       id="path2233"
+       d="M 546.65775,638.76325 L 551.31016,666.67769"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 546.65775,638.76325 L 575.03743,632.24988"
+       id="path2235"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       id="path2237"
+       d="M 546.65775,638.76325 L 528.97861,632.24988"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+  </g>
+</svg>
