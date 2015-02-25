@@ -1,0 +1,165 @@
+http://gis.stackexchange.com/questions/86812/how-to-draw-polygons-from-the-python-console
+
+# create a memory layer with two points
+layer =  QgsVectorLayer('Point', 'pointszz' , "memory")
+pr = layer.dataProvider()
+# add the first point
+pt = QgsFeature()
+point1 = QgsPoint(-2,2)
+pt.setGeometry(QgsGeometry.fromPoint(point1))
+pr.addFeatures([pt])
+# update extent of the layer
+layer.updateExtents()
+# add the second point
+pt = QgsFeature()
+point2 = QgsPoint(-1,2)
+pt.setGeometry(QgsGeometry.fromPoint(point2))
+pr.addFeatures([pt])
+# update extent
+layer.updateExtents()
+# add the layer to the canvas
+QgsMapLayerRegistry.instance().addMapLayers([layer])
+
+
+http://gis.stackexchange.com/questions/26257/how-can-i-iterate-over-map-layers-in-qgis-python
+
+
+layers = iface.legendInterface().layers()
+# ou bien
+layers = iface.mapCanvas().layers()
+
+
+for layer in layers:
+    layerType = layer.type()
+    if layerType == QgsMapLayer.VectorLayer:
+        print layer.name()
+
+
+pr = layer.dataProvider()
+poly = QgsFeature()
+poly = initAttributes(2) # marche pas
+poly.setAttribute("Nom", "tralala") # marche pas
+points = [QgsPoint(-0.5,0.5),QgsPoint(-0.5,1.5),QgsPoint(-1.0,1.5),QgsPoint(-1.0,0.5)]
+poly.setGeometry(QgsGeometry.fromPolygon([points]))
+pr.addFeatures([poly])
+layer.updateExtents()
+
+
+http://gis.stackexchange.com/questions/30935/when-iterating-over-a-vector-layer-with-pyqgis-how-do-i-check-whether-a-feature
+http://gis.stackexchange.com/questions/116572/qgsvectordataprovider-object-has-no-attribute-select
+mouais, c'est du code des vieilles versions.
+
+for feat in layer.getFeatures():
+    geom = feat.geometry()
+    print feat
+    print feat.attributes()
+    print feat.attribute("Nom")
+
+
+http://gis.stackexchange.com/questions/83641/set-feature-attribute-by-name-via-qgis-python-api
+
+layer.startEditing()
+feat['Nom'] = "trululuyyy"
+layer.updateFeature(feat)
+#Call commit to save the changes
+layer.commitChanges()
+
+
+
+layer.startEditing()
+pr = layer.dataProvider()
+poly = QgsFeature()
+points = [QgsPoint(-0.5,0.5),QgsPoint(-0.5,1.5),QgsPoint(-1.0,1.5),QgsPoint(-1.0,0.5)]
+poly.setGeometry(QgsGeometry.fromPolygon([points]))
+poly.setAttribute(0, 5)
+poly.setAttribute(1, "blarg")
+machin = pr.addFeatures([poly])
+layer.updateExtents()
+layer.commitChanges()
+osef, lis_feat = machin
+new_feat = lis_feat[0]
+
+feat.initAttributes(1)
+
+layer.startEditing()
+feat.initAttributes(5)
+layer.updateFeature(feat)
+#Call commit to save the changes
+layer.commitChanges()
+
+
+def add_feature(layer, feature_geom, feature_attributes):
+    layer.startEditing()
+    pr = layer.dataProvider()
+    poly = QgsFeature()
+    poly.setGeometry(QgsGeometry.fromPolygon([feature_geom]))
+    pr.addFeatures([poly])
+    layer.updateExtents()
+    layer.commitChanges()
+    # porcasse
+    created_feature = None
+    for feat in layer.getFeatures():
+        if feat.attribute("id") == NULL:
+            created_feature = feat
+    if created_feature is not None:
+        layer.startEditing()
+        for key_attr, val_attr in feature_attributes.items():
+            feat[key_attr] = val_attr
+        layer.updateFeature(feat)
+        #Call commit to save the changes
+        layer.commitChanges()
+
+
+
+add_feature(layer, "paf", {})
+
+add_feature(layer, [QgsPoint(-0.5,-1.0),QgsPoint(-0.5,1.5),QgsPoint(-1.0,1.5),QgsPoint(-1.0,0.5)], {"id" : 20, "Nom" : "pouet"})
+
+
+
+
++proj=longlat +datum=WGS84 +no_defs +axis=esu
+
+
+
+
+
+
+    def add_feature(self, layer, geom_points, attributes, attrib_name_identifier="identifier"):
+        layer.startEditing()
+        pr = layer.dataProvider()
+        feature_creating = qgis._core.QgsFeature()
+        feature_creating.setGeometry(qgis._core.QgsGeometry.fromPolygon([geom_points]))
+        pr.addFeatures([feature_creating])
+        layer.updateExtents()
+        layer.commitChanges()
+
+        feature_created = None
+        for feat in layer.getFeatures():
+            if feat.attribute(attrib_name_identifier) == NULL:
+                feature_created = feat
+
+        if feature_created is not None:
+            layer.startEditing()
+            for key_attr, val_attr in attributes.items():
+                feat[key_attr] = val_attr
+            layer.updateFeature(feat)
+            layer.commitChanges()
+
+
+
+concat(
+    nom, '\n',
+    'cartes : ', carte_req, '/', carte_tot, '\n',
+    'or : ', or_tot)
+
+
+CASE WHEN $scale > 10000000
+THEN
+    nom
+ELSE
+    concat(
+        nom, '\n',
+        'cartes : ', carte_req, '/', carte_tot, '\n',
+        'or : ', or_tot)
+END
