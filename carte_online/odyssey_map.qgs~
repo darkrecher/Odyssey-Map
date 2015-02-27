@@ -3,27 +3,24 @@
     <title></title>
     <layer-tree-group expanded="1" checked="Qt::Checked" name="">
         <customproperties/>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="ruines20150226002220285" name="ruines">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="ruines20150226004537026" name="ruines">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="ile20150225194559474" name="ile">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="ile20150226004534432" name="ile">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="mer20150225083919517" name="mer">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="mer20150226004527702" name="mer">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-group expanded="1" checked="Qt::Checked" name="objets_quete">
-            <customproperties/>
-        </layer-tree-group>
     </layer-tree-group>
     <relations/>
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>-4.02393403234227698</xmin>
-            <ymin>-10.0401386672245323</ymin>
-            <xmax>12.56852604110306793</xmax>
-            <ymax>3.33316340970979752</ymax>
+            <xmin>-5.15989636711828048</xmin>
+            <ymin>-9.29986176662335318</ymin>
+            <xmax>11.43256370632706087</xmax>
+            <ymax>4.23854280508793924</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -40,42 +37,44 @@
         </destinationsrs>
         <layer_coordinate_transform_info>
             <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ile20150225194559474"/>
+            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ile20150226004534432"/>
+            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ruines20150226004537026"/>
             <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100000" srcDatumTransform="-1" destDatumTransform="-1" layerid="mer20150225083919517"/>
             <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ile20150225194510668"/>
             <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ruines20150226001602863"/>
+            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="mer20150226004527702"/>
             <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ruines20150226002220285"/>
         </layer_coordinate_transform_info>
     </mapcanvas>
     <visibility-presets/>
     <layer-tree-canvas>
         <custom-order enabled="0">
-            <item>mer20150225083919517</item>
-            <item>ile20150225194559474</item>
-            <item>ruines20150226002220285</item>
+            <item>mer20150226004527702</item>
+            <item>ile20150226004534432</item>
+            <item>ruines20150226004537026</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ruines" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="ruines20150226002220285" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="ruines20150226004537026" visible="1"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ile" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="ile20150225194559474" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="ile20150226004534432" visible="1"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="mer" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="mer20150225083919517" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="mer20150226004527702" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendgroup open="true" checked="Qt::Checked" name="objets_quete"/>
     </legend>
     <projectlayers layercount="3">
         <maplayer minimumScale="-4.65661e-10" maximumScale="1.7e+07" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-            <id>ile20150225194559474</id>
-            <datasource>./ile.shp</datasource>
+            <id>ile20150226004534432</id>
+            <datasource>dbname='gqcblb_dzflal' host=db.qgiscloud.com port=5432 user='gqcblb_dzflal' password='f476c74b' key='ogc_fid' estimatedmetadata=true table="ile" (wkb_geometry) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -94,11 +93,14 @@
                     <geographicflag>true</geographicflag>
                 </spatialrefsys>
             </srs>
-            <provider encoding="UTF-8">ogr</provider>
+            <provider encoding="UTF-8">postgres</provider>
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
             <edittypes>
+                <edittype widgetv2type="TextEdit" name="ogc_fid">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
                 <edittype widgetv2type="TextEdit" name="identifier">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
@@ -304,6 +306,9 @@
             <excludeAttributesWFS/>
             <attributeactions/>
             <edittypes>
+                <edittype widgetv2type="TextEdit" name="ogc_fid">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
                 <edittype widgetv2type="TextEdit" name="identifier">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
@@ -313,8 +318,8 @@
             </edittypes>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-            <id>mer20150225083919517</id>
-            <datasource>./mer.shp</datasource>
+            <id>mer20150226004527702</id>
+            <datasource>dbname='gqcblb_dzflal' host=db.qgiscloud.com port=5432 user='gqcblb_dzflal' password='f476c74b' key='ogc_fid' estimatedmetadata=true table="mer" (wkb_geometry) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -333,11 +338,14 @@
                     <geographicflag>true</geographicflag>
                 </spatialrefsys>
             </srs>
-            <provider encoding="UTF-8">ogr</provider>
-            <previewExpression>COALESCE( "identifier", '&lt;NULL>' )</previewExpression>
+            <provider encoding="UTF-8">postgres</provider>
+            <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
             <edittypes>
+                <edittype widgetv2type="TextEdit" name="ogc_fid">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
                 <edittype widgetv2type="TextEdit" name="identifier">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
@@ -552,6 +560,9 @@
             <excludeAttributesWFS/>
             <attributeactions/>
             <edittypes>
+                <edittype widgetv2type="TextEdit" name="ogc_fid">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
                 <edittype widgetv2type="TextEdit" name="identifier">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
@@ -570,8 +581,8 @@
             </edittypes>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-            <id>ruines20150226002220285</id>
-            <datasource>./ruines.shp</datasource>
+            <id>ruines20150226004537026</id>
+            <datasource>dbname='gqcblb_dzflal' host=db.qgiscloud.com port=5432 user='gqcblb_dzflal' password='f476c74b' key='ogc_fid' estimatedmetadata=true table="ruines" (wkb_geometry) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -590,11 +601,14 @@
                     <geographicflag>true</geographicflag>
                 </spatialrefsys>
             </srs>
-            <provider encoding="UTF-8">ogr</provider>
-            <previewExpression>COALESCE( "identifier", '&lt;NULL>' )</previewExpression>
+            <provider encoding="UTF-8">postgres</provider>
+            <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
             <edittypes>
+                <edittype widgetv2type="TextEdit" name="ogc_fid">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
                 <edittype widgetv2type="TextEdit" name="identifier">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
@@ -827,6 +841,9 @@
             <excludeAttributesWFS/>
             <attributeactions/>
             <edittypes>
+                <edittype widgetv2type="TextEdit" name="ogc_fid">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
                 <edittype widgetv2type="TextEdit" name="identifier">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
@@ -884,23 +901,28 @@
         </Gui>
         <Digitizing>
             <LayerSnappingList type="QStringList">
-                <value>ile20150225194559474</value>
-                <value>mer20150225083919517</value>
+                <value>mer20150226004527702</value>
+                <value>ile20150226004534432</value>
+                <value>ruines20150226004537026</value>
             </LayerSnappingList>
             <LayerSnappingEnabledList type="QStringList">
-                <value>enabled</value>
-                <value>enabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
             </LayerSnappingEnabledList>
             <AvoidIntersectionsList type="QStringList"/>
             <LayerSnappingToleranceUnitList type="QStringList">
                 <value>0</value>
                 <value>0</value>
+                <value>0</value>
             </LayerSnappingToleranceUnitList>
             <LayerSnapToList type="QStringList">
-                <value>to_vertex</value>
-                <value>to_vertex</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
             </LayerSnapToList>
             <LayerSnappingToleranceList type="QStringList">
+                <value>0.000000</value>
                 <value>0.000000</value>
                 <value>0.000000</value>
             </LayerSnappingToleranceList>

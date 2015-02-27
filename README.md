@@ -1,4 +1,7 @@
 Carte du jeu vidéo Odyssey (Motion Twin)
-Fait avec QGis.
+Réalisée avec QGis.
 
-Sera publié dans le cloud de QGis, quand elle sera potable.
+Sera publiée dans le cloud de QGis, quand elle sera potable.
+
+ici : http://qgiscloud.com/Recher/odyssey_map
+
