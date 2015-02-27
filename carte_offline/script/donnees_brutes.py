@@ -1,75 +1,17 @@
-# structure #
 
-## surfaciques ##
+# - données -
 
-Mer :
-nom court
-nom complet
-cartes requise/total
-total or (île + ruines)
-xp min - xp max
+# -- pompage twinpedia --
 
-île
-nom
-or (île + ruines)
-détail or sur l'île
+# TP = TWINPEDIA
 
-gros surfacique global pour faire le fond
+TP_URL = "http://www.twinpedia.com/muxxu/odyssey"
+TP_DATE_LEECH = "2015-26-02"
 
-## linéaires ##
 
-carroyage (voir si on peut faire une couche virtuelle de carroyage)
+# --- boss ---
 
-## ponctuels ##
-
-ruines
-or
-liste de monstres
-
-objets de quête
-nom court
-nom complet
-description twinpedia
-nombre total dans le jeu
-un seul type avec tous les objets dedans, sinon on s'en sortira jamais.
-si possible, une couleur/un symbole différent par objet, mais c'est pas obligé
-
-carte/boussole
-
-pnj
-nom court
-nom complet
-description twinpedia
-
-pj
-nom court
-nom complet
-si possible, une couleur/un symbole différent par objet, mais c'est pas obligé
-
-boss
-nom
-
-améliorations et batiment
- - canne à pêche (nom, description twinpedia)
- - potions
- - temples
- - bibliothèques
- - fontaines
- - distillateur de potions
- - augmentation de sac de nourriture
- - auberge (prix)
-
-autels
- - un type par Dieu (nom du dieu)
-
-# données #
-
-## pompage twinpedia ##
-
-http://www.twinpedia.com/muxxu/odyssey
-
-### boss ###
-
+TP_BOSSES = """
 Envoyé d'Hypérion   -13°-3'     24  3   5   -   Drain?? FureurAttaqueAttente    50  ?
 Tristan Roi des Tritons 15°2'   30  2   6   Acide   ProvoqueDrainAttaque bulleAttaqueAttaque bulleAttaqueAttaque bulle  50  ?
 Stalskin Pope de Kabal  -3°24'  42  3 BM    12  -   RégénérationRégénérationAttaqueAttenteAttente   50  ?
@@ -79,9 +21,11 @@ Chronatorgh 2°31'   100     -   5   -   AttaqueAttaqueAttaqueAttaqueSouffle enf
 Astérope    20°16'  70  6 BM    5   Contre-attaque  RégénérationAttaque mentaleRégénérationAttaqueFoudreRégénérationAttaque     200     ?
 Golem prismatique   22°-9'  150     3 BM    14  -   Double-attaqueAttenteAttenteAttenteAttaqueAttenteAttenteAttente     200     ?
 Semerkhet   -23°5'  50  12  8   -       200     ?
+"""
 
-### mers et îles ###
+# --- mers et îles ---
 
+TP_ISLAND_SEAS = """
 Mer du Destin (~ 10 XP, 3 cartes)
 Ile de l'oracle     0° 0'   1   Point de départ de l'aventure
 Ile Rékiphie    1° 0'   1   PNJ: Papapapalopoulos (ramener “Viande grillée”, “Fruit appétissant”, “Gros légume”)
@@ -627,9 +571,11 @@ Ilot aux Spegma     16° 11'     2   ruines, fontaine
 Hynos   15° 11'     1   remplissage de potions
 Ilot Aroula     14° 12'     0   ruines
 Dokitheu    14° 12'     1   remplissage de potions
+"""
 
-### objets ###
+# --- objets ---
 
+TP_OBJECTS = """
     Planche Île de l'oracle, 5 exemplaires  Une solide planche en bois, utilisée en construction navale. Nécessaires pour débloquer le bateau.
     Canne du Débutant   Mer Harmaque - Ile Aralmi -4°-8'    Cette canne-à-pêche est très pratique pour pêcher, mais uniquement les petits poissons sur les mers calmes !
 Permet de pêcher une fois par jour dans les ports de mers proches. Gain entre 0 et 16 rations.
@@ -755,9 +701,11 @@ Remplir vos potions dans les bâtiments adéquat. Utiliser hors combat.
     Carottes de Drüne   ?   ?
 objets  Carte de la mer d'Hypothésis    Ilot de Lesas -18°15' (12 éléments)     Cette carte une fois complétée vous permettra d'accéder à la mer d'Hypothésis
 objets      ?   ?
+"""
 
-### ruines ###
+# --- ruines ---
 
+TP_RUINS = """
 Coordonnées positives   Nom de l'ile    Gain en or  Liste des ennemis
 0° 2'   Récif des Enas  196 or  Bulot maudit, Raide momie, Panthère, Blob féroce, Foudrine, Araignée géante
 0° 9'   Ile de Minitha  280 or  Sado-gorgogne, Panthère, Raide momie, Golem d'argile, Foudrine
@@ -897,13 +845,14 @@ Coordonnées négatives   Nom de l'ile    Gain en or  Liste des ennemis
 -17° 12'    Ile de l'Orie   296 or  Blob féroce, Diablotin sournois, Apprenti, Squelette vengeur, Armanite puante, Apprenti, Araignée géante, Renard laineux
 -17° 16'    Phyron  200 or  Panthère, Diablotin sournois, Pygmé incrédule, Apprenti, Pygmé incrédule, Foudrine
 -20° 15'    Ile Pelideasa   200 or  Kevinathan biblique
+"""
 
-### bâtiments ###
+# --- bâtiments ---
 
-Temples
+# ---- Temples ----
+# L'éveil du personnage augmente. Il gagne une ligne à sa grille de runes. Emplacement:
 
-L'éveil du personnage augmente. Il gagne une ligne à sa grille de runes. Emplacement:
-
+TP_TEMPLES = """
 2°0'
 
 3°10'
@@ -929,10 +878,12 @@ L'éveil du personnage augmente. Il gagne une ligne à sa grille de runes. Empla
 -2°-13'
 
 -15°-22'
-Bibliothèques
+"""
 
-La connaissance du personnage augmente. Il gagne une colonne à sa grille de runes. Emplacement:
+# ---- Bibliothèques ----
+# La connaissance du personnage augmente. Il gagne une colonne à sa grille de runes. Emplacement:
 
+TP_LIBRARIES = """
 1°4'
 
 0°-8'
@@ -950,10 +901,13 @@ La connaissance du personnage augmente. Il gagne une colonne à sa grille de run
 -5°28'
 
 -17°24'
-Fontaines
+"""
 
-Régénère vos runes et vos 10 combats du jour gratuitement. Emplacement :
+# ---- Fontaines ----
+# Régénère vos runes et vos 10 combats du jour gratuitement. Emplacement :
 
+TP_FOUNTAINS =
+"""
 11°5'
 
 15°-1'
@@ -975,10 +929,12 @@ Régénère vos runes et vos 10 combats du jour gratuitement. Emplacement :
 -8°-14'
 
 -18°-12'
-Distillateur de potions
+"""
 
-Permet de remplir vos potions vides si vous en possédez.
+# ---- Distillateur de potions ----
+# Permet de remplir vos potions vides si vous en possédez.
 
+TP_POTION_DISTILLERs = """
 9°0'
 
 9°8'
@@ -1030,10 +986,12 @@ Permet de remplir vos potions vides si vous en possédez.
 -2°-16'
 
 -21°-15'
-Augmentation de sac de nourriture
+"""
 
-Permet d'agrandir son sac de plus de 5 nourriture maximal. Emplacement :
+# ---- Augmentation de sac de nourriture ----
+# Permet d'agrandir son sac de plus de 5 nourriture maximal. Emplacement :
 
+TP_FOOD_BAGS = """
 2°30'
 
 8°11'
@@ -1095,10 +1053,12 @@ Permet d'agrandir son sac de plus de 5 nourriture maximal. Emplacement :
 -5°-12'
 
 -21°-15'
-Auberges
+"""
 
-Auberge: Dormir à l'auberge vous permet un regain de vos runes et de vos dix combats contre des pièces d'or. Le prix d'une auberge dépend du nombre de héros dans l'équipe (Avoir deux personnages double le prix, en avoir trois le triple) . Les prix indiqués ci-dessous sont ceux pour un seul personnage. Voir aussi la Carte des Auberges, recensant les auberges découvertes. Emplacement:
+# ---- Auberges ----
+# Auberge: Dormir à l'auberge vous permet un regain de vos runes et de vos dix combats contre des pièces d'or. Le prix d'une auberge dépend du nombre de héros dans l'équipe (Avoir deux personnages double le prix, en avoir trois le triple) . Les prix indiqués ci-dessous sont ceux pour un seul personnage. Voir aussi la Carte des Auberges, recensant les auberges découvertes. Emplacement:
 
+TP_INNS = """
 0°9' - 65 pièces d'or
 
 4°3' - 55 pièces d'or
@@ -1198,11 +1158,11 @@ Auberge: Dormir à l'auberge vous permet un regain de vos runes et de vos dix co
 -10°-20' - 65 pièces d'or
 
 -2°-16' - 65 pièces d'or
+"""
 
-### autels ###
+# --- Autels ---
 
-
-
+TP_ALTARS = """
 Arès :
 
     9° 0' : Orors (mer Orès)
@@ -1242,4 +1202,4 @@ Poséidon :
     -9° 22' : Araki (mer Zikax)
     -2° -15' : Ile aux Kylème (mer Zikeidos)
     -5° -23' : Tagma (mer Orax)
-
+"""

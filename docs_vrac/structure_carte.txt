@@ -1,0 +1,64 @@
+# structure #
+
+## surfaciques ##
+
+Mer :
+nom court
+nom complet
+cartes requise/total
+total or (île + ruines)
+xp min - xp max
+
+île
+nom
+or (île + ruines)
+détail or sur l'île
+
+gros surfacique global pour faire le fond
+
+## linéaires ##
+
+carroyage (voir si on peut faire une couche virtuelle de carroyage)
+
+## ponctuels ##
+
+ruines
+or
+liste de monstres
+
+objets de quête
+nom court
+nom complet
+description twinpedia
+nombre total dans le jeu
+un seul type avec tous les objets dedans, sinon on s'en sortira jamais.
+si possible, une couleur/un symbole différent par objet, mais c'est pas obligé
+
+carte/boussole
+
+pnj
+nom court
+nom complet
+description twinpedia
+
+pj
+nom court
+nom complet
+si possible, une couleur/un symbole différent par objet, mais c'est pas obligé
+
+boss
+nom
+
+améliorations et batiment
+ - canne à pêche (nom, description twinpedia)
+ - potions
+ - temples
+ - bibliothèques
+ - fontaines
+ - distillateur de potions
+ - augmentation de sac de nourriture
+ - auberge (prix)
+
+autels
+ - un type par Dieu (nom du dieu)
+
