@@ -99,8 +99,51 @@ class Coord(object):
             self.x = Fraction(int(x), 1)
             self.y = Fraction(int(y), 1)
 
+    def _extracted_parts(self, coord):
+        if coord.denominator == 1:
+            return coord.numerator, 0, 0.0
+        elif coord.denominator == 3:
+            return int(coord), coord.numerator % 3, 0.0
+        else:
+            return 0, 0, float(coord)
+
+    def _as_notation_recher(self, coord):
+        int_part, third, float_part = self._extracted_parts(coord)
+        if float_part != 0.0:
+            return str(float_part)
+        elif third != 0:
+            if coord < 0:
+                int_part = int_part-1
+            return "".join((str(int_part), " ", str(third), "/"))
+
+        else:
+            return str(int_part)
+
+    def _as_notation_odyssey(self, coord):
+        int_part, third, float_part = self._extracted_parts(coord)
+        if float_part != 0.0:
+            return str(float_part)
+        else:
+            sign = ""
+            if coord < 0:
+                third = 3 - third
+                sign = "-"
+            STRINGED_THIRD = { 0:"", 1:".333", 2:".666", 3:""}
+            return "".join((sign, str(abs(int_part)), STRINGED_THIRD[third]))
+
     def __str__(self):
-        pass # TODO
+        return ", ".join((
+            self._as_notation_recher(coord.x),
+            self._as_notation_recher(coord.y)
+        ))
+
+    def as_notation_odyssey(self):
+        return "".join((
+            self._as_notation_odyssey(coord.x),
+            "°",
+            self._as_notation_odyssey(coord.y),
+            "'"
+        ))
 
 
 if __name__ == "__main__":
@@ -118,25 +161,37 @@ if __name__ == "__main__":
     info(Coord.may_contain_odyssey_coord("aaaabbb"))
     info(Coord.may_contain_odyssey_coord("aaaa°bbb"))
 
-    coord = Coord()
-    info((coord.x, coord.y))
+    def log_coord(coord):
+        info("------")
+        info((coord.x, coord.y))
+        info(coord)
+        info(coord.as_notation_odyssey())
 
-    coord = Coord(recher_n="1 2/, 3 1/")
-    info((coord.x, coord.y))
-    coord = Coord(recher_n="-1 2/, -3 1/")
-    info((coord.x, coord.y))
+    coord = Coord()
+    log_coord(coord)
+
+    coord = Coord(recher_n="0 1/, 0 2/")
+    log_coord(coord)
+    coord = Coord(recher_n="1 1/, 1 2/")
+    log_coord(coord)
+    coord = Coord(recher_n="-1 1/, -1 2/")
+    log_coord(coord)
+    coord = Coord(recher_n="3 2/, 4 1/")
+    log_coord(coord)
+    coord = Coord(recher_n="-10 2/, -11 1/")
+    log_coord(coord)
 
     coord = Coord(odyssey_n="1°2'")
-    info((coord.x, coord.y))
+    log_coord(coord)
     coord = Coord(odyssey_n="3°4")
-    info((coord.x, coord.y))
+    log_coord(coord)
     coord = Coord(odyssey_n="-5°-6'")
-    info((coord.x, coord.y))
+    log_coord(coord)
     coord = Coord(odyssey_n="blablabla  654654 -77   °   -88  654564'  blabla")
-    info((coord.x, coord.y))
+    log_coord(coord)
     coord = Coord(odyssey_n="blablabla  654654 999   °   111  654564'  blabla")
-    info((coord.x, coord.y))
+    log_coord(coord)
     # Celle-ci est vraiment bizarre, mais si ça fonctionne, pourquoi pas.
     coord = Coord(odyssey_n="bla  654654 ---999   °   111  654564'  bla")
-    info((coord.x, coord.y))
+    log_coord(coord)
 
