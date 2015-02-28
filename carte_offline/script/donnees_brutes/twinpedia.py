@@ -908,8 +908,7 @@ LIBRARIES = """
 # ---- Fontaines ----
 # Régénère vos runes et vos 10 combats du jour gratuitement. Emplacement :
 
-FOUNTAINS =
-"""
+FOUNTAINS = """
 11°5'
 
 15°-1'
@@ -936,7 +935,7 @@ FOUNTAINS =
 # ---- Distillateur de potions ----
 # Permet de remplir vos potions vides si vous en possédez.
 
-POTION_DISTILLERs = """
+POTION_DISTILLERS = """
 9°0'
 
 9°8'
