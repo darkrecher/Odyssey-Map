@@ -48,8 +48,19 @@ class Coord(object):
         self.y = Fraction()
         self.set(odyssey_n, recher_n, x, y)
 
-    def _recher_notation_one_coord_converted(self, one_coord):
+    @staticmethod
+    def recher_n_one_coord_converted(one_coord):
         int_part, space, fract_part = one_coord.strip().partition(" ")
+        if space == "":
+            # il n'y a qu'une seule partie (ou zero) dans la coordonnée
+            # On cherche le slash, pour déterminer si on a que la partie
+            # entière, ou que la partie tiers.
+            if "/" in one_coord:
+                int_part = "0"
+                fract_part = one_coord
+            # dans le cas contraire, on n'a que la partie entière.
+            # la fonction partiton l'a déjà placée dans int_part.
+
         int_part = int_part.strip()
         int_part = Fraction(int(int_part), 1)
         numerator, divisor, denominator = fract_part.partition("/")
@@ -80,8 +91,8 @@ class Coord(object):
                 # ou quelque chose comme ça. Ce serait classe.
                 raise Exception(
                     "Notation réchèrienne incorrecte. format : 000 0/,000 0/")
-            self.x = self._recher_notation_one_coord_converted(x)
-            self.y = self._recher_notation_one_coord_converted(y)
+            self.x = Coord.recher_n_one_coord_converted(x)
+            self.y = Coord.recher_n_one_coord_converted(y)
 
         elif odyssey_n != "":
             search_result = Coord.REGEXP_ODYSSEY_COORDINATES.search(odyssey_n)
@@ -153,10 +164,9 @@ if __name__ == "__main__":
 
     # TODO : ajouter des asserts si on est motivé. Ou bien utiliser pytest.
 
-    coord = Coord(x=0, y=0)
-    info(coord._recher_notation_one_coord_converted("2 1/"))
-    info(coord._recher_notation_one_coord_converted("   -1    "))
-    info(coord._recher_notation_one_coord_converted("-5    2/    "))
+    info(Coord.recher_n_one_coord_converted("2 1/"))
+    info(Coord.recher_n_one_coord_converted("   -1    "))
+    info(Coord.recher_n_one_coord_converted("-5    2/    "))
 
     info(Coord.may_contain_odyssey_coord("aaaabbb"))
     info(Coord.may_contain_odyssey_coord("aaaa°bbb"))
@@ -171,6 +181,8 @@ if __name__ == "__main__":
     log_coord(coord)
 
     coord = Coord(recher_n="0 1/, 0 2/")
+    log_coord(coord)
+    coord = Coord(recher_n="1/, 2/")
     log_coord(coord)
     coord = Coord(recher_n="1 1/, 1 2/")
     log_coord(coord)
