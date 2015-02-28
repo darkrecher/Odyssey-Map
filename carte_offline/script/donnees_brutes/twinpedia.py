@@ -577,7 +577,7 @@ Dokitheu    14° 12'     1   remplissage de potions
 
 # --- objets ---
 
-OBJECTS = """
+ITEMS = """
     Planche Île de l'oracle, 5 exemplaires  Une solide planche en bois, utilisée en construction navale. Nécessaires pour débloquer le bateau.
     Canne du Débutant   Mer Harmaque - Ile Aralmi -4°-8'    Cette canne-à-pêche est très pratique pour pêcher, mais uniquement les petits poissons sur les mers calmes !
 Permet de pêcher une fois par jour dans les ports de mers proches. Gain entre 0 et 16 rations.
