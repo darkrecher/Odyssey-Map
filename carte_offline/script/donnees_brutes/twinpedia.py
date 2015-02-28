@@ -1,17 +1,19 @@
+# -*- coding: utf-8 -*-
 
-# - données -
+"""
+    Données brutes, pompée depuis Twinpedia.
+"""
 
-# -- pompage twinpedia --
+from __future__ import (unicode_literals, absolute_import,
+                        print_function, division)
 
-# TP = TWINPEDIA
-
-TP_URL = "http://www.twinpedia.com/muxxu/odyssey"
-TP_DATE_LEECH = "2015-26-02"
+LEECH_URL = "http://www.twinpedia.com/muxxu/odyssey"
+LEECH_DATE = "2015-26-02"
 
 
 # --- boss ---
 
-TP_BOSSES = """
+BOSSES = """
 Envoyé d'Hypérion   -13°-3'     24  3   5   -   Drain?? FureurAttaqueAttente    50  ?
 Tristan Roi des Tritons 15°2'   30  2   6   Acide   ProvoqueDrainAttaque bulleAttaqueAttaque bulleAttaqueAttaque bulle  50  ?
 Stalskin Pope de Kabal  -3°24'  42  3 BM    12  -   RégénérationRégénérationAttaqueAttenteAttente   50  ?
@@ -25,7 +27,7 @@ Semerkhet   -23°5'  50  12  8   -       200     ?
 
 # --- mers et îles ---
 
-TP_ISLAND_SEAS = """
+ISLAND_SEAS = """
 Mer du Destin (~ 10 XP, 3 cartes)
 Ile de l'oracle     0° 0'   1   Point de départ de l'aventure
 Ile Rékiphie    1° 0'   1   PNJ: Papapapalopoulos (ramener “Viande grillée”, “Fruit appétissant”, “Gros légume”)
@@ -575,7 +577,7 @@ Dokitheu    14° 12'     1   remplissage de potions
 
 # --- objets ---
 
-TP_OBJECTS = """
+OBJECTS = """
     Planche Île de l'oracle, 5 exemplaires  Une solide planche en bois, utilisée en construction navale. Nécessaires pour débloquer le bateau.
     Canne du Débutant   Mer Harmaque - Ile Aralmi -4°-8'    Cette canne-à-pêche est très pratique pour pêcher, mais uniquement les petits poissons sur les mers calmes !
 Permet de pêcher une fois par jour dans les ports de mers proches. Gain entre 0 et 16 rations.
@@ -705,7 +707,7 @@ objets      ?   ?
 
 # --- ruines ---
 
-TP_RUINS = """
+RUINS = """
 Coordonnées positives   Nom de l'ile    Gain en or  Liste des ennemis
 0° 2'   Récif des Enas  196 or  Bulot maudit, Raide momie, Panthère, Blob féroce, Foudrine, Araignée géante
 0° 9'   Ile de Minitha  280 or  Sado-gorgogne, Panthère, Raide momie, Golem d'argile, Foudrine
@@ -852,7 +854,7 @@ Coordonnées négatives   Nom de l'ile    Gain en or  Liste des ennemis
 # ---- Temples ----
 # L'éveil du personnage augmente. Il gagne une ligne à sa grille de runes. Emplacement:
 
-TP_TEMPLES = """
+TEMPLES = """
 2°0'
 
 3°10'
@@ -883,7 +885,7 @@ TP_TEMPLES = """
 # ---- Bibliothèques ----
 # La connaissance du personnage augmente. Il gagne une colonne à sa grille de runes. Emplacement:
 
-TP_LIBRARIES = """
+LIBRARIES = """
 1°4'
 
 0°-8'
@@ -906,7 +908,7 @@ TP_LIBRARIES = """
 # ---- Fontaines ----
 # Régénère vos runes et vos 10 combats du jour gratuitement. Emplacement :
 
-TP_FOUNTAINS =
+FOUNTAINS =
 """
 11°5'
 
@@ -934,7 +936,7 @@ TP_FOUNTAINS =
 # ---- Distillateur de potions ----
 # Permet de remplir vos potions vides si vous en possédez.
 
-TP_POTION_DISTILLERs = """
+POTION_DISTILLERs = """
 9°0'
 
 9°8'
@@ -991,7 +993,7 @@ TP_POTION_DISTILLERs = """
 # ---- Augmentation de sac de nourriture ----
 # Permet d'agrandir son sac de plus de 5 nourriture maximal. Emplacement :
 
-TP_FOOD_BAGS = """
+FOOD_BAGS = """
 2°30'
 
 8°11'
@@ -1058,7 +1060,7 @@ TP_FOOD_BAGS = """
 # ---- Auberges ----
 # Auberge: Dormir à l'auberge vous permet un regain de vos runes et de vos dix combats contre des pièces d'or. Le prix d'une auberge dépend du nombre de héros dans l'équipe (Avoir deux personnages double le prix, en avoir trois le triple) . Les prix indiqués ci-dessous sont ceux pour un seul personnage. Voir aussi la Carte des Auberges, recensant les auberges découvertes. Emplacement:
 
-TP_INNS = """
+INNS = """
 0°9' - 65 pièces d'or
 
 4°3' - 55 pièces d'or
@@ -1162,7 +1164,7 @@ TP_INNS = """
 
 # --- Autels ---
 
-TP_ALTARS = """
+ALTARS = """
 Arès :
 
     9° 0' : Orors (mer Orès)
