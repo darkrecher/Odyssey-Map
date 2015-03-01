@@ -9,7 +9,7 @@ from __future__ import (unicode_literals, absolute_import,
 import logging
 from fractions import Fraction
 
-from coord import Coord
+from coords import Coord
 
 class CoordRect(object):
     """"
@@ -49,6 +49,8 @@ class CoordRect(object):
             if len(coords_rect):
                 h = coords_rect.pop(0)
                 self.h = converted(h)
+        if self.w < 0 or self.h < 0:
+            raise Exception("taille de rectangle négative.")
         self._determine_corners()
 
     def _determine_corners(self):
@@ -57,10 +59,54 @@ class CoordRect(object):
         self.coord_down_left = Coord(x=self.x, y=self.y+self.h)
         self.coord_down_right = Coord(x=self.x+self.w, y=self.y+self.h)
 
+    def _contains_point(self, coord):
+        return (
+            coord.x >= self.x and
+            coord.y >= self.y and
+            coord.x <= self.coord_down_right.x and
+            coord.y <= self.coord_down_right.y)
+
+    def includes(self, geom):
+        if isinstance(geom, Coord):
+            return self._contains_point(geom)
+        else:
+            raise Exception("type attendu : Coord ou CoordRect")
+
+    def intersects(self, geom):
+        if isinstance(geom, Coord):
+            return self._contains_point(geom)
+        else:
+            raise Exception("type attendu : Coord ou CoordRect")
 
 
+    def __str__(self):
+        coord_size = Coord(x=self.w, y=self.h)
+        return ", ".join((str(self.coord_up_left), str(coord_size)))
 
 
+if __name__ == "__main__":
+
+    info = logging.info
+    logging.basicConfig(format="%(message)s", level=logging.INFO)
+
+    rect = CoordRect("4, 5 1/, 6 2/, 7 2/")
+    info(rect)
+    info(rect.coord_down_right)
+    info(rect.includes(Coord(recher_n="8 1/, 9 2/")))
+    info(rect.includes(Coord(recher_n="11, 9 2/")))
+    info(rect.includes(Coord(recher_n="8 1/, 13 1/")))
+
+    rect = CoordRect("-4, -5 1/, 6 2/, 7 2/")
+    info(rect)
+    info(rect.coord_down_right)
+    info(rect.includes(Coord(recher_n="-3 1/, -4 2/")))
+    info(rect.includes(Coord(recher_n="3, -4 2/")))
+    info(rect.includes(Coord(recher_n="-3 1/, 3")))
+    info(rect.includes(Coord(recher_n="-3 1/, 3 1/")))
+
+    rect = CoordRect("-4, -5 1/, 1/, 2/")
+    info(rect)
+    info(rect.coord_down_right)
 
 
 

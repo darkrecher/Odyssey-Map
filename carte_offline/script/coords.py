@@ -144,15 +144,15 @@ class Coord(object):
 
     def __str__(self):
         return ", ".join((
-            self._as_notation_recher(coord.x),
-            self._as_notation_recher(coord.y)
+            self._as_notation_recher(self.x),
+            self._as_notation_recher(self.y)
         ))
 
     def as_notation_odyssey(self):
         return "".join((
-            self._as_notation_odyssey(coord.x),
+            self._as_notation_odyssey(self.x),
             "°",
-            self._as_notation_odyssey(coord.y),
+            self._as_notation_odyssey(self.y),
             "'"
         ))
 
