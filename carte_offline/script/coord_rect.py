@@ -43,10 +43,10 @@ class CoordRect(object):
             self.x = converted(x)
             y = coords_rect.pop(0)
             self.y = converted(y)
-            if len(coords_rect):
+            if coords_rect:
                 w = coords_rect.pop(0)
                 self.w = converted(w)
-            if len(coords_rect):
+            if coords_rect:
                 h = coords_rect.pop(0)
                 self.h = converted(h)
         if self.w < 0 or self.h < 0:
@@ -69,12 +69,20 @@ class CoordRect(object):
     def includes(self, geom):
         if isinstance(geom, Coord):
             return self._contains_point(geom)
+        elif isinstance(geom, CoordRect):
+            return (
+                self._contains_point(geom.coord_up_left) and
+                self._contains_point(geom.coord_down_right))
         else:
             raise Exception("type attendu : Coord ou CoordRect")
 
     def intersects(self, geom):
         if isinstance(geom, Coord):
             return self._contains_point(geom)
+        elif isinstance(geom, CoordRect):
+            return (
+                self._contains_point(geom.coord_up_left) or
+                self._contains_point(geom.coord_down_right))
         else:
             raise Exception("type attendu : Coord ou CoordRect")
 
@@ -95,6 +103,11 @@ if __name__ == "__main__":
     info(rect.includes(Coord(recher_n="8 1/, 9 2/")))
     info(rect.includes(Coord(recher_n="11, 9 2/")))
     info(rect.includes(Coord(recher_n="8 1/, 13 1/")))
+    info("test include et intersect de rects")
+    info(rect.includes(CoordRect("7 1/, 9 2/, 2 2/, 2 1/")))
+    info(rect.intersects(CoordRect("7 1/, 9 2/, 2 2/, 2 1/")))
+    info(rect.includes(CoordRect("7 1/, 9 2/, 12 2/, 2 1/")))
+    info(rect.intersects(CoordRect("7 1/, 9 2/, 12 2/, 2 1/")))
 
     rect = CoordRect("-4, -5 1/, 6 2/, 7 2/")
     info(rect)
@@ -103,6 +116,11 @@ if __name__ == "__main__":
     info(rect.includes(Coord(recher_n="3, -4 2/")))
     info(rect.includes(Coord(recher_n="-3 1/, 3")))
     info(rect.includes(Coord(recher_n="-3 1/, 3 1/")))
+    info("test include et intersect de rects")
+    info(rect.includes(CoordRect("1/, 2/, 1 2/, 2 1/")))
+    info(rect.intersects(CoordRect("1/, 2/, 1 2/, 2 1/")))
+    info(rect.includes(CoordRect("1/, 2/, 12 2/, 2 1/")))
+    info(rect.intersects(CoordRect("1/, 2/, 12 2/, 2 1/")))
 
     rect = CoordRect("-4, -5 1/, 1/, 2/")
     info(rect)
