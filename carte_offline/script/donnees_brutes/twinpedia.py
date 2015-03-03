@@ -27,7 +27,7 @@ Semerkhet   -23°5'  50  12  8   -       200     ?
 
 # --- mers et îles ---
 
-ISLAND_SEAS = """
+ISLANDS_AND_SEAS = """
 Mer du Destin (~ 10 XP, 3 cartes)
 Ile de l'oracle     0° 0'   1   Point de départ de l'aventure
 Ile Rékiphie    1° 0'   1   PNJ: Papapapalopoulos (ramener “Viande grillée”, “Fruit appétissant”, “Gros légume”)
