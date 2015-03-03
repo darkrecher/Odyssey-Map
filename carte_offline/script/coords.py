@@ -32,6 +32,10 @@ class Coord(object):
             \-?        # éventuellement, le signe "moins"
             [0-9]+     # au moins un chiffre
 
+            # le caractère final.
+            \s*'?      # éventuellement des espaces,
+                       # et éventuellement une apostrophe.
+
         )              # les caractères définissant
                        # la coordonnée odyssienne s'arrêtent ici
 
@@ -43,10 +47,17 @@ class Coord(object):
     def may_contain_odyssey_coord(data):
         return "°" in data
 
-    def __init__(self, odyssey_n="", recher_n="", x=None, y=None):
-        self.x = Fraction()
-        self.y = Fraction()
-        self.set(odyssey_n, recher_n, x, y)
+    @staticmethod
+    def partition_odyssey_coord(data):
+        search_result = Coord.REGEXP_ODYSSEY_COORDINATES.search(data)
+        if search_result is None:
+            return (data, "", "")
+        else:
+            coord_index_start, coord_index_end = search_result.span(1)
+            return (
+                data[coord_index_start:],
+                data[coord_index_start:coord_index_end],
+                data[coord_index_end:])
 
     @staticmethod
     def recher_n_one_coord_converted(one_coord):
@@ -78,6 +89,11 @@ class Coord(object):
 
         return int_part + fract_part
 
+    def __init__(self, odyssey_n="", recher_n="", x=None, y=None):
+        self.x = Fraction()
+        self.y = Fraction()
+        self.set(odyssey_n, recher_n, x, y)
+
     def set(self, odyssey_n="", recher_n="", x=None, y=None):
 
         if x is not None and y is not None:
@@ -95,19 +111,16 @@ class Coord(object):
             self.y = Coord.recher_n_one_coord_converted(y)
 
         elif odyssey_n != "":
-            search_result = Coord.REGEXP_ODYSSEY_COORDINATES.search(odyssey_n)
-            if search_result is None:
+            x, degree, y = odyssey_n.partition("°")
+            if degree == "":
                 raise Exception(
-                    "Notation odyssienne incorrecte. format : 000 ° 000")
-            search_result_groups = search_result.groups()
-            if len(search_result_groups) < 1:
-                raise Exception(
-                    "Notation odyssienne incorrecte. format : 000 ° 000")
-            odyssey_n_extracted = search_result_groups[0]
-            x, degree, y = odyssey_n_extracted.partition("°")
+                    "Notation odyssienne incorrecte. format : 000 ° 000 '")
             x = x.strip()
-            y = y.strip()
             self.x = Fraction(int(x), 1)
+            y = y.strip()
+            if y.endswith("'"):
+                y = y[:-1]
+            y = y.rstrip()
             self.y = Fraction(int(y), 1)
 
     def _extracted_parts(self, coord):
@@ -171,6 +184,16 @@ if __name__ == "__main__":
     info(Coord.may_contain_odyssey_coord("aaaabbb"))
     info(Coord.may_contain_odyssey_coord("aaaa°bbb"))
 
+    info(Coord.partition_odyssey_coord("aaaaabbbbbbbb"))
+    info(Coord.partition_odyssey_coord("3°4"))
+    info(Coord.partition_odyssey_coord("3°4'"))
+    info(Coord.partition_odyssey_coord("blablabla  654654 -77   °   -88  654564'  blabla"))
+    info(Coord.partition_odyssey_coord("blablabla  654654 -77   °   -88' 654564'  blabla"))
+    info(Coord.partition_odyssey_coord("blablabla  654654 999   °   111   654564'  blabla"))
+    info(Coord.partition_odyssey_coord("blablabla  654654 999   °   111 ' 654564'  blabla"))
+    # Celle-ci est vraiment bizarre, mais si ça fonctionne, pourquoi pas.
+    info(Coord.partition_odyssey_coord("bla  654654 ---999   °   111  654564'  bla"))
+
     def log_coord(coord):
         info("------")
         info((coord.x, coord.y))
@@ -199,11 +222,6 @@ if __name__ == "__main__":
     log_coord(coord)
     coord = Coord(odyssey_n="-5°-6'")
     log_coord(coord)
-    coord = Coord(odyssey_n="blablabla  654654 -77   °   -88  654564'  blabla")
-    log_coord(coord)
-    coord = Coord(odyssey_n="blablabla  654654 999   °   111  654564'  blabla")
-    log_coord(coord)
-    # Celle-ci est vraiment bizarre, mais si ça fonctionne, pourquoi pas.
-    coord = Coord(odyssey_n="bla  654654 ---999   °   111  654564'  bla")
+    coord = Coord(odyssey_n="  -78  °  -89  '   ")
     log_coord(coord)
 
