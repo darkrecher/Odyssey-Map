@@ -33,7 +33,7 @@ class SeaImg(object):
         return "\n".join(all_desc)
 
 
-def parse_data_from_img(data):
+def parse_data_from_img(data=donnees_brutes.img_778N9.DATA):
     seas = []
     current_sea = None
 
@@ -63,7 +63,7 @@ def parse_data_from_img(data):
 
 if __name__ == "__main__":
     logging.basicConfig(format="%(message)s", level=logging.INFO)
-    seas = parse_data_from_img(donnees_brutes.img_778N9.DATA)
+    seas = parse_data_from_img()
     for sea in seas:
         info(unicode(sea))
         info("-" * 10)

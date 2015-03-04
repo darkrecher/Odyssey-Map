@@ -127,7 +127,7 @@ def parse_island_line(before, coord, after):
     desc = desc.strip()
     return IslandTwinpedia(island_name, coord, nb_maps, desc, warning)
 
-def parse_islands_and_seas(data):
+def parse_islands_and_seas(data=twinpedia.ISLANDS_AND_SEAS):
 
     seas = []
     current_sea = None
@@ -164,7 +164,7 @@ def parse_islands_and_seas(data):
 
 if __name__ == "__main__":
     logging.basicConfig(format="%(message)s", level=logging.INFO)
-    seas = parse_islands_and_seas(twinpedia.ISLANDS_AND_SEAS)
+    seas = parse_islands_and_seas()
     for sea in seas:
         info(unicode(sea))
         info("-" * 10)
