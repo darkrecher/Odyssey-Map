@@ -55,7 +55,7 @@ class Coord(object):
         else:
             coord_index_start, coord_index_end = search_result.span(1)
             return (
-                data[coord_index_start:],
+                data[:coord_index_start],
                 data[coord_index_start:coord_index_end],
                 data[coord_index_end:])
 
