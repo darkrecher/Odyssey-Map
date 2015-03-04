@@ -12,6 +12,7 @@ info = logging.info
 # TODO : foutre ça dans le main.
 logging.basicConfig(format="%(message)s", level=logging.INFO)
 
+from bat_belt import join_unicode
 from coords import Coord
 from coord_rect import CoordRect
 import donnees_brutes.twinpedia
@@ -20,19 +21,20 @@ twinpedia = donnees_brutes.twinpedia
 
 class IslandTwinpedia(object):
 
-    def __init__(self, name, coord, nb_maps, description):
+    def __init__(self, name, coord, nb_maps, description, warning):
         self.name = name
         self.coord = coord
         self.nb_maps = nb_maps
         self.description = description
+        self.warning = warning
 
     def __unicode__(self):
-        return "".join((
-            unicode(self.name), " ",
-            "(", unicode(self.coord), ") ",
-            "M:", unicode(self.nb_maps), " ",
-            unicode(self.description)))
-
+        return join_unicode(
+            self.name, " ",
+            "(", self.coord, ") ",
+            "M:", self.nb_maps, " ",
+            self.description, " ",
+            "W:", self.warning)
 
 class SeaTwinpedia(object):
 
@@ -45,10 +47,10 @@ class SeaTwinpedia(object):
         self.islands = []
 
     def __unicode__(self):
-        sea_desc = "".join((
-            unicode(self.name), " ",
-            "XP:", unicode(self.xp_min), "-", unicode(self.xp_max), " ",
-            "M:", unicode(self.total_maps_required)))
+        sea_desc = join_unicode(
+            self.name, " ",
+            "XP:", self.xp_min, "-", self.xp_max, " ",
+            "M:", self.total_maps_required)
         islands_desc = [ "    " + unicode(island) for island in self.islands ]
         all_desc = [ sea_desc ] + islands_desc
         return "\n".join(all_desc)
@@ -113,15 +115,18 @@ def parse_island_line(before, coord, after):
     warning = ""
     after = after.strip()
     nb_maps_data, space, desc = after.partition(" ")
+    warning_nb_maps = ""
+    if nb_maps_data.endswith("?"):
+        nb_maps_data = nb_maps_data[:-1]
+        warning_nb_maps = ";nb cartes incertain"
     try:
-        # TODO : si c'est un nombre suivi d'un point d'interrogation
-        # récupérer le nombre mais mettre un warning "nb maps incertain"
         nb_maps = int(nb_maps_data)
     except ValueError:
         desc = after
-        warning += ";nb cartes manquant ou incorrect"
+        warning_nb_maps = ";nb cartes manquant ou incorrect"
+    warning += warning_nb_maps
     desc = desc.strip()
-    return IslandTwinpedia(island_name, coord, nb_maps, desc)
+    return IslandTwinpedia(island_name, coord, nb_maps, desc, warning)
 
 def parse_islands_and_seas(data):
 
