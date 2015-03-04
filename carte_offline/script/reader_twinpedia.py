@@ -9,8 +9,6 @@ from __future__ import (unicode_literals, absolute_import,
                         print_function, division)
 import logging
 info = logging.info
-# TODO : foutre ça dans le main.
-logging.basicConfig(format="%(message)s", level=logging.INFO)
 
 from bat_belt import join_unicode
 from coords import Coord
@@ -54,6 +52,7 @@ class SeaTwinpedia(object):
         islands_desc = [ "    " + unicode(island) for island in self.islands ]
         all_desc = [ sea_desc ] + islands_desc
         return "\n".join(all_desc)
+
 
 def _parse_sea_line(data_line):
     xp_min = 0
@@ -164,6 +163,7 @@ def parse_islands_and_seas(data):
 
 
 if __name__ == "__main__":
+    logging.basicConfig(format="%(message)s", level=logging.INFO)
     seas = parse_islands_and_seas(twinpedia.ISLANDS_AND_SEAS)
     for sea in seas:
         info(unicode(sea))

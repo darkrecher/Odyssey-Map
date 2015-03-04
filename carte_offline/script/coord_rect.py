@@ -7,6 +7,7 @@
 from __future__ import (unicode_literals, absolute_import,
                         print_function, division)
 import logging
+info = logging.info
 from fractions import Fraction
 
 from coords import Coord
@@ -86,15 +87,12 @@ class CoordRect(object):
         else:
             raise Exception("type attendu : Coord ou CoordRect")
 
-
     def __str__(self):
         coord_size = Coord(x=self.w, y=self.h)
         return ", ".join((str(self.coord_up_left), str(coord_size)))
 
 
 if __name__ == "__main__":
-
-    info = logging.info
     logging.basicConfig(format="%(message)s", level=logging.INFO)
 
     rect = CoordRect("4, 5 1/, 6 2/, 7 2/")
