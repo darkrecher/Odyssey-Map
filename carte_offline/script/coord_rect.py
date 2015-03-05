@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    Définit la classe CoordSquare
+    Définit la classe CoordRect.
 """
 
 from __future__ import (unicode_literals, absolute_import,
@@ -18,19 +18,30 @@ class CoordRect(object):
     Coin sup gauche, largeur et longueur, comme d'hab'.
     """
 
-    def __init__(self, recher_n_rect="", x=None, y=None, w=None, h=None):
+    def __init__(self,
+        recher_n_rect="", coord_raw=None,
+        x=None, y=None, w=None, h=None):
+
         self.x = Fraction()
         self.y = Fraction()
         self.w = Fraction()
         self.h = Fraction()
-        self.set(recher_n_rect, x, y, w, h)
+        self.set(recher_n_rect, coord_raw, x, y, w, h)
 
-    def set(self, recher_n_rect="", x=None, y=None, w=None, h=None):
+    def set(self,
+        recher_n_rect="", coord_raw=None,
+        x=None, y=None, w=None, h=None):
+
         if x is not None and y is not None and w is not None and h is not None:
             self.x = Fraction(x)
             self.y = Fraction(y)
             self.w = Fraction(w)
             self.h = Fraction(h)
+        elif coord_raw is not None:
+            self.x = Fraction(coord_raw.x)
+            self.y = Fraction(coord_raw.y)
+            self.w = Fraction(2, 3)
+            self.h = Fraction(2, 3)
         else:
             coords_rect = recher_n_rect.split(",")
             if len(coords_rect) < 2:
@@ -83,7 +94,9 @@ class CoordRect(object):
         elif isinstance(geom, CoordRect):
             return (
                 self._contains_point(geom.coord_up_left) or
-                self._contains_point(geom.coord_down_right))
+                self._contains_point(geom.coord_down_right) or
+                geom._contains_point(self.coord_up_left) or
+                geom._contains_point(self.coord_up_right))
         else:
             raise Exception("type attendu : Coord ou CoordRect")
 

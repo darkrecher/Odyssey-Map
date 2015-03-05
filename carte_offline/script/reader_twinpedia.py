@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """
-    Interpréteur du fichier twinpedia.py,
-    contenant les infos récupérées depuis le site twinpedia.
+    Interpréteur du fichier img_778N9.py,
+    contenant les infos saisies à la main,
+    à partir de l'image de la carte globale.
 """
 
 from __future__ import (unicode_literals, absolute_import,
@@ -149,7 +150,6 @@ def parse_islands_and_seas(data=twinpedia.ISLANDS_AND_SEAS):
                     current_sea = new_sea
 
             else:
-
                 if current_sea is None: raise Exception("fail current sea")
                 new_island = parse_island_line(before, coord, after)
                 if new_island is None:
