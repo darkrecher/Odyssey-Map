@@ -61,9 +61,11 @@ def parse_data_from_img(data=img_778N9.DATA):
     return seas
 
 
-if __name__ == "__main__":
-    logging.basicConfig(format="%(message)s", level=logging.INFO)
+def test():
     seas = parse_data_from_img()
     for sea in seas:
         info(unicode(sea))
         info("-" * 10)
+
+if __name__ == "__main__":
+    test()

@@ -161,10 +161,11 @@ def parse_islands_and_seas(data=twinpedia.ISLANDS_AND_SEAS):
     return seas
 
 
-if __name__ == "__main__":
-    logging.basicConfig(format="%(message)s", level=logging.INFO)
+def test():
     seas = parse_islands_and_seas()
     for sea in seas:
         info(unicode(sea))
         info("-" * 10)
 
+if __name__ == "__main__":
+    test()

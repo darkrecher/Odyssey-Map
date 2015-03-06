@@ -179,11 +179,11 @@ def build_data():
     return seas
 
 
-if __name__ == "__main__":
-    logging.basicConfig(format="%(message)s", level=logging.INFO)
+def test():
     seas = build_data()
     for sea in seas:
         info(unicode(sea))
         info("-" * 10)
 
-
+if __name__ == "__main__":
+    test()

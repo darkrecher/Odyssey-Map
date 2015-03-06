@@ -114,7 +114,5 @@ def test():
         square_coords(1 + 1.0/3.0, -(1), 1.0/3.0, -1.0/3.0),
         {"identifier" : 100, "Nom" : "Île Ganes"})
 
-
-#import qgis_recher_api
-#reload(qgis_recher_api)
-#qgis_recher_api.test()
+if __name__ == "__main__":
+    test()

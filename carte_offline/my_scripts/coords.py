@@ -7,6 +7,7 @@
 from __future__ import (unicode_literals, absolute_import,
                         print_function, division)
 import logging
+info = logging.info
 import re
 from fractions import Fraction
 
@@ -170,10 +171,7 @@ class Coord(object):
         ))
 
 
-if __name__ == "__main__":
-
-    info = logging.info
-    logging.basicConfig(format="%(message)s", level=logging.INFO)
+def test():
 
     # TODO : ajouter des asserts si on est motivé. Ou bien utiliser pytest.
 
@@ -225,3 +223,5 @@ if __name__ == "__main__":
     coord = Coord(odyssey_n="  -78  °  -89  '   ")
     log_coord(coord)
 
+if __name__ == "__main__":
+    test()

@@ -10,13 +10,32 @@ from __future__ import (unicode_literals, absolute_import,
 import logging
 info = logging.info
 
-# TODO : plus tard
-#from .qgis_recher_api import QgisRecherApi
+from .qgis_recher_api import QgisRecherApi
 from .data_merger import build_data
 
-def test():
-    logging.basicConfig(format="%(message)s", level=logging.INFO)
+def _qgis_points_from_coord_rect(coord_rect):
+    return [
+        (coord_rect.coord_up_left.x, -coord_rect.coord_up_left.y),
+        (coord_rect.coord_up_right.x, -coord_rect.coord_up_right.y),
+        (coord_rect.coord_down_right.x, -coord_rect.coord_down_right.y),
+        (coord_rect.coord_down_left.x, -coord_rect.coord_down_left.y),
+    ]
+
+def _add_sea(sea, recher_api, layer):
+    qgis_points = _qgis_points_from_coord_rect(sea.coord_rect)
+    recher_api.add_feature(
+        layer,
+        qgis_points,
+        {"identifier" : 12, "nom":sea.name, "carte_req":3, "carte_tot":6, "or_tot":0}) # TODO
+
+def populate():
+    recher_api = QgisRecherApi()
+    layer = recher_api.layers["mer"]
     seas = build_data()
     for sea in seas:
-        info(unicode(sea))
+        #info(unicode(sea))
+        _add_sea(sea, recher_api, layer)
         info("-" * 10)
+
+if __name__ == "__main__":
+    populate()

@@ -105,9 +105,7 @@ class CoordRect(object):
         return ", ".join((str(self.coord_up_left), str(coord_size)))
 
 
-if __name__ == "__main__":
-    logging.basicConfig(format="%(message)s", level=logging.INFO)
-
+def test():
     rect = CoordRect("4, 5 1/, 6 2/, 7 2/")
     info(rect)
     info(rect.coord_down_right)
@@ -137,5 +135,5 @@ if __name__ == "__main__":
     info(rect)
     info(rect.coord_down_right)
 
-
-
+if __name__ == "__main__":
+    test()
