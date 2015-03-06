@@ -9,11 +9,15 @@ from __future__ import (unicode_literals, absolute_import,
 import logging
 info = logging.info
 
-import my_scripts.map_populator
-
 def main():
+
+    import my_scripts.map_populator
     reload(my_scripts.map_populator)
     my_scripts.map_populator.test()
+
+    #import my_scripts.qgis_recher_api
+    #reload(my_scripts.qgis_recher_api)
+    #my_scripts.qgis_recher_api.test()
 
 if __name__ == "__main__":
     main()

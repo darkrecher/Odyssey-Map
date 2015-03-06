@@ -10,9 +10,9 @@ from __future__ import (unicode_literals, absolute_import,
 import logging
 info = logging.info
 
-from bat_belt import join_unicode
-from coord_rect import CoordRect
-import donnees_brutes.img_778N9
+from .bat_belt import join_unicode
+from .coord_rect import CoordRect
+from .donnees_brutes import img_778N9
 
 
 class IslandImg(object):
@@ -33,7 +33,7 @@ class SeaImg(object):
         return "\n".join(all_desc)
 
 
-def parse_data_from_img(data=donnees_brutes.img_778N9.DATA):
+def parse_data_from_img(data=img_778N9.DATA):
     seas = []
     current_sea = None
 

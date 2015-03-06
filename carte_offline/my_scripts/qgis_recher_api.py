@@ -15,11 +15,10 @@ NULL = qgis.core.NULL
 
 class QgisRecherApi(object):
 
-    def __init__(self, iface):
-        self.iface = iface
+    def __init__(self):
+        self.iface = qgis.utils.iface
         self.layers = {}
         self._fill_layer_dict()
-
 
     def _fill_layer_dict(self):
         list_layers = self.iface.mapCanvas().layers()
@@ -27,7 +26,6 @@ class QgisRecherApi(object):
             if layer.type() == qgis._core.QgsMapLayer.VectorLayer:
                 name = layer.name()
                 self.layers[name] = layer
-
 
     def add_feature(self,
         layer, geom_points, attributes,
@@ -55,25 +53,19 @@ class QgisRecherApi(object):
             layer.updateFeature(feat)
             layer.commitChanges()
 
-# TODO : mettre tout ce bazar ailleurs
-
-def square_coords(x, y, w, h):
-    return [
-        (x, y),
-        (x + w, y),
-        (x + w, y + h),
-        (x, y + h)
-    ]
 
 def test():
 
-    recher = QgisRecherApi(qgis.utils.iface)
-    layer = recher.layers["mer"]
+    def square_coords(x, y, w, h):
+        return [
+            (x, y),
+            (x + w, y),
+            (x + w, y + h),
+            (x, y + h)
+        ]
 
-    #recher.add_feature(
-    #    layer,
-    #    [(-0.5, -1.0), (-0.5, 1.5), (-1.0, 1.5), (-1.0, 0.5)],
-    #    {"identifier" : 20, "Nom" : "pouetzz"})
+    recher = QgisRecherApi()
+    layer = recher.layers["mer"]
 
     recher.add_feature(
         layer,
@@ -90,10 +82,6 @@ def test():
         square_coords(-1, -(2 + 2.0/3.0), 4, -3),
         {"identifier":2, "nom":"Arème", "carte_req":3, "carte_tot":6, "or_tot":0})
 
-
-def test2():
-
-    recher = QgisRecherApi(qgis.utils.iface)
     layer = recher.layers["ile"]
 
     recher.add_feature(

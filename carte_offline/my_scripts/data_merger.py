@@ -10,11 +10,11 @@ from __future__ import (unicode_literals, absolute_import,
 import logging
 info = logging.info
 
-from bat_belt import join_unicode
-from coords import Coord
-from coord_rect import CoordRect
-import reader_twinpedia
-import reader_data_from_img
+from .bat_belt import join_unicode
+from .coords import Coord
+from .coord_rect import CoordRect
+from . import reader_twinpedia
+from . import reader_data_from_img
 
 class Island(object):
 

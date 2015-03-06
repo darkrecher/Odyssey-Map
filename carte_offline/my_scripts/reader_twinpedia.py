@@ -11,11 +11,10 @@ from __future__ import (unicode_literals, absolute_import,
 import logging
 info = logging.info
 
-from bat_belt import join_unicode
-from coords import Coord
-from coord_rect import CoordRect
-import donnees_brutes.twinpedia
-twinpedia = donnees_brutes.twinpedia
+from .bat_belt import join_unicode
+from .coords import Coord
+from .coord_rect import CoordRect
+from .donnees_brutes import twinpedia
 
 
 class IslandTwinpedia(object):
