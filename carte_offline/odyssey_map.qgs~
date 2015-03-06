@@ -12,15 +12,18 @@
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="mer20150225083919517" name="mer">
             <customproperties/>
         </layer-tree-layer>
+        <layer-tree-group expanded="1" checked="Qt::Checked" name="objets_quete">
+            <customproperties/>
+        </layer-tree-group>
     </layer-tree-group>
     <relations/>
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>-18.42736666805918233</xmin>
-            <ymin>-13.6757262940545079</ymin>
-            <xmax>14.75755347883150037</xmax>
-            <ymax>9.93037639360647795</ymax>
+            <xmin>-21.08442789474475632</xmin>
+            <ymin>-8.93182504109721798</ymin>
+            <xmax>30.93065106944124665</xmax>
+            <ymax>4.964360270413259</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -67,6 +70,7 @@
                 <legendlayerfile isInOverview="0" layerid="mer20150225083919517" visible="1"/>
             </filegroup>
         </legendlayer>
+        <legendgroup open="true" checked="Qt::Checked" name="objets_quete"/>
     </legend>
     <projectlayers layercount="3">
         <maplayer minimumScale="-4.65661e-10" maximumScale="1.7e+07" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
@@ -856,8 +860,8 @@
             <DegreeFormat type="QString">D</DegreeFormat>
         </PositionPrecision>
         <WCSUrl type="QString"></WCSUrl>
-        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSContactPhone type="QString"></WMSContactPhone>
+        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSServiceAbstract type="QString"></WMSServiceAbstract>
         <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
         <Measure>
