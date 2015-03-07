@@ -70,17 +70,21 @@ def test():
     recher.add_feature(
         layer,
         square_coords(-1 + 2.0/3.0, -(-1 + 2.0/3.0), 2 + 1.0/3.0, -3),
-        {"identifier" : 0, "nom":"M. du Destin", "carte_req":3, "carte_tot":6, "or_tot":0})
-
+        {
+            "identifier" : 0, "nom":"M. du Destin", "carte_req":3,
+            "carte_tot":6, "or_tot":0})
     recher.add_feature(
         layer,
         square_coords(2, -(-1 + 2.0/3.0), 4 + 2.0/3.0, -3),
-        {"identifier":1, "nom":"Kyfi", "carte_req":3, "carte_tot":6, "or_tot":30})
-
+        {
+            "identifier":1, "nom":"Kyfi", "carte_req":3,
+            "carte_tot":6, "or_tot":30})
     recher.add_feature(
         layer,
         square_coords(-1, -(2 + 2.0/3.0), 4, -3),
-        {"identifier":2, "nom":"Arème", "carte_req":3, "carte_tot":6, "or_tot":0})
+        {
+            "identifier":2, "nom":"Arème", "carte_req":3,
+            "carte_tot":6, "or_tot":0})
 
     layer = recher.layers["ile"]
 
@@ -88,27 +92,22 @@ def test():
         layer,
         square_coords(0, -(0), 2.0/3.0, -2.0/3.0),
         {"identifier" : 100, "Nom" : "Île de l'oracle"})
-
     recher.add_feature(
         layer,
         square_coords(1 + 1.0/3.0, -(1.0/3.0), 1.0/3.0, -1.0/3.0),
         {"identifier" : 100, "Nom" : "Île Rékiphie"})
-
     recher.add_feature(
         layer,
         square_coords(1, -(2), 1.0/3.0, -1.0/3.0),
         {"identifier" : 100, "Nom" : "Île Spelulogos"})
-
     recher.add_feature(
         layer,
         square_coords(0, -(2), 1.0/3.0, -1.0/3.0),
         {"identifier" : 100, "Nom" : "Récif des Enas"})
-
     recher.add_feature(
         layer,
         square_coords(1, -(1), 1.0/3.0, -1.0/3.0),
         {"identifier" : 100, "Nom" : "Île du Tahépe"})
-
     recher.add_feature(
         layer,
         square_coords(1 + 1.0/3.0, -(1), 1.0/3.0, -1.0/3.0),

@@ -13,6 +13,8 @@ info = logging.info
 from .qgis_recher_api import QgisRecherApi
 from .data_merger import build_data
 
+# TODO : ce sera mieux avec une classe. Pour stocker les layer et l'api.
+
 def _qgis_points_from_coord_rect(coord_rect):
     return [
         (coord_rect.coord_up_left.x, -coord_rect.coord_up_left.y),
@@ -28,14 +30,28 @@ def _add_sea(sea, recher_api, layer):
         qgis_points,
         {"identifier" : 12, "nom":sea.name, "carte_req":3, "carte_tot":6, "or_tot":0}) # TODO
 
+def _add_island(island, recher_api, layer):
+    qgis_points = _qgis_points_from_coord_rect(island.coord_rect)
+    island_name = island.name
+    if not island.geom_ok:
+        island_name = "??" + island_name + "??"
+    recher_api.add_feature(
+        layer,
+        qgis_points,
+        # TODO : homégénéité des majuscules dans les noms de champs.
+        {"identifier" : 13, "Nom":island_name}) # TODO
+
+
 def populate():
     recher_api = QgisRecherApi()
-    layer = recher_api.layers["mer"]
+    layer_mer = recher_api.layers["mer"]
+    layer_ile = recher_api.layers["ile"]
     seas = build_data()
+    # TODO : tout virer dans la carte.
     for sea in seas:
-        #info(unicode(sea))
-        _add_sea(sea, recher_api, layer)
-        info("-" * 10)
+        _add_sea(sea, recher_api, layer_mer)
+        for island in sea.islands:
+            _add_island(island, recher_api, layer_ile)
 
 if __name__ == "__main__":
     populate()

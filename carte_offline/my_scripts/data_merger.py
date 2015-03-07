@@ -115,7 +115,6 @@ def _check_coherency_one_sea(sea_twinpedia, sea_img):
                 island_img,
                 True))
             islands_twinpedia.remove(chosen_island_twinpedia)
-            islands_img.remove(island_img)
         else:
             # Plusieurs îles dans twinpedia pour la même île d'image.
             # Tant pis, on met un warning, et on créera des îles aux

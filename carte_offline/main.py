@@ -34,6 +34,9 @@ def main():
 
     import my_scripts.map_populator
     reload(my_scripts.map_populator)
+    # TODO forcer ce con de QGIS à recharger mes trucs. Mais là, ça marche pô.
+    import my_scripts.donnees_brutes.img_778N9
+    reload(my_scripts.donnees_brutes.img_778N9)
     my_scripts.map_populator.populate()
 
 if __name__ == "__main__":
