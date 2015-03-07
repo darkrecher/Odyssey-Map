@@ -40,7 +40,9 @@ class Island(object):
         self.geom_ok = geom_ok
 
         if island_img is None:
-            self.coord_rect = CoordRect(coord_raw=island_twinpedia.coord)
+            self.coord_rect = CoordRect(
+                coord_up_left=island_twinpedia.coord,
+                w=1, h=1)
             self.geom_ok = False
             self.warning += (";coordonnées incertaines. " +
                 "introuvable dans la copie d'écran de la carte.")
@@ -120,7 +122,9 @@ def _twinpedia_candidates_of_island_img(seas_twinpedia, island_img):
         for island in sea.islands:
             # TODO : on recrée un CoordRect pour chaque islands twinpedia
             # à chaque fois qu'on appelle cette fonction. C'est pas top.
-            rect_candidate = CoordRect(coord_raw=island.coord)
+            rect_candidate = CoordRect(
+                coord_up_left=island.coord,
+                w=Fraction(2, 3), h=Fraction(2, 3))
             if rect_candidate.intersects(island_img.coord_rect):
                 twinpedia_candidates.append((sea, island))
     return twinpedia_candidates
@@ -140,7 +144,13 @@ def _check_coherency_one_sea(sea_twinpedia, sea_img):
         intersecting_islands_twinpedia = []
 
         for island_twinpedia in islands_twinpedia:
-            rect_candidate = CoordRect(coord_raw=island_twinpedia.coord)
+            # Faut pas indiquer des longueurs/largeurs de 1. Car ça va
+            # s'intersecter avec d'éventuels îles de la coordonnée d'à côté
+            # (vers la droite ou vers le bas). Ça s'intersectera sur la ligne
+            # commune. Donc on met des 2/3
+            rect_candidate = CoordRect(
+                coord_up_left=island_twinpedia.coord,
+                w=Fraction(2, 3), h=Fraction(2, 3))
             if rect_candidate.intersects(island_img.coord_rect):
                 intersecting_islands_twinpedia.append(island_twinpedia)
 

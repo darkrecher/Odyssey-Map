@@ -22,48 +22,47 @@ class CoordRect(object):
     """
 
     def __init__(self,
-        recher_n_rect="", coord_raw=None,
+        recher_n_rect="", coord_up_left=None,
         x=None, y=None, w=None, h=None):
 
         self.x = Fraction()
         self.y = Fraction()
         self.w = Fraction()
         self.h = Fraction()
-        self.set(recher_n_rect, coord_raw, x, y, w, h)
+        self.set(recher_n_rect, coord_up_left, x, y, w, h)
 
     def set(self,
-        recher_n_rect="", coord_raw=None,
+        recher_n_rect="", coord_up_left=None,
         x=None, y=None, w=None, h=None):
 
-        if x is not None and y is not None and w is not None and h is not None:
-            self.x = Fraction(x)
-            self.y = Fraction(y)
-            self.w = Fraction(w)
-            self.h = Fraction(h)
-        elif coord_raw is not None:
-            self.x = Fraction(coord_raw.x)
-            self.y = Fraction(coord_raw.y)
-            self.w = Fraction(2, 3)
-            self.h = Fraction(2, 3)
-        else:
+        if recher_n_rect != "":
             coords_rect = recher_n_rect.split(",")
             if len(coords_rect) < 2:
-                # TODO : créer une exception spécifique. BadCoordinateArgument,
+                # TODO : créer une exception spécifique. BadCoordArgument,
                 # ou quelque chose comme ça. Ce serait classe.
                 raise Exception("""
                     Notation réchèrienne incorrecte.
                     format : 000 0/,000 0/,000 0/,000 0/""")
             converted = Coord.recher_n_one_coord_converted
-            x = coords_rect.pop(0)
-            self.x = converted(x)
-            y = coords_rect.pop(0)
-            self.y = converted(y)
+            recher_x = coords_rect.pop(0)
+            self.x = converted(recher_x)
+            recher_y = coords_rect.pop(0)
+            self.y = converted(recher_y)
             if coords_rect:
-                w = coords_rect.pop(0)
-                self.w = converted(w)
+                recher_w = coords_rect.pop(0)
+                self.w = converted(recher_w)
             if coords_rect:
-                h = coords_rect.pop(0)
-                self.h = converted(h)
+                recher_h = coords_rect.pop(0)
+                self.h = converted(recher_h)
+
+        if coord_up_left is not None:
+            self.x = Fraction(coord_up_left.x)
+            self.y = Fraction(coord_up_left.y)
+        if x is not None: self.x = Fraction(x)
+        if y is not None: self.y = Fraction(y)
+        if w is not None: self.w = Fraction(w)
+        if h is not None: self.h = Fraction(h)
+
         if self.w < 0 or self.h < 0:
             raise Exception("taille de rectangle négative.")
         self._determine_corners()

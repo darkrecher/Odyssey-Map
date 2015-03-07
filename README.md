@@ -15,7 +15,6 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - lister les îles incertaines pour cause de "même coordonnée". Essayer de connaître leur position précise.
  - permettre d'indiquer directement le nom de l'île dans img_778N9.py
  - mettre l'île en incertain, si indiqué comme tel dans img_778N9.py
- - les îles incertaines ont une taille de 1.
  - classe générique POI (avec attributs spécifique, genre le prix pour les auberges).
  - symbole des POI :
     * boss
@@ -69,4 +68,4 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - création des mers et des îles dans la carte.
  - publication de la carte (à refaire manuellement à chaque mise à jour)
  - contraindre les îles incertaines dans les limites de leur mer.
-
+ - les îles incertaines ont une taille de 1 par défaut.
