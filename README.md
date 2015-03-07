@@ -7,7 +7,7 @@ ici : http://qgiscloud.com/Recher/odyssey_map
 
 # Liste des tâches #
 
-# TODO #
+## TODO ##
 
  - bords en zigouigoui pour les îles et mers incertaines.
  - ajouter les îles et mers qui sont mentionnées dans twinpedia, mais pas dans l'image de carte.
@@ -51,7 +51,7 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - doc pour expliquer comment reconstruire la carte et la publier.
  - doc sur le module qgis_recher_api
 
-# FUTURE (TODO, mais que si on est vraiment motivé) #
+## FUTURE (TODO, mais que si on est vraiment motivé) ##
 
  - POI des rumeurs
  - les îles incertaines dans la même coordonnée ne doivent pas se superposer.
@@ -62,7 +62,7 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - possibilité de faire le plan détaillé d'une île : les chemins, les listes de monstres, ...
  - doc de conception du code.
 
-# FINI #
+## FINI ##
 
  - récupération des mers et des îles de twinpedia.
  - récupération des mers et des îles depuis une saisie manuelle d'un screenshot de carte globale.
