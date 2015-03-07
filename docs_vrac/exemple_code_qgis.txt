@@ -34,6 +34,12 @@ for layer in layers:
     if layerType == QgsMapLayer.VectorLayer:
         print layer.name()
 
+list_layers = iface.mapCanvas().layers()
+for layer in list_layers:
+    if layer.type() == qgis._core.QgsMapLayer.VectorLayer:
+        name = layer.name()
+        layers[name] = layer
+
 
 pr = layer.dataProvider()
 poly = QgsFeature()

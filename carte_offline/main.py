@@ -11,33 +11,46 @@ info = logging.info
 logging.basicConfig(format="%(message)s", level=logging.INFO)
 
 
-def main():
+def test_coord_rect():
+    import my_scripts.coord_rect
+    my_scripts.coord_rect.test()
 
-    #import my_scripts.coord_rect
-    #my_scripts.coord_rect.test()
+def test_coords():
+    import my_scripts.coords
+    my_scripts.coords.test()
 
-    #import my_scripts.coords
-    #my_scripts.coords.test()
+def test_reader_data_from_img():
+    import my_scripts.reader_data_from_img
+    my_scripts.reader_data_from_img.test()
 
-    #import my_scripts.reader_data_from_img
-    #my_scripts.reader_data_from_img.test()
+def test_reader_twinpedia():
+    import my_scripts.reader_twinpedia
+    my_scripts.reader_twinpedia.test()
 
-    #import my_scripts.reader_twinpedia
-    #my_scripts.reader_twinpedia.test()
+def test_data_merger():
+    import my_scripts.data_merger
+    my_scripts.data_merger.test()
 
-    #import my_scripts.data_merger
-    #my_scripts.data_merger.test()
+def test_qgis_recher_api():
+    import my_scripts.qgis_recher_api
+    reload(my_scripts.qgis_recher_api)
+    my_scripts.qgis_recher_api.test()
 
-    #import my_scripts.qgis_recher_api
-    #reload(my_scripts.qgis_recher_api)
-    #my_scripts.qgis_recher_api.test()
-
+def make_map():
     import my_scripts.map_populator
     reload(my_scripts.map_populator)
-    # TODO forcer ce con de QGIS à recharger mes trucs. Mais là, ça marche pô.
-    import my_scripts.donnees_brutes.img_778N9
-    reload(my_scripts.donnees_brutes.img_778N9)
     my_scripts.map_populator.populate()
+
+
+def main():
+    #function_to_call = test_coord_rect
+    #function_to_call = test_coords
+    #function_to_call = test_reader_data_from_img
+    #function_to_call = test_reader_twinpedia
+    #function_to_call = test_data_merger
+    #function_to_call = test_qgis_recher_api
+    function_to_call = make_map
+    function_to_call()
 
 if __name__ == "__main__":
     main()

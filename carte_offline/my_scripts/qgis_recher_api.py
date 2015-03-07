@@ -8,10 +8,10 @@
 
 from __future__ import (unicode_literals, absolute_import,
                         print_function, division)
-
 import qgis._core
 import qgis.core
 NULL = qgis.core.NULL
+
 
 class QgisRecherApi(object):
 

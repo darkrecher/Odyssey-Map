@@ -10,8 +10,11 @@ from __future__ import (unicode_literals, absolute_import,
 import logging
 info = logging.info
 
-from .qgis_recher_api import QgisRecherApi
-from .data_merger import build_data
+from . import qgis_recher_api
+reload(qgis_recher_api)
+QgisRecherApi = qgis_recher_api.QgisRecherApi
+from . import data_merger
+reload(data_merger)
 
 # TODO : ce sera mieux avec une classe. Pour stocker les layer et l'api.
 
@@ -47,7 +50,7 @@ def populate():
     recher_api = QgisRecherApi()
     layer_mer = recher_api.layers["mer"]
     layer_ile = recher_api.layers["ile"]
-    seas = build_data()
+    seas = data_merger.build_data()
     recher_api.delete_all_features(layer_mer)
     recher_api.delete_all_features(layer_ile)
 

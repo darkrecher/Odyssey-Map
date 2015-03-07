@@ -10,7 +10,10 @@ import logging
 info = logging.info
 from fractions import Fraction
 
-from .coords import Coord
+from . import coords
+reload(coords)
+Coord = coords.Coord
+
 
 class CoordRect(object):
     """"

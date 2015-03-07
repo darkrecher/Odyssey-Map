@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    Données brutes, pompée depuis Twinpedia.
+    Données brutes, pompées depuis Twinpedia.
 """
 
 from __future__ import (unicode_literals, absolute_import,
@@ -9,7 +9,6 @@ from __future__ import (unicode_literals, absolute_import,
 
 LEECH_URL = "http://www.twinpedia.com/muxxu/odyssey"
 LEECH_DATE = "2015-26-02"
-
 
 # --- boss ---
 
