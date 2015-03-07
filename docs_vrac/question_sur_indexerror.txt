@@ -1,0 +1,48 @@
+Je suis en train de bosser sur un script dans QGIS. J'aimerais bien ne pas avoir à redémarrer tout QGIS à chaque fois que je veux tester la moindre modif que j'ai faite dans un module.
+
+Il faut donc que j'utilise la fonction reload(). Mais je n'ai pas trouvé de meilleure solution que d'en mettre partout.
+
+Pour chaque import fait dans chacun de mes modules, je dois ajouter un reload.
+
+Ce code
+
+from .repertoire_1 import module_1
+
+devient
+
+from .repertoire_1 import module_1
+reload(module_1)
+
+Ce code
+
+from .module_2 import fonction_A
+
+devient :
+
+from . import module_2
+reload(module_2)
+fonction_A = module_2.fonction_A
+
+Et quand je veux lancer mon script, dans la console QGIS, je tape :
+reload(main)
+main.la_fonction_main()
+
+Est-ce qu'il n'y a pas une solution plus élégante que d'indiquer des reload de partout ?
+
+J'ai essayé de concentrer tous mes imports et reload au début du module main, histoire de confiner le code moche dans un même endroit.
+
+import repertoire_1.repertoire_2.module_1
+reload(repertoire_1.repertoire_2.module_1)
+import module_2
+reload(module_2)
+...
+
+Mais ça ne marche pas. Les changements effectués dans mon code ne sont pas pris en compte.
+
+
+Petite précision : le python de la console QGIS est en 2.7.5.
+Je met
+from __future__ import absolute_import
+au début de chacun de mes modules.
+
+
