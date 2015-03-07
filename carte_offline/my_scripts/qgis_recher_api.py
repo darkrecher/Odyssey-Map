@@ -53,6 +53,12 @@ class QgisRecherApi(object):
             layer.updateFeature(feat)
             layer.commitChanges()
 
+    def delete_all_features(self, layer_to_clean):
+        list_id_to_delete = [ f.id() for f in layer_to_clean.getFeatures() ]
+        layer_to_clean.startEditing()
+        layer_to_clean.dataProvider().deleteFeatures(list_id_to_delete)
+        layer_to_clean.commitChanges()
+
 
 def test():
 
@@ -66,6 +72,7 @@ def test():
 
     recher = QgisRecherApi()
     layer = recher.layers["mer"]
+    recher.delete_all_features(layer)
 
     recher.add_feature(
         layer,
@@ -87,6 +94,7 @@ def test():
             "carte_tot":6, "or_tot":0})
 
     layer = recher.layers["ile"]
+    recher.delete_all_features(layer)
 
     recher.add_feature(
         layer,

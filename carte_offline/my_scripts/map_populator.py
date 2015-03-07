@@ -43,11 +43,14 @@ def _add_island(island, recher_api, layer):
 
 
 def populate():
+
     recher_api = QgisRecherApi()
     layer_mer = recher_api.layers["mer"]
     layer_ile = recher_api.layers["ile"]
     seas = build_data()
-    # TODO : tout virer dans la carte.
+    recher_api.delete_all_features(layer_mer)
+    recher_api.delete_all_features(layer_ile)
+
     for sea in seas:
         _add_sea(sea, recher_api, layer_mer)
         for island in sea.islands:
