@@ -13,7 +13,6 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - ajouter les îles et mers qui sont mentionnées dans twinpedia, mais pas dans l'image de carte.
  - finir de saisir les îles et mers de img_778N9.png.
  - lister les îles incertaines pour cause de "même coordonnée". Essayer de connaître leur position précise.
- - contraindre les îles incertaines dans les limites de leur mers.
  - permettre d'indiquer directement le nom de l'île dans img_778N9.py
  - mettre l'île en incertain, si indiqué comme tel dans img_778N9.py
  - les îles incertaines ont une taille de 1.
@@ -69,5 +68,5 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - vérif de cohérence entre ces deux sources de données.
  - création des mers et des îles dans la carte.
  - publication de la carte (à refaire manuellement à chaque mise à jour)
-
+ - contraindre les îles incertaines dans les limites de leur mer.
 

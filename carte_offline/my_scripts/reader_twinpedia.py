@@ -26,7 +26,7 @@ reload(twinpedia)
 
 class IslandTwinpedia(object):
 
-    def __init__(self, name, coord, nb_maps, description, warning):
+    def __init__(self, name, coord, nb_maps=0, description="", warning=""):
         self.name = name
         self.coord = coord
         self.nb_maps = nb_maps

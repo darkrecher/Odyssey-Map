@@ -9,6 +9,7 @@ from __future__ import (unicode_literals, absolute_import,
                         print_function, division)
 import logging
 info = logging.info
+from fractions import Fraction
 
 from . import bat_belt
 reload(bat_belt)
@@ -23,6 +24,8 @@ from . import reader_twinpedia
 reload(reader_twinpedia)
 from . import reader_data_from_img
 reload(reader_data_from_img)
+
+# TODO : peut-être que l'Island et la Sea iront dans un fichier à part.
 
 class Island(object):
 
@@ -49,6 +52,38 @@ class Island(object):
             self.name, " ",
             "(", self.coord_rect, ") ",
             "W:", self.warning)
+
+    def clamp_in_rect(self, rect_owner):
+        # Si l'île est trop à gauche ou trop haut par rapport au rectangle
+        # censé l'englober, on la déplace.
+        coord_ul = self.coord_rect.coord_up_left
+        dist_ul_isle_owner_x = rect_owner.coord_up_left.x - coord_ul.x
+        dist_ul_isle_owner_y = rect_owner.coord_up_left.y - coord_ul.y
+        dist_ul_isle_owner_x = max(dist_ul_isle_owner_x, 0)
+        dist_ul_isle_owner_y = max(dist_ul_isle_owner_y, 0)
+        if dist_ul_isle_owner_x > 0 or dist_ul_isle_owner_y > 0:
+            vector_move = Coord(x=dist_ul_isle_owner_x, y=dist_ul_isle_owner_y)
+            self.coord_rect.move(vector_move)
+            self.geom_ok = False
+            self.warning += ";déplacement pour rester dans le rect englobant"
+        # Si l'île est trop à droite ou trop en bas, on diminue sa taille.
+        # (Tout en conservant une taille minimale de 1/)
+        coord_dr = self.coord_rect.coord_down_right
+        dist_dr_isle_owner_x = rect_owner.coord_down_right.x - coord_dr.x
+        dist_dr_isle_owner_y = rect_owner.coord_down_right.y - coord_dr.y
+        dist_dr_isle_owner_x = min(dist_dr_isle_owner_x, 0)
+        dist_dr_isle_owner_y = min(dist_dr_isle_owner_y, 0)
+        if dist_dr_isle_owner_x < 0 or dist_dr_isle_owner_y < 0:
+            self.coord_rect.add_to_size(
+                dist_dr_isle_owner_x,
+                dist_dr_isle_owner_y)
+            self.coord_rect.set_min_size(Fraction(1, 3), Fraction(1, 3))
+            self.geom_ok = False
+            self.warning += ";retaillage pour rester dans le rect englobant"
+        # TODO : la diminution de taille n'a pas forcément fait rentrer l'île
+        # dans le rectangle englobant. Si elle n'est toujours pas dedans,
+        # il faut la déplacer. C'est jamais censé arriver par rapport à ce
+        # que je fais dans le reste du code, donc osef.
 
 class Sea(object):
 
@@ -136,6 +171,8 @@ def _check_coherency_one_sea(sea_twinpedia, sea_img):
         islands_ok.append(Island(island_twinpedia))
 
     sea_ok = Sea(sea_twinpedia, sea_img)
+    for island in islands_ok:
+        island.clamp_in_rect(sea_ok.coord_rect)
     sea_ok.islands = islands_ok
     return sea_ok
 
@@ -191,6 +228,26 @@ def test():
     for sea in seas:
         info(unicode(sea))
         info("-" * 10)
+
+    # test des clamps.
+    island_twinpedia = reader_twinpedia.IslandTwinpedia(
+        "a", Coord(recher_n="5, 3 2/"))
+    island = Island(island_twinpedia)
+    info(unicode(island))
+    island.clamp_in_rect(CoordRect(recher_n_rect="5 2/, 4, 10, 10"))
+    info(unicode(island))
+    island.clamp_in_rect(CoordRect(recher_n_rect="6, 4, 10, 10"))
+    info(unicode(island))
+    info("-" * 3)
+    island_twinpedia = reader_twinpedia.IslandTwinpedia(
+        "a", Coord(recher_n="5, 3 2/"))
+    island = Island(island_twinpedia)
+    info(unicode(island))
+    island.clamp_in_rect(CoordRect(recher_n_rect="3, 3, 2 2/, 10"))
+    info(unicode(island))
+    island.clamp_in_rect(CoordRect(recher_n_rect="3, 3, 10, 1/"))
+    info(unicode(island))
+
 
 if __name__ == "__main__":
     test()

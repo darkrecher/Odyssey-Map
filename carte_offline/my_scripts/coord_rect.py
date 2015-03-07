@@ -103,6 +103,24 @@ class CoordRect(object):
         else:
             raise Exception("type attendu : Coord ou CoordRect")
 
+    def move(self, vector):
+        self.x += vector.x
+        self.y += vector.y
+        self._determine_corners()
+
+    def add_to_size(self, w_inc=0, h_inc=0):
+        self.w += w_inc
+        self.h += h_inc
+        # On ne permet pas d'avoir une taille inférieure à 0.
+        self.w = max(self.w, 0)
+        self.h = max(self.h, 0)
+        self._determine_corners()
+
+    def set_min_size(self, w_min=0, h_min=0):
+        self.w = max(self.w, w_min)
+        self.h = max(self.h, h_min)
+        self._determine_corners()
+
     def __str__(self):
         coord_size = Coord(x=self.w, y=self.h)
         return ", ".join((str(self.coord_up_left), str(coord_size)))
