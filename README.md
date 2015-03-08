@@ -12,7 +12,6 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - ajouter les îles et mers qui sont mentionnées dans twinpedia, mais pas dans l'image de carte.
  - finir de saisir les îles et mers de img_778N9.png.
  - lister les îles incertaines pour cause de "même coordonnée". Essayer de connaître leur position précise.
- - permettre d'indiquer directement le nom de l'île dans img_778N9.py
  - mettre l'île en incertain, si indiqué comme tel dans img_778N9.py
  - classe générique POI (avec attributs spécifique, genre le prix pour les auberges).
  - symbole des POI :
@@ -55,6 +54,7 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - trouver un screenshot plus complet de la carte globale.
  - vérif de cohérence entre les POI de twinpedia et ceux de help-odyssey.
  - vérif de cohérence entre les îles de twinpedia et les îles indiquées dans la partie "items" de help-odyssey.
+ - vérif de cohérence entre la description des îles de twinpedia et tout le reste.
  - mettre les quêtes. une quête par répertoire de layer. avec un linéaire indiquant le chemin le plus court passant par tous les points de la quête. (Extraire manuellement les infos des quêtes à partir des indications du site help-odyssey)
  - possibilité de faire le plan détaillé d'une île : les chemins, les listes de monstres, ...
  - doc de conception du code.
@@ -69,3 +69,4 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - contraindre les îles incertaines dans les limites de leur mer.
  - les îles incertaines ont une taille de 1 par défaut.
  - bords en zigouigoui pour les îles et mers incertaines.
+ - permettre d'indiquer directement le nom de l'île dans img_778N9.py

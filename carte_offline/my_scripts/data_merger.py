@@ -55,6 +55,7 @@ class Island(object):
             "(", self.coord_rect, ") ",
             "W:", self.warning)
 
+    # TODO : ça va dans la classe geom_tools, un truc comme ça. ou CoordRect.
     def clamp_in_rect(self, rect_owner):
         # Si l'île est trop à gauche ou trop haut par rapport au rectangle
         # censé l'englober, on la déplace.
@@ -137,46 +138,81 @@ def _check_coherency_one_sea(sea_twinpedia, sea_img):
 
     for island_img in islands_img:
 
-        # TODO : permettre d'indiquer le nom d'une île dans img_778N9.py,
-        # pour une association directe. Parce que des fois,
-        # on aura pas le choix, faudra spécifier l'association manuellement.
+        if island_img.supposed_name != "":
 
-        intersecting_islands_twinpedia = []
+            # Le nom de l'île est directement indiqué dans img_778N9.py.
+            # Ça permet de régler les cas où il y a plusieurs îles sur la
+            # même coordonée. Dans ce cas, on cherche directement la bonne
+            # île dans twinpedia, et on vérifie que c'est cohérent.
+            island_twinpedia_found = None
+            for island_twinpedia in islands_twinpedia:
+                if island_img.supposed_name in island_twinpedia.name:
+                    island_twinpedia_found = island_twinpedia
 
-        for island_twinpedia in islands_twinpedia:
-            # Faut pas indiquer des longueurs/largeurs de 1. Car ça va
-            # s'intersecter avec d'éventuels îles de la coordonnée d'à côté
-            # (vers la droite ou vers le bas). Ça s'intersectera sur la ligne
-            # commune. Donc on met des 2/3
-            rect_candidate = CoordRect(
-                coord_up_left=island_twinpedia.coord,
-                w=Fraction(2, 3), h=Fraction(2, 3))
-            if rect_candidate.intersects(island_img.coord_rect):
-                intersecting_islands_twinpedia.append(island_twinpedia)
+            if island_twinpedia_found is None:
+                # On ne trouve pas l'île dans twinpedia. On oublie
+                # cette island_img. On n'essaie même pas de l'associer à une
+                # autre île par intersection. C'est violent, mais c'est jamais
+                # censé arriver, car c'est moi qui saisi manuellement les noms
+                # des îles dans img_778N9.
+                info("île twinpedia introuvable : " + island_img.supposed_name)
+                islands_img_left.append(island_img)
+            else:
+                island_ok = Island(island_twinpedia_found, island_img, True)
+                islands_twinpedia.remove(island_twinpedia_found)
+                islands_ok.append(island_ok)
 
-        if not intersecting_islands_twinpedia:
-            # Il manque une île dans twinpedia. On considère que tout est
-            # foiré. On se casse.
-            sea_twinpedia.warning += (";test échoué avec mer " +
-                str(sea_img.coord_rect))
-            return None
-        elif len(intersecting_islands_twinpedia) == 1:
-            # Correspondance super top. 1 pour 1. On crée une île finale.
-            chosen_island_twinpedia = intersecting_islands_twinpedia[0]
-            islands_ok.append(Island(
-                chosen_island_twinpedia,
-                island_img,
-                True))
-            islands_twinpedia.remove(chosen_island_twinpedia)
+                rect_twinpedia = CoordRect(
+                    coord_up_left=island_twinpedia_found.coord,
+                    w=Fraction(2, 3), h=Fraction(2, 3))
+                if not rect_twinpedia.intersects(island_img.coord_rect):
+                    # Les position img et twinpedia ne sont pas cohérentes.
+                    # On garde quand même l'association, mais on le signale.
+                    # Et on rend la géométrie incertaine.
+                    island_ok.geom_ok = False
+                    island_ok.warning += (";association par nom réussie, " +
+                        "mais les îles ne sont pas au même endroit.")
+
         else:
-            # Plusieurs îles dans twinpedia pour la même île d'image.
-            # Tant pis, on met un warning, et on créera des îles aux
-            # coordonnées incertaines.
-            for island_twinpedia in intersecting_islands_twinpedia:
-                island_twinpedia.warning += (";hésitation avec " +
-                    str(island_img.coord_rect))
-            islands_img_left.append(island_img)
 
+            intersecting_islands_twinpedia = []
+
+            for island_twinpedia in islands_twinpedia:
+                # Faut pas indiquer des longueurs/largeurs de 1. Car ça va
+                # s'intersecter avec d'éventuels îles de la coordonnée d'à côté
+                # (vers la droite ou vers le bas). Ça s'intersectera sur la
+                # ligne commune. Donc on met des 2/3.
+                rect_candidate = CoordRect(
+                    coord_up_left=island_twinpedia.coord,
+                    w=Fraction(2, 3), h=Fraction(2, 3))
+                if rect_candidate.intersects(island_img.coord_rect):
+                    intersecting_islands_twinpedia.append(island_twinpedia)
+
+            if not intersecting_islands_twinpedia:
+                # Il manque une île dans twinpedia. On considère que tout est
+                # foiré. On se casse.
+                sea_twinpedia.warning += (";test échoué avec mer " +
+                    str(sea_img.coord_rect))
+                return None
+            elif len(intersecting_islands_twinpedia) == 1:
+                # Correspondance super top. 1 pour 1. On crée une île finale.
+                island_twinpedia_found = intersecting_islands_twinpedia[0]
+                islands_ok.append(Island(
+                    island_twinpedia_found,
+                    island_img,
+                    True))
+                islands_twinpedia.remove(island_twinpedia_found)
+            else:
+                # Plusieurs îles dans twinpedia pour la même île d'image.
+                # Tant pis, on met un warning, et on créera des îles aux
+                # coordonnées incertaines.
+                for island_twinpedia in intersecting_islands_twinpedia:
+                    island_twinpedia.warning += (";hésitation avec " +
+                        str(island_img.coord_rect))
+                islands_img_left.append(island_img)
+
+    # On a fait toutes les associations qu'on pouvait. On rajoute
+    # les îles twinpedia restantes. Elles auront une géométrie incertaine.
     for island_twinpedia in islands_twinpedia:
         islands_ok.append(Island(island_twinpedia))
 

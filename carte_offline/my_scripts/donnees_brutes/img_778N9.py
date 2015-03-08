@@ -13,6 +13,16 @@ from __future__ import (unicode_literals, absolute_import,
 LEECH_URL = "http://i.imgur.com/778N9.png"
 LEECH_DATE = "2015-22-02"
 
+# TODO : expliquer pourquoi on peut indiquer directement un nom d'île.
+
+# TODO
+# Île à indiquer explicitement là dedans, car elle incertaines.
+# Harxos. 2/, 2/. au-dessus de :
+# Aralmi. 2/, 2/
+#
+# Saraxas : w = 2/, h = 1/. au-dessus de :
+# Minipsas : w = 2/, h = 2/
+
 # s = sea
 # i = islands
 DATA = """
@@ -26,19 +36,19 @@ i 6, -14, 1/, 1/
 i 5, -14 2/, 1/, 1/
 
 s -10, -17 2/, 4 2/, 5 1/
-i -8 2/, -14 1/, 2/, 2/ : [incertain]
+i -8 2/, -14 1/, 2/, 2/ ; W:incertain
 i -8 1/, -12, 2/, 2/
 
 s -17 1/, -15, 6 2/, 4 2/
-i -14, -12, 1, 1 : [incertain]
+i -14, -12, 1, 1 ; W:incertain
 
 s  -1 2/, -1 2/, 2 1/, 3
 i  0, 0, 2/, 2/
 i  1 1/, 1/, 1/, 1/
 i  1, 2, 1/, 1/
 i  0, 2, 1/, 1/
-i  1, 1, 1/, 1/
-i  1 1/, 1, 1/, 1/
+i  1, 1, 1/, 1/ ; I:Ganes
+i  1 1/, 1, 1/, 1/ ; I:Tahépe
 
 s  2, -1 2/, 4 2/, 3
 

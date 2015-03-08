@@ -21,11 +21,15 @@ reload(img_778N9)
 
 
 class IslandImg(object):
-    def __init__(self, coord_rect, descrip):
+    def __init__(self, coord_rect, warning, supposed_name):
         self.coord_rect = coord_rect
-        self.descrip = descrip
+        self.warning = warning
+        self.supposed_name = supposed_name
     def __unicode__(self):
-        return join_unicode(self.coord_rect, " : ", self.descrip)
+        return join_unicode(
+            self.coord_rect, " ; ",
+            "W:", self.warning, " "
+            "I:", self.supposed_name)
 
 class SeaImg(object):
     def __init__(self, coord_rect):
@@ -55,9 +59,20 @@ def parse_data_from_img(data=img_778N9.DATA):
                 current_sea = SeaImg(coord_rect)
 
             elif data_type.upper() == "I":
-                coord_rect_data, semicolon, descrip = data_line.partition(":")
+                coord_rect_data, semicolon, descrip = data_line.partition(";")
+                warning = ""
+                supposed_name = ""
+                descrip_elems = descrip.split(";")
+                for descrip_elem in descrip_elems:
+                    descrip_elem = descrip_elem.strip()
+                    elem_type, semicol, elem_val = descrip_elem.partition(":")
+                    if semicol != "":
+                        if elem_type.upper() == "W":
+                            warning = elem_val
+                        elif elem_type.upper() == "I":
+                            supposed_name = elem_val
                 coord_rect = CoordRect(recher_n_rect=coord_rect_data)
-                island = IslandImg(coord_rect, descrip)
+                island = IslandImg(coord_rect, warning, supposed_name)
                 current_sea.islands.append(island)
 
             else:
