@@ -44,8 +44,6 @@ def _add_island(island, recher_api, layer):
         island.coord_rect,
         not island.geom_ok))
     island_name = island.name
-    if not island.geom_ok:
-        island_name = "??" + island_name + "??"
     recher_api.add_feature(
         layer,
         qgis_points,

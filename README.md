@@ -45,6 +45,7 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - annoncer sur le forum de twinoid.
  - doc pour expliquer comment reconstruire la carte et la publier.
  - doc sur le module qgis_recher_api
+ - mini-docs d'utilisation, et remerciements dans la carte elle-même.
 
 ## FUTURE (TODO, mais que si on est vraiment motivé) ##
 
