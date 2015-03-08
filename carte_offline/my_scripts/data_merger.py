@@ -48,6 +48,10 @@ class Island(object):
                 "introuvable dans la copie d'écran de la carte.")
         else:
             self.coord_rect = island_img.coord_rect
+            self.geom_ok = False
+            if island_img.warning != "":
+                self.warning += (";coordonnées incertaines. " +
+                "copie d'écran de la carte imprécise.")
 
     def __unicode__(self):
         return join_unicode(
