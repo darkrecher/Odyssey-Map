@@ -9,6 +9,7 @@ ici : http://qgiscloud.com/Recher/odyssey_map
 
 ## TODO ##
 
+ - tester les intersections en excluant les bords droits et bas, car là ça fait trop d'hésitation.
  - ajouter les îles et mers qui sont mentionnées dans twinpedia, mais pas dans l'image de carte.
  - finir de saisir les îles et mers de img_778N9.png.
  - lister les îles incertaines pour cause de "même coordonnée". Essayer de connaître leur position précise.

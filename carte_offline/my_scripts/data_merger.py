@@ -122,6 +122,8 @@ class Sea(object):
 
 
 def _twinpedia_candidates_of_island_img(seas_twinpedia, island_img):
+    # TODO : si l'island_img possède un "supposed_name", ce serait bien
+    # de s'en servir pour effectuer directement l'association.
     twinpedia_candidates = []
     for sea in seas_twinpedia:
         for island in sea.islands:
@@ -234,6 +236,25 @@ def _find_first_sea_association(seas_twinpedia, seas_img):
             candidates = _twinpedia_candidates_of_island_img(
                 seas_twinpedia,
                 current_island_img)
+
+            # TODO : logger un warning si plusieurs candidats
+            # de mers différentes. Au lieu de ce tas de merde.
+            if False:
+                if candidates:
+                    info("deb " + candidates[0][0].name)
+                    info("deb " + candidates[0][1].name)
+                    info("deb " + unicode(candidates[0][1].coord))
+                    info("deb " + str(len(candidates)))
+                    if len(candidates) > 1:
+                        info("deb " + candidates[1][0].name)
+                        info("deb " + candidates[1][1].name)
+                        info("deb " + unicode(candidates[1][1].coord))
+                        info("deb " + str(len(candidates)))
+                    info("-"*10)
+                else:
+                    info("deb fail " + unicode(current_island_img.coord_rect))
+                    info("-"*10)
+
             if len(candidates) == 1:
                 sea_candidate_twinpedia = candidates[0][0]
                 coherency_result = _check_coherency_one_sea(

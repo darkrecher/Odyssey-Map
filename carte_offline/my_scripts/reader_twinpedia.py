@@ -109,7 +109,7 @@ def _parse_sea_line(data_line):
 
     return SeaTwinpedia(sea_name, xp_min, xp_max, nb_maps, warning)
 
-def parse_island_line(before, coord, after):
+def _parse_island_line(before, coord, after):
     try:
         coord = Coord(odyssey_n=coord)
     except:
@@ -134,6 +134,28 @@ def parse_island_line(before, coord, after):
     desc = desc.strip()
     return IslandTwinpedia(island_name, coord, nb_maps, desc, warning)
 
+def _manual_correction(seas):
+    """ Corrections manuelles du site Twinpedia. Si je ne les fais pas,
+    je ne peux pas faire toutes les asociations de mers et d'îles que
+    je pourrais.
+    Le but ultérieur serait de corriger Twinpedia pour ne plus avoir
+    à faire ce genre de bidouille."""
+    # Je vire la mer Orakiti, car manifestement, la seule île qu'elle
+    # contient a une coordonnée fausse. (La coordonnée -15° -9 est déjà
+    # dans une autre mer). Si je la laisse, je peux pas associer l'autre mer
+    # Comme il faut.
+    seas = [ sea for sea in seas if sea.name != "Mer Orakiti" ]
+    # Ajout d'une île non mentionnée dans Twinpedia, dans la mer Magaos.
+    sea_magaos = [ sea for sea in seas if "Magaos" in sea.name ]
+    if sea_magaos:
+        sea_magaos = sea_magaos[0]
+        island_forgotten = IslandTwinpedia(
+            "Pas de nom", Coord(x=-12, y=-10),
+            nb_maps=0, description="",
+            warning=";Non mentionnée dans Twinpedia.")
+        sea_magaos.islands.append(island_forgotten)
+    return seas
+
 def parse_islands_and_seas(data=twinpedia.ISLANDS_AND_SEAS):
 
     seas = []
@@ -157,7 +179,7 @@ def parse_islands_and_seas(data=twinpedia.ISLANDS_AND_SEAS):
 
             else:
                 if current_sea is None: raise Exception("fail current sea")
-                new_island = parse_island_line(before, coord, after)
+                new_island = _parse_island_line(before, coord, after)
                 if new_island is None:
                     info("Île incorrecte :")
                     info(data_line)
@@ -165,7 +187,7 @@ def parse_islands_and_seas(data=twinpedia.ISLANDS_AND_SEAS):
                 else:
                     current_sea.islands.append(new_island)
 
-    return seas
+    return _manual_correction(seas)
 
 
 def test():
