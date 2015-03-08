@@ -36,6 +36,10 @@ def test_qgis_recher_api():
     reload(my_scripts.qgis_recher_api)
     my_scripts.qgis_recher_api.test()
 
+def test_populate_map():
+    import my_scripts.map_populator
+    my_scripts.map_populator.test()
+
 def make_map():
     import my_scripts.map_populator
     reload(my_scripts.map_populator)
@@ -49,6 +53,7 @@ def main():
     #function_to_call = test_reader_twinpedia
     #function_to_call = test_data_merger
     #function_to_call = test_qgis_recher_api
+    #function_to_call = test_populate_map
     function_to_call = make_map
     function_to_call()
 
