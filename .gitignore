@@ -74,3 +74,10 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
+####################
+# Spécial Odyssey-Map
+####################
+# Pas besoin de versionner la carte_online
+# c'est la même que la offline, avec des liens.
+carte_online/
+
