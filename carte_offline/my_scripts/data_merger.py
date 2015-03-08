@@ -197,6 +197,8 @@ def _check_coherency_one_sea(sea_twinpedia, sea_img):
                 # foiré. On se casse.
                 sea_twinpedia.warning += (";test échoué avec mer " +
                     str(sea_img.coord_rect))
+                info(sea_twinpedia.warning)
+                info(island_img.coord_rect)
                 return None
             elif len(intersecting_islands_twinpedia) == 1:
                 # Correspondance super top. 1 pour 1. On crée une île finale.
