@@ -9,7 +9,6 @@ ici : http://qgiscloud.com/Recher/odyssey_map
 
 ## TODO ##
 
- - bords en zigouigoui pour les îles et mers incertaines.
  - ajouter les îles et mers qui sont mentionnées dans twinpedia, mais pas dans l'image de carte.
  - finir de saisir les îles et mers de img_778N9.png.
  - lister les îles incertaines pour cause de "même coordonnée". Essayer de connaître leur position précise.
@@ -69,3 +68,4 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - publication de la carte (à refaire manuellement à chaque mise à jour)
  - contraindre les îles incertaines dans les limites de leur mer.
  - les îles incertaines ont une taille de 1 par défaut.
+ - bords en zigouigoui pour les îles et mers incertaines.
