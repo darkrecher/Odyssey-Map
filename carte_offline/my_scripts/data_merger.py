@@ -130,9 +130,8 @@ def _twinpedia_candidates_of_island_img(seas_twinpedia, island_img):
             # TODO : on recrée un CoordRect pour chaque islands twinpedia
             # à chaque fois qu'on appelle cette fonction. C'est pas top.
             rect_candidate = CoordRect(
-                coord_up_left=island.coord,
-                w=Fraction(2, 3), h=Fraction(2, 3))
-            if rect_candidate.intersects(island_img.coord_rect):
+                coord_up_left=island.coord, w=1, h=1)
+            if rect_candidate.intersects(island_img.coord_rect, False):
                 twinpedia_candidates.append((sea, island))
     return twinpedia_candidates
 
@@ -169,8 +168,7 @@ def _check_coherency_one_sea(sea_twinpedia, sea_img):
                 islands_ok.append(island_ok)
 
                 rect_twinpedia = CoordRect(
-                    coord_up_left=island_twinpedia_found.coord,
-                    w=Fraction(2, 3), h=Fraction(2, 3))
+                    coord_up_left=island_twinpedia_found.coord, w=1, h=1)
                 if not rect_twinpedia.intersects(island_img.coord_rect):
                     # Les position img et twinpedia ne sont pas cohérentes.
                     # On garde quand même l'association, mais on le signale.
@@ -182,17 +180,21 @@ def _check_coherency_one_sea(sea_twinpedia, sea_img):
         else:
 
             intersecting_islands_twinpedia = []
+            logging.debug("deb ******")
+            logging.debug("deb " + unicode(island_img.coord_rect))
+            logging.debug("deb ******")
 
             for island_twinpedia in islands_twinpedia:
-                # Faut pas indiquer des longueurs/largeurs de 1. Car ça va
-                # s'intersecter avec d'éventuels îles de la coordonnée d'à côté
-                # (vers la droite ou vers le bas). Ça s'intersectera sur la
-                # ligne commune. Donc on met des 2/3.
+                # On met des longueurs/largeurs de 1. Mais on considère que ça
+                # s'intersecte pas quand y'a que les bords qui se touchent.
                 rect_candidate = CoordRect(
-                    coord_up_left=island_twinpedia.coord,
-                    w=Fraction(2, 3), h=Fraction(2, 3))
-                if rect_candidate.intersects(island_img.coord_rect):
+                    coord_up_left=island_twinpedia.coord, w=1, h=1)
+                logging.debug("deb " + island_twinpedia.name + " " + unicode(rect_candidate))
+                logging.debug("deb " + unicode(island_img.coord_rect))
+                if rect_candidate.intersects(island_img.coord_rect, False):
                     intersecting_islands_twinpedia.append(island_twinpedia)
+                    logging.debug("deb ok")
+                logging.debug("deb -----")
 
             if not intersecting_islands_twinpedia:
                 # Il manque une île dans twinpedia. On considère que tout est
@@ -239,21 +241,20 @@ def _find_first_sea_association(seas_twinpedia, seas_img):
 
             # TODO : logger un warning si plusieurs candidats
             # de mers différentes. Au lieu de ce tas de merde.
-            if False:
-                if candidates:
-                    info("deb " + candidates[0][0].name)
-                    info("deb " + candidates[0][1].name)
-                    info("deb " + unicode(candidates[0][1].coord))
-                    info("deb " + str(len(candidates)))
-                    if len(candidates) > 1:
-                        info("deb " + candidates[1][0].name)
-                        info("deb " + candidates[1][1].name)
-                        info("deb " + unicode(candidates[1][1].coord))
-                        info("deb " + str(len(candidates)))
-                    info("-"*10)
-                else:
-                    info("deb fail " + unicode(current_island_img.coord_rect))
-                    info("-"*10)
+            if candidates:
+                logging.debug("find_first deb " + candidates[0][0].name)
+                logging.debug("find_first deb " + candidates[0][1].name)
+                logging.debug("find_first deb " + unicode(candidates[0][1].coord))
+                logging.debug("find_first deb " + str(len(candidates)))
+                if len(candidates) > 1:
+                    logging.debug("find_first deb " + candidates[1][0].name)
+                    logging.debug("find_first deb " + candidates[1][1].name)
+                    logging.debug("find_first deb " + unicode(candidates[1][1].coord))
+                    logging.debug("find_first deb " + str(len(candidates)))
+                logging.debug("find_first" + "-"*10)
+            else:
+                logging.debug("find_first deb fail " + unicode(current_island_img.coord_rect))
+                logging.debug("find_first" + "-"*10)
 
             if len(candidates) == 1:
                 sea_candidate_twinpedia = candidates[0][0]

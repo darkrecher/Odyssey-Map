@@ -13,6 +13,9 @@ from fractions import Fraction
 from . import coords
 reload(coords)
 Coord = coords.Coord
+from . import bat_belt
+reload(bat_belt)
+ORI = bat_belt.ORI
 
 
 class CoordRect(object):
@@ -73,12 +76,25 @@ class CoordRect(object):
         self.coord_down_left = Coord(x=self.x, y=self.y+self.h)
         self.coord_down_right = Coord(x=self.x+self.w, y=self.y+self.h)
 
-    def _contains_point(self, coord):
+    def _contains_point(self,
+        coord, bnds_incl=(ORI.UP, ORI.RIGHT, ORI.DOWN, ORI.LEFT)):
         return (
-            coord.x >= self.x and
-            coord.y >= self.y and
-            coord.x <= self.coord_down_right.x and
-            coord.y <= self.coord_down_right.y)
+            (
+                (ORI.LEFT in bnds_incl and coord.x >= self.coord_up_left.x)
+                or coord.x > self.coord_up_left.x)
+            and
+            (
+                (ORI.UP in bnds_incl and coord.y >= self.coord_up_left.y)
+                or coord.y > self.coord_up_left.y)
+            and
+            (
+                (ORI.RIGHT in bnds_incl and coord.x <= self.coord_down_right.x)
+                or coord.x < self.coord_down_right.x)
+            and
+            (
+                (ORI.DOWN in bnds_incl and coord.y <= self.coord_down_right.y)
+                or coord.y < self.coord_down_right.y)
+            )
 
     def includes(self, geom):
         if isinstance(geom, Coord):
@@ -90,15 +106,27 @@ class CoordRect(object):
         else:
             raise Exception("type attendu : Coord ou CoordRect")
 
-    def intersects(self, geom):
+    def intersects(self, geom, bounds_included=True):
         if isinstance(geom, Coord):
-            return self._contains_point(geom)
+            if bounds_included:
+                bounds_included = (ORI.UP, ORI.RIGHT, ORI.DOWN, ORI.LEFT)
+            else:
+                bounds_included = ()
+            return self._contains_point(geom, bounds_included)
         elif isinstance(geom, CoordRect):
-            return (
-                self._contains_point(geom.coord_up_left) or
-                self._contains_point(geom.coord_down_right) or
-                geom._contains_point(self.coord_up_left) or
-                geom._contains_point(self.coord_up_right))
+            if bounds_included:
+                return (
+                    self._contains_point(geom.coord_up_left) or
+                    self._contains_point(geom.coord_down_right) or
+                    geom._contains_point(self.coord_up_left) or
+                    geom._contains_point(self.coord_down_right))
+            else:
+                return (
+                    self._contains_point(geom.coord_up_left, (ORI.UP, ORI.LEFT)) or
+                    self._contains_point(geom.coord_down_right, (ORI.DOWN, ORI.RIGHT)) or
+                    geom._contains_point(self.coord_up_left, (ORI.UP, ORI.LEFT)) or
+                    geom._contains_point(self.coord_down_right, (ORI.DOWN, ORI.RIGHT)))
+
         else:
             raise Exception("type attendu : Coord ou CoordRect")
 
@@ -137,6 +165,19 @@ def test():
     info(rect.intersects(CoordRect("7 1/, 9 2/, 2 2/, 2 1/")))
     info(rect.includes(CoordRect("7 1/, 9 2/, 12 2/, 2 1/")))
     info(rect.intersects(CoordRect("7 1/, 9 2/, 12 2/, 2 1/")))
+    info("test intersect avec les bords")
+    info(rect.intersects(CoordRect("10 2/, 5 2/, 1/, 1/")))
+    info(rect.intersects(CoordRect("10 2/, 5 2/, 1/, 1/"), False))
+    info(rect.intersects(CoordRect("4 1/, 13, 1/, 1/")))
+    info(rect.intersects(CoordRect("4 1/, 13, 1/, 1/"), False))
+    info(rect.intersects(CoordRect("3 1/, 5 2/, 2/, 1/")))
+    info(rect.intersects(CoordRect("3 1/, 5 2/, 2/, 1/"), False))
+    info("test intersect pas tout compris")
+    rect_spenes = CoordRect("1 2/, -13 2/, 0 1/, 0 2/")
+    rect_img = CoordRect("1, -12, 1, 1")
+    info(rect_spenes.intersects(rect_img, False))
+    info(rect_img.intersects(rect_spenes, False))
+
 
     rect = CoordRect("-4, -5 1/, 6 2/, 7 2/")
     info(rect)

@@ -52,8 +52,8 @@ def make_map():
 
 
 def main():
-    #function_to_call = test_coord_rect
     #function_to_call = test_coords
+    #function_to_call = test_coord_rect
     #function_to_call = test_reader_data_from_img
     #function_to_call = test_reader_twinpedia
     #function_to_call = test_data_merger

@@ -12,12 +12,7 @@ from fractions import Fraction
 
 from . import bat_belt
 reload(bat_belt)
-enum = bat_belt.enum
-
-""" orientations """
-ORI = enum(
-    "ORI",
-    "RIGHT", "DOWN", "LEFT", "UP")
+ORI = bat_belt.ORI
 
 def garbled_line(coord_start, length, orientation):
     nb_points = int(length * 6)

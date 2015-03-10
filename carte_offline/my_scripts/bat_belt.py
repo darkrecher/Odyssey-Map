@@ -49,3 +49,8 @@ def enum(enumName, *listValueNames):
     # chaîne ASCII, et non pas une chaîne unicode. D'où le "str".
     mainType = type(str(enumName), (), dictAttrib)
     return mainType
+
+""" orientations """
+ORI = enum(
+    "ORI",
+    "RIGHT", "DOWN", "LEFT", "UP")

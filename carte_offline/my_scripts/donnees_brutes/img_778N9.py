@@ -50,7 +50,7 @@ i -4 2/, -11 2/, 2/, 2/
 s -1 2/, -14 2/, 4 2/, 3
 i 1 2/, -13 1/, 2/, 1/
 i 0 2/, -13 2/, 2/, 2/
-i 1 2/, -13 2/, 1/, 1/
+i 1 2/, -13 2/, 1/, 2/ ; W:incertain ; I:Réro ; C:caché par un drapeau d'auberge, association arbitraire sinon mélangeage de pinceau
 i 2, -12 1/, 1/, 1/
 i 2 2/, -12 1/, 1/, 2/
 
