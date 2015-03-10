@@ -75,6 +75,9 @@ def parse_data_from_img(data=img_778N9.DATA):
                 island = IslandImg(coord_rect, warning, supposed_name)
                 current_sea.islands.append(island)
 
+            elif data_type == "#":
+                pass
+
             else:
                 raise Exception("Type de donnée inconnu : " + data_type)
 

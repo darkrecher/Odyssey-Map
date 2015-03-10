@@ -15,10 +15,6 @@ LEECH_DATE = "2015-22-02"
 
 # TODO : expliquer pourquoi on peut indiquer directement un nom d'île.
 
-# TODO
-# Île à indiquer explicitement là dedans, car elle incertaines.
-# Harxos. 2/, 2/. au-dessus de :
-# Aralmi. 2/, 2/
 #
 # Saraxas : w = 2/, h = 1/. au-dessus de :
 # Minipsas : w = 2/, h = 2/
@@ -81,8 +77,8 @@ s 6 2/, -11 2/, 6 1/, 4 1/
 i 10, -8, 2/, 2/ ; W:incertain ; C:ajout manuel car j'ai rien dans mon screenshot
 
 s -6 2/, -9, 5, 5 2/
-i -4, -9 2/, 2/, 2/
-i -4, -8 1/, 2/, 2/
+i -4, -9 2/, 2/, 2/ ; I:Harxos
+i -4, -8 1/, 2/, 2/ ; I:Aralmi
 i -3, -8 1/, 2/, 2/
 i -5, -8 2/, 2/, 2/
 i -3, -6 1/, 2/, 2/
@@ -93,6 +89,37 @@ i -9, -5, 1/, 2/
 i -7 1/, -4, 2/, 2/
 i -9 2/, -4 1/, 2/, 2/
 i -8 1/, -4 1/, 2/, 1/
+
+s -1 2/, -6, 2 1/, 5 2/
+i 1, -5, 1/, 1/
+i 2/, -5 1/, 1/, 1/
+i 1 1/, -5 2/, 1/, 1/
+i 2/, -4 2/, 1/, 1/
+i 1, -2 2/, 1/, 1/
+i 0, -1, 1/, 1/
+
+s 2, -6, 4 2/, 5 2/
+i 3 2/, -5 2/, 2/, 1/
+i 4 1/, -3, 2/, 2/
+i 3 1/, -3 2/, 2/, 2/
+i 4, -2, 2/, 2/
+
+s 6 2/, -6, 6 1/, 3 1/
+i 8, -6 1/, 1/, 1/
+i 10 1/, -6 2/, 2/, 2/
+i 7 2/, -5, 1/, 1/
+
+s -17 1/, -5 2/, 6 2/, 4 2/
+i -15 2/, -4 2/, 2/, 1
+i -15 1/, -2 2/, 1, 1
+
+s -6 2/, -4 2/, 5, 6
+i -5 1/, -3 2/, 1/, 1/
+#i -1 2/, -2 1/, 1/, 1/   # pas mentionné dans twinpedia, ou alors pas là où il faut
+#i -4 2/, -1, 1/, 1/      # pas mentionné dans twinpedia, ou alors pas là où il faut
+i -3 2/, 2/, 1/, 1/
+i -4 1/, 1, 1/, 1/
+i -3 2/, 1 2/, 1/, 1/
 
 s  -1 2/, -1 2/, 2 1/, 3
 i  0, 0, 2/, 2/
