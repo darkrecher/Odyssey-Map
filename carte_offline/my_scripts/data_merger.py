@@ -122,17 +122,29 @@ class Sea(object):
 
 
 def _twinpedia_candidates_of_island_img(seas_twinpedia, island_img):
-    # TODO : si l'island_img possède un "supposed_name", ce serait bien
-    # de s'en servir pour effectuer directement l'association.
     twinpedia_candidates = []
+
+    # Si l'island_img possède un "supposed_name", on s'en sert
+    # pour effectuer directement l'association.
+    if island_img.supposed_name != "":
+        for sea in seas_twinpedia:
+            for island_twinpedia in sea.islands:
+                if island_img.supposed_name in island_twinpedia.name:
+                    # TODO : pas de "in" car il y a plein de noms semblables
+                    # (par exemple : Aralmi)
+                    # On renvoie direct un seul résultat,
+                    # sans chercher plus loin.
+                    twinpedia_candidates.append((sea, island_twinpedia))
+                    return twinpedia_candidates
+
     for sea in seas_twinpedia:
-        for island in sea.islands:
+        for island_twinpedia in sea.islands:
             # TODO : on recrée un CoordRect pour chaque islands twinpedia
             # à chaque fois qu'on appelle cette fonction. C'est pas top.
             rect_candidate = CoordRect(
-                coord_up_left=island.coord, w=1, h=1)
+                coord_up_left=island_twinpedia.coord, w=1, h=1)
             if rect_candidate.intersects(island_img.coord_rect, False):
-                twinpedia_candidates.append((sea, island))
+                twinpedia_candidates.append((sea, island_twinpedia))
     return twinpedia_candidates
 
 def _check_coherency_one_sea(sea_twinpedia, sea_img):
@@ -151,6 +163,8 @@ def _check_coherency_one_sea(sea_twinpedia, sea_img):
             # île dans twinpedia, et on vérifie que c'est cohérent.
             island_twinpedia_found = None
             for island_twinpedia in islands_twinpedia:
+                # TODO : pas de "in" car il y a plein de noms semblables
+                # (par exemple : Aralmi)
                 if island_img.supposed_name in island_twinpedia.name:
                     island_twinpedia_found = island_twinpedia
 
