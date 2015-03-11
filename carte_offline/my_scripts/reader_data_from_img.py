@@ -81,6 +81,8 @@ def parse_data_from_img(data=img_778N9.DATA):
             else:
                 raise Exception("Type de donnée inconnu : " + data_type)
 
+    if current_sea is not None:
+        seas.append(current_sea)
     return seas
 
 
