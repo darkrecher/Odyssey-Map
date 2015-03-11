@@ -198,4 +198,35 @@ i 12 2/, 7, 2/, 2/
 s 13 2/, 2 2/, 5, 6
 i 14, 5, 1, 1 ; W:incertain ; C:ajout manuel car j'ai rien dans mon screenshot
 
+s -10, 6 1/, 2, 4 1/
+i -10 2/, 6 2/, 2/, 2/
+i -10 2/, 7 1/, 2/, 2/
+i -10 2/, 9 2/, 2/, 2/
+
+s -8, 4 2/, 4 2/, 6
+i -5, 6, 1/, 2/
+i -7 2/, 6 1/, 2/, 2/
+i -7 1/, 7 2/, 2/, 1/
+i -6, 9 1/, 2/, 1/
+
+s -4 2/, 4 2/, 2 1/, 6
+i -3, 5, 2/, 2/  ; W:incertain C:caché par un drapeau d'auberge.
+i -2, 6, 1/, 2/
+i -3 1/, 7 2/, 2/, 2/
+i -2, 8 2/, 2/, 2/
+i -2 1/, 9 2/, 1/, 1/
+
+s -1, 5 2/, 3 1/, 6
+i 0, 9, 1, 1   ; W:incertain C:il n'y a que le drapeau d'auberge.
+i 1, 9, 1/, 2/
+i 1 2/, 9 1/, 1/, 2/
+
+s 2 1/, 5 2/, 6, 4 1/
+i 5 1/, 6, 2/, 2/  ; W:incertain C:caché par un drapeau d'auberge.
+i 2 2/, 7, 2/, 2/
+i 5, 7 2/, 2/, 2/
+i 6, 8 1/, 2/, 2/
+i 4, 9, 2/, 2/
+
+
 """
