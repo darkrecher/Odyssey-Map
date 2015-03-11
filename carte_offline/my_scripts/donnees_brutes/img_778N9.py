@@ -149,8 +149,53 @@ i  0, 2, 1/, 1/
 i  1, 1, 1/, 1/ ; I:Ganes
 i  1 1/, 1, 1/, 1/ ; I:Tahépe
 
-s  2, -1 2/, 4 2/, 3
+s 2, -1 2/, 4 2/, 3
+i 4, 0, 1/, 1/
+i 2 1/, 2/, 1/, 1/
+i 3 1/, 1 1/, 2/, 1/
+i 6, 2, 1/, 1/
 
-s  -1, 2 2/, 4, 3
+s -16 2/, 1/, 5 1/, 5
+i -14, 1 2/, 2/, 2/
+i -12 2/, 1 2/, 2/, 2/
+i -13, 4 1/, 2/, 2/
+
+s -10, 2 2/, 2, 3 2/
+i -9 1/, 4 1/, 1/, 1/
+i -9, 4 2/, 2/, 2/
+
+s -8, 2 2/, 4 2/, 2
+i -6, 3 2/, 2/, 2/ ; W:incertain ; I:Autofi ; C:attribution arbitraire. Sinon je peux pas associer la mer.
+
+s -4 2/, 2 2/, 2 1/, 2
+i -2, 3, 2/, 2/ ; W:incertain ; I:Kareskone ; C:attribution arbitraire. Sinon je peux pas associer la mer.
+i -2, 3, 1/, 2/ ; W:incertain C:gloubiboulga d'île dans le screenshot.
+
+s -1, 2 2/, 4, 3
+i -1 1/, 3, 1/, 2/
+i 2 1/, 3 1/, 1/, 1/
+i 1, 4, 1/, 1/
+i 2, 4 1/, 1/, 1/
+i -1 1/, 4 2/, 1/, 1/
+
+s 3, 2 2/, 4 1/, 3
+i 3 2/, 3 1/, 2/, 1/
+i 3 1/, 4, 2/, 2/
+i 4, 4, 1/, 1/
+i 3 2/, 4 2/, 2/, 2/
+
+s 7 1/, 2 2/, 3 1/, 3
+i 9 2/, 3 1/, 1/, 2/
+i 8, 4, 1/, 2/
+i 7 2/, 4 1/, 1/, 1/
+i 8 1/, 4 1/, 2/, 2/
+
+s 10 2/, 2 2/, 3, 6
+i 12, 3, 2/, 2/
+i 11 1/, 6 1/, 2/, 2/
+i 12 2/, 7, 2/, 2/
+
+s 13 2/, 2 2/, 5, 6
+i 14, 5, 1, 1 ; W:incertain ; C:ajout manuel car j'ai rien dans mon screenshot
 
 """
