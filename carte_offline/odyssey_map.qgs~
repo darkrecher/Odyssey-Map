@@ -20,10 +20,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>-22.83008453860883336</xmin>
-            <ymin>-10.5850922534407399</ymin>
-            <xmax>36.22126721721171805</xmax>
-            <ymax>21.30957131721771702</ymax>
+            <xmin>-12.38361774691004946</xmin>
+            <ymin>-9.52690557726694109</ymin>
+            <xmax>36.29927891188050637</xmax>
+            <ymax>16.7675748098684636</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -202,7 +202,7 @@
                 <property key="labeling/repeatDistanceUnit" value="1"/>
                 <property key="labeling/reverseDirectionSymbol" value="false"/>
                 <property key="labeling/rightDirectionSymbol" value=">"/>
-                <property key="labeling/scaleMax" value="5000000"/>
+                <property key="labeling/scaleMax" value="9000000"/>
                 <property key="labeling/scaleMin" value="1"/>
                 <property key="labeling/scaleVisibility" value="true"/>
                 <property key="labeling/shadowBlendMode" value="6"/>
@@ -312,7 +312,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>mer20150225083919517</id>
             <datasource>./mer.shp</datasource>
             <title></title>
@@ -451,7 +451,7 @@
                 <property key="labeling/reverseDirectionSymbol" value="false"/>
                 <property key="labeling/rightDirectionSymbol" value=">"/>
                 <property key="labeling/scaleMax" value="30000000"/>
-                <property key="labeling/scaleMin" value="5000000"/>
+                <property key="labeling/scaleMin" value="9000000"/>
                 <property key="labeling/scaleVisibility" value="true"/>
                 <property key="labeling/shadowBlendMode" value="6"/>
                 <property key="labeling/shadowColorB" value="0"/>
