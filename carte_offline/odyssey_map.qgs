@@ -15,37 +15,34 @@
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="mer_copier20150312000438644" name="mer">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-group expanded="1" checked="Qt::Checked" name="objets_quete">
-            <customproperties/>
-        </layer-tree-group>
     </layer-tree-group>
     <relations/>
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-24.17612569532389344</xmin>
-            <ymin>-14.46855361824442276</ymin>
-            <xmax>30.14473527484244286</xmax>
-            <ymax>14.87108948892956839</ymax>
+            <xmin>-19848.38486603727506008</xmin>
+            <ymin>-3238.79898558209606563</ymin>
+            <xmax>11084.27576580977620324</xmax>
+            <ymax>18765.15823491967239534</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
             <spatialrefsys>
-                <proj4>+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=km +no_defs</proj4>
-                <srsid>100000</srsid>
-                <srid>0</srid>
-                <authid>USER:100000</authid>
-                <description>Odyssey - Motion Twin</description>
+                <proj4>+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                <srsid>27870</srsid>
+                <srid>54002</srid>
+                <authid>EPSG:54002</authid>
+                <description>World_Equidistant_Cylindrical</description>
                 <projectionacronym>eqc</projectionacronym>
                 <ellipsoidacronym></ellipsoidacronym>
                 <geographicflag>false</geographicflag>
             </spatialrefsys>
         </destinationsrs>
         <layer_coordinate_transform_info>
-            <layer_coordinate_transform destAuthId="USER:100000" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ile20150225194559474"/>
-            <layer_coordinate_transform destAuthId="USER:100000" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="mer20150225083919517"/>
-            <layer_coordinate_transform destAuthId="USER:100000" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="mer_copier20150312000438644"/>
-            <layer_coordinate_transform destAuthId="USER:100000" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ruines20150226002220285"/>
+            <layer_coordinate_transform destAuthId="EPSG:54002" srcAuthId="USER:100000" srcDatumTransform="-1" destDatumTransform="-1" layerid="ile20150225194559474"/>
+            <layer_coordinate_transform destAuthId="EPSG:54002" srcAuthId="USER:100000" srcDatumTransform="-1" destDatumTransform="-1" layerid="mer20150225083919517"/>
+            <layer_coordinate_transform destAuthId="EPSG:54002" srcAuthId="USER:100000" srcDatumTransform="-1" destDatumTransform="-1" layerid="mer_copier20150312000438644"/>
+            <layer_coordinate_transform destAuthId="EPSG:54002" srcAuthId="USER:100000" srcDatumTransform="-1" destDatumTransform="-1" layerid="ruines20150226002220285"/>
         </layer_coordinate_transform_info>
     </mapcanvas>
     <visibility-presets/>
@@ -78,10 +75,9 @@
                 <legendlayerfile isInOverview="0" layerid="mer_copier20150312000438644" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendgroup open="true" checked="Qt::Checked" name="objets_quete"/>
     </legend>
     <projectlayers layercount="4">
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1.7e+07" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1.7e+07" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>ile20150225194559474</id>
             <datasource>./ile.shp</datasource>
             <title></title>
@@ -92,11 +88,11 @@
             <layername>ile</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=km +no_defs</proj4>
-                    <srsid>100000</srsid>
-                    <srid>0</srid>
-                    <authid>USER:100000</authid>
-                    <description>Odyssey - Motion Twin</description>
+                    <proj4>+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>27870</srsid>
+                    <srid>54002</srid>
+                    <authid>EPSG:54002</authid>
+                    <description>World_Equidistant_Cylindrical</description>
                     <projectionacronym>eqc</projectionacronym>
                     <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
@@ -210,7 +206,7 @@
                 <property key="labeling/repeatDistanceUnit" value="1"/>
                 <property key="labeling/reverseDirectionSymbol" value="false"/>
                 <property key="labeling/rightDirectionSymbol" value=">"/>
-                <property key="labeling/scaleMax" value="70"/>
+                <property key="labeling/scaleMax" value="50000"/>
                 <property key="labeling/scaleMin" value="0"/>
                 <property key="labeling/scaleVisibility" value="true"/>
                 <property key="labeling/shadowBlendMode" value="6"/>
@@ -331,11 +327,11 @@
             <layername>mer_avec_texte</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=km +no_defs</proj4>
-                    <srsid>100000</srsid>
-                    <srid>0</srid>
-                    <authid>USER:100000</authid>
-                    <description>Odyssey - Motion Twin</description>
+                    <proj4>+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>27870</srsid>
+                    <srid>54002</srid>
+                    <authid>EPSG:54002</authid>
+                    <description>World_Equidistant_Cylindrical</description>
                     <projectionacronym>eqc</projectionacronym>
                     <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
@@ -410,7 +406,7 @@
                 <property key="labeling/distMapUnitMaxScale" value="0"/>
                 <property key="labeling/distMapUnitMinScale" value="0"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="CASE WHEN $scale > 200&#xd;&#xa;THEN &#xd;&#xa;    nom&#xd;&#xa;ELSE &#xd;&#xa;    concat(&#xd;&#xa;        nom, '\n', &#xd;&#xa;        'cartes : ', carte_req, '/', carte_tot, '\n',&#xd;&#xa;    &#x9;'or : ', or_tot)&#xd;&#xa;END"/>
+                <property key="labeling/fieldName" value="CASE WHEN $scale > 200000&#xd;&#xa;THEN &#xd;&#xa;    nom&#xd;&#xa;ELSE &#xd;&#xa;    concat(&#xd;&#xa;        nom, '\n', &#xd;&#xa;        'cartes : ', carte_req, '/', carte_tot, '\n',&#xd;&#xa;    &#x9;'or : ', or_tot)&#xd;&#xa;END"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Ebrima"/>
@@ -458,8 +454,8 @@
                 <property key="labeling/repeatDistanceUnit" value="1"/>
                 <property key="labeling/reverseDirectionSymbol" value="false"/>
                 <property key="labeling/rightDirectionSymbol" value=">"/>
-                <property key="labeling/scaleMax" value="400"/>
-                <property key="labeling/scaleMin" value="70"/>
+                <property key="labeling/scaleMax" value="300000"/>
+                <property key="labeling/scaleMin" value="50000"/>
                 <property key="labeling/scaleVisibility" value="true"/>
                 <property key="labeling/shadowBlendMode" value="6"/>
                 <property key="labeling/shadowColorB" value="0"/>
@@ -588,11 +584,11 @@
             <layername>mer</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=km +no_defs</proj4>
-                    <srsid>100000</srsid>
-                    <srid>0</srid>
-                    <authid>USER:100000</authid>
-                    <description>Odyssey - Motion Twin</description>
+                    <proj4>+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>27870</srsid>
+                    <srid>54002</srid>
+                    <authid>EPSG:54002</authid>
+                    <description>World_Equidistant_Cylindrical</description>
                     <projectionacronym>eqc</projectionacronym>
                     <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
@@ -845,11 +841,11 @@
             <layername>ruines</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=km +no_defs</proj4>
-                    <srsid>100000</srsid>
-                    <srid>0</srid>
-                    <authid>USER:100000</authid>
-                    <description>Odyssey - Motion Twin</description>
+                    <proj4>+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>27870</srsid>
+                    <srid>54002</srid>
+                    <authid>EPSG:54002</authid>
+                    <description>World_Equidistant_Cylindrical</description>
                     <projectionacronym>eqc</projectionacronym>
                     <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
@@ -1125,8 +1121,8 @@
             <DegreeFormat type="QString">D</DegreeFormat>
         </PositionPrecision>
         <WCSUrl type="QString"></WCSUrl>
-        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSContactPhone type="QString"></WMSContactPhone>
+        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSServiceAbstract type="QString"></WMSServiceAbstract>
         <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
         <Measure>
@@ -1151,21 +1147,31 @@
             <LayerSnappingList type="QStringList">
                 <value>ile20150225194559474</value>
                 <value>mer20150225083919517</value>
+                <value>mer_copier20150312000438644</value>
+                <value>ruines20150226002220285</value>
             </LayerSnappingList>
             <LayerSnappingEnabledList type="QStringList">
                 <value>enabled</value>
                 <value>enabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
             </LayerSnappingEnabledList>
             <AvoidIntersectionsList type="QStringList"/>
             <LayerSnappingToleranceUnitList type="QStringList">
+                <value>0</value>
+                <value>0</value>
                 <value>0</value>
                 <value>0</value>
             </LayerSnappingToleranceUnitList>
             <LayerSnapToList type="QStringList">
                 <value>to_vertex</value>
                 <value>to_vertex</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
             </LayerSnapToList>
             <LayerSnappingToleranceList type="QStringList">
+                <value>0.000000</value>
+                <value>0.000000</value>
                 <value>0.000000</value>
                 <value>0.000000</value>
             </LayerSnappingToleranceList>
@@ -1182,9 +1188,9 @@
             <filterByMap type="bool">false</filterByMap>
         </Legend>
         <SpatialRefSys>
-            <ProjectCRSProj4String type="QString">+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=km +no_defs</ProjectCRSProj4String>
-            <ProjectCrs type="QString">USER:100000</ProjectCrs>
-            <ProjectCRSID type="int">100000</ProjectCRSID>
+            <ProjectCRSProj4String type="QString">+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</ProjectCRSProj4String>
+            <ProjectCrs type="QString">EPSG:54002</ProjectCrs>
+            <ProjectCRSID type="int">27870</ProjectCRSID>
             <ProjectionsEnabled type="int">1</ProjectionsEnabled>
         </SpatialRefSys>
         <DefaultStyles>

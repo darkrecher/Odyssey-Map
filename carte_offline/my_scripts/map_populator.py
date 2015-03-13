@@ -28,7 +28,7 @@ def coords_qgis_from_odyssey(points):
     à peu près respecté par les gens utilisant l'alphabet latin (voire
     d'autres alphabets).
     """
-    return [ (x, -y) for (x, y) in points ]
+    return [ (x * 1000, -y * 1000) for (x, y) in points ]
 
 def _add_sea(sea, recher_api, layer):
     qgis_points = coords_qgis_from_odyssey(geom_tools.points_from_coord_rect(
