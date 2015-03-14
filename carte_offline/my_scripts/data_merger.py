@@ -95,17 +95,20 @@ class Island(object):
 class Sea(object):
 
     def __init__(self, sea_twinpedia, sea_img=None, warning=""):
+        """
+        Objet inutilisable immédiatement après son instanciation.
+        Car islands et éventuellement coord_rect peuvent être None.
+        C'est au code extérieur de se débrouiller pour les définir
+        """
         self.name = sea_twinpedia.name
         self.xp_min = sea_twinpedia.xp_min
         self.xp_max = sea_twinpedia.xp_max
         self.total_maps_required = sea_twinpedia.total_maps_required
         self.warning = sea_twinpedia.warning
         self.warning += warning
-        self.islands = []
+        self.islands = None
 
         if sea_img is None:
-            # TODO : déduire une géométrie incertaine
-            # à partir des islands contenues dans sea_twinpedia
             self.coord_rect = None
             self.geom_ok = False
             self.warning +=  (";coordonnées incertaines. " +
@@ -286,6 +289,27 @@ def _find_first_sea_association(seas_twinpedia, seas_img):
                         current_sea_img)
     return None
 
+def _sea_from_twinpedia_only(sea_twinpedia):
+    islands = [
+        Island(island_twinpedia)
+        for island_twinpedia
+        in sea_twinpedia.islands ]
+    #info("aaaa")
+    #info(sea_twinpedia)
+    #info(sea_twinpedia.islands)
+    #info(islands)
+    #machin = [ island.coord_rect for island in islands ]
+    #info(machin)
+    rect_sea = CoordRect.bounding_rect(
+        [ island.coord_rect for island in islands ] )
+    if rect_sea is None:
+        return None
+    rect_sea.inflate(Fraction(1, 3))
+    sea_ok = Sea(sea_twinpedia)
+    sea_ok.islands = islands
+    sea_ok.coord_rect = rect_sea
+    return sea_ok
+
 def _merge_twinpedia_img(seas_twinpedia, seas_img):
     seas_img_copy = list(seas_img)
     seas_twinpedia_copy = list(seas_twinpedia)
@@ -303,8 +327,13 @@ def _merge_twinpedia_img(seas_twinpedia, seas_img):
         else:
             added_sea = False
 
-    # TODO : prendre toutes les mers de twinpedia qui restent,
-    # créer des mers finales avec. (Elles auront des coordonnées incertaines).
+    # On prend toutes les mers de twinpedia qui restent,
+    # on crée des mers finales, en leur mettant des coordonnées incertaines.
+    for sea_twinpedia in seas_twinpedia_copy:
+        sea = _sea_from_twinpedia_only(sea_twinpedia)
+        if sea is not None:
+            seas_ok.append(sea)
+
     return seas_ok
 
 def build_data():

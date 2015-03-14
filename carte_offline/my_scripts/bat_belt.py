@@ -54,3 +54,11 @@ def enum(enumName, *listValueNames):
 ORI = enum(
     "ORI",
     "RIGHT", "DOWN", "LEFT", "UP")
+
+def first(the_iterable, default_val=None):
+    """ Premier élément d'un itérable, quel qu'il soit.
+    Renvoie default_val si l'itérable est vide.
+    http://stackoverflow.com/a/2364277
+    """
+    return next( (x for x in the_iterable), default_val)
+

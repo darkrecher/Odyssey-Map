@@ -158,6 +158,15 @@ class CoordRect(object):
         self.h = max(self.h, h_min)
         self._determine_corners()
 
+    def inflate(self, w_infl, h_infl=None):
+        if h_infl is None:
+            h_infl = w_infl
+        self.x -= w_infl
+        self.y -= h_infl
+        self.w += w_infl + w_infl
+        self.h += h_infl + h_infl
+        self._determine_corners()
+
     def __str__(self):
         coord_size = Coord(x=self.w, y=self.h)
         return ", ".join((str(self.coord_up_left), str(coord_size)))
@@ -165,7 +174,27 @@ class CoordRect(object):
     @staticmethod
     def bounding_rect(rects):
         # TODO : accepter des Coord, en plus des CoordRect.
-        for rect in rects
+        x_min = []
+        x_max = []
+        y_min = []
+        y_max = []
+        for rect in rects:
+            x_min.append(rect.coord_up_left.x)
+            x_min = [ min(x_min) ]
+            x_max.append(rect.coord_down_right.x)
+            x_max = [ max(x_max) ]
+            y_min.append(rect.coord_up_left.y)
+            y_min = [ min(y_min) ]
+            y_max.append(rect.coord_down_right.y)
+            y_max = [ max(y_max) ]
+        if x_min:
+            x = x_min[0]
+            y = y_min[0]
+            w = x_max[0] - x
+            h = y_max[0] - y
+            return CoordRect(x=x, y=y, w=w, h=h)
+        else:
+            return None
 
 
 def test():
@@ -215,6 +244,17 @@ def test():
     rect = CoordRect("-4, -5 1/, 1/, 2/")
     info(rect)
     info(rect.coord_down_right)
+
+    rect = CoordRect.bounding_rect((
+        CoordRect("4 1/, 13, 1/, 1/"),
+        CoordRect("2 1/, 10, 1/, 1/"),
+        CoordRect("3 2/, 12 2/, 10, 10"),
+    ))
+    info("bounding")
+    info(rect)
+    rect.inflate(Fraction(1, 3))
+    info("inflate")
+    info(rect)
 
 if __name__ == "__main__":
     test()

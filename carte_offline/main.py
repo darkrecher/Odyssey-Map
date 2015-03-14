@@ -9,7 +9,7 @@ from __future__ import (unicode_literals, absolute_import,
 import logging
 info = logging.info
 debug = logging.debug
-logging.basicConfig(format="%(message)s", level=logging.DEBUG)
+logging.basicConfig(format="%(message)s", level=logging.INFO)
 
 # TODO : ne marche pas pour l'instant. Mais ça viendra peut-être plus tard.
 #import sys, imp
@@ -62,14 +62,14 @@ def make_map():
 
 def main():
     #function_to_call = test_coords
-    function_to_call = test_coord_rect
+    #function_to_call = test_coord_rect
     #function_to_call = test_reader_data_from_img
     #function_to_call = test_reader_twinpedia
     #function_to_call = test_data_merger
     #function_to_call = test_qgis_recher_api
     #function_to_call = test_geom_tools
     #function_to_call = test_populate_map
-    #function_to_call = make_map
+    function_to_call = make_map
     function_to_call()
 
 if __name__ == "__main__":

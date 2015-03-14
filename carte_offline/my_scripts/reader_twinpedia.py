@@ -67,6 +67,17 @@ def _parse_sea_line(data_line):
     nb_maps = 0
     warning = ""
 
+    if ("Mer" not in data_line and
+        "~" not in data_line and
+        "XP" not in data_line and
+        "(" not in data_line and
+        "carte" not in data_line and
+        ")" not in data_line):
+        # On veut bien être permissif, mais y'a des limites.
+        # Si on ne trouve aucun des tokens attendus dans la description
+        # d'une mer, on laisse tomber.
+        return None
+
     sea_name, parenthesis, sea_desc = data_line.partition("(")
     if parenthesis == "":
         warning += ";XP manquant;nb cartes manquant"
@@ -91,6 +102,7 @@ def _parse_sea_line(data_line):
             xp_max = int(xp_max.strip())
         except ValueError:
             info("valeur(s) de XP incorrecte(s)")
+            # TODO : autoriser la création de la mer quand même ?
             return None
 
     nb_maps_data = nb_maps_data.strip()
@@ -105,6 +117,7 @@ def _parse_sea_line(data_line):
                 nb_maps = int(nb_maps.strip())
             except ValueError:
                 info("valeur de nb cartes incorrecte")
+                # TODO : autoriser la création de la mer quand même ?
                 return None
 
     return SeaTwinpedia(sea_name, xp_min, xp_max, nb_maps, warning)
@@ -134,10 +147,21 @@ def _parse_island_line(before, coord, after):
     desc = desc.strip()
     return IslandTwinpedia(island_name, coord, nb_maps, desc, warning)
 
-def _manual_correction(seas):
-    """ Corrections manuelles du site Twinpedia. Si je ne les fais pas,
-    je ne peux pas faire toutes les asociations de mers et d'îles que
-    je pourrais.
+def _manual_correction_before(data_line):
+    """ Corrections manuelles du site twinpedia, avant le parsage.
+    Il y a deux îles qui ont les caractères de coordonnées inversés.
+    Le "°" (degré) et le "'" (apostrophe)
+    """
+    if data_line.startswith("Ile aux Hynas"):
+        data_line = data_line.replace("-5' -22°", "-5° -22'")
+    if data_line.startswith("Spegramanie"):
+        data_line = data_line.replace("-2' -23°", "-2° -23'")
+    return data_line
+
+def _manual_correction_after(seas):
+    """ Corrections manuelles du site Twinpedia. (après parsage des données)
+    Si je ne les fais pas, je ne peux pas faire toutes les associations de
+    mers et d'îles que je pourrais.
     Le but ultérieur serait de corriger Twinpedia pour ne plus avoir
     à faire ce genre de bidouille."""
     # Je vire la mer Orakiti, car manifestement, la seule île qu'elle
@@ -164,6 +188,7 @@ def parse_islands_and_seas(data=twinpedia.ISLANDS_AND_SEAS):
     for data_line in data.split("\n"):
         data_line = data_line.strip()
         if data_line != "":
+            data_line = _manual_correction_before(data_line)
             before, coord, after = Coord.partition_odyssey_coord(data_line)
 
             if coord == "":
@@ -187,7 +212,7 @@ def parse_islands_and_seas(data=twinpedia.ISLANDS_AND_SEAS):
                 else:
                     current_sea.islands.append(new_island)
 
-    return _manual_correction(seas)
+    return _manual_correction_after(seas)
 
 
 def test():
