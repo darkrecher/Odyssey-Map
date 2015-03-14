@@ -9,11 +9,12 @@ ici : http://qgiscloud.com/Recher/odyssey_map
 
 ## TODO ##
 
- - couche "mer étiquette". Comme ça on peut cacher les étiquettes des mers tout en voyant les mers. (C'est de la triche et c'est pas optimisé, mais pas mieux)
- - ajouter les îles et mers qui sont mentionnées dans twinpedia, mais pas dans l'image de carte.
- - lister les îles incertaines pour cause de "même coordonnée". Essayer de connaître leur position précise.
- - classe générique POI (avec attributs spécifique, genre le prix pour les auberges).
- - symbole des POI :
+ - texte détaillé des mers : carte et XP. (L'or, on verra plus tard).
+ - regrouper les erreurs relevés dans twinpedia, et les corriger ou demander leur correction.
+ - lister les îles incertaines pour cause de "même coordonnée". Essayer de connaître leur position précise. (Soit en demandant, soit en y allant soi-même).
+ - classe générique POI.
+ - possibilité d'ajouter des attributs spécifique à un POI, genre le prix pour les auberges, afin de les exporter dans la carte.
+ - symbole des POI en SVG :
     * boss
     * objets de quêtes et objets divers
     * cartes
@@ -27,32 +28,34 @@ ici : http://qgiscloud.com/Recher/odyssey_map
     * autels
     * PNJ (à prendre depuis help-odyssey)
     * héros
- - récupérer les POI simples depuis twinpedia.
+ - récupérer les POI simples depuis twinpedia, sans leurs attributs.
+ - déterminer les attributs de chaque type de POI, et les parser.
  - récupérer les POI compliqués (objets divers)
  - récupérer les POI compliqués (PNJ, depuis help-odyssey)
- - placement du POI sur une île, ou un plein milieu d'une coordonnée quand on ne sait pas où il est.
+ - placement du POI au milieu de la coordonnée.
+ - Répartir correctement les POI présent sur une même coordonnée, pour qu'ils ne soient pas superposés.
+ - placement du POI sur une île, quand c'est possible (une seule île possible).
  - lorsqu'il y a plusieurs îles sur une même coordonnée, les POI seront incertains. Lever les incertitudes levables à l'aide des descriptions d'île dans twinpedia.
- - répartition de tous les POI d'une île / d'une coordonnée, pour les représenter non superposés.
+ - Adapter le processur de répartition des POI, pour que ça marche avec les îles et les coordonnées.
  - trouver un moyen de représenter les POI incertains dans la carte (symbole grisé, ou un truc du genre).
- - noms courts et noms longs pour : îles, mers, héros, PNJ.
- - fonction d'agrégation pour l'or.
+ - noms courts et noms longs pour : mers, héros, PNJ.
+ - attributs or pour les îles. Parser et afficher dans la carte.
+ - fonction d'agrégation pour l'or. afficher l'or pour chaque mer (total des îles, en séparant ruines et pas-ruines)
  - apparence de la carte :
-    * quels textes s'affichent à quelle échelle.
-    * hachurage des îles selon leur difficulté.
+    * quel texte s'affiche à quelle échelle, et à quelle taille.
+    * hachurage des îles selon leur difficulté (nombre d'XP).
     * même symbole mais avec une couleur différente, pour les PNJ, les autels, les héros, [les boss]
- - carroyage.
  - gros carré pour faire un fond, avec le lien vers github et mon blog.
- - publier.
  - annoncer sur le forum de twinoid.
  - doc pour expliquer comment reconstruire la carte et la publier.
  - doc sur le module qgis_recher_api
- - mini-docs d'utilisation, et remerciements dans la carte elle-même.
+ - mini-docs d'utilisation, et remerciements dans la carte elle-même. (avec le gros carré)
 
 ## FUTURE (TODO, mais que si on est vraiment motivé) ##
 
  - carte mer+île en "ascii art", pour que ce soit plus facile à mettre à jour et à saisir.
  - POI des rumeurs
- - les îles incertaines dans la même coordonnée ne doivent pas se superposer.
+ - les îles incertaines dans la même coordonnée ne doivent pas se superposer. À répartir aussi.
  - trouver un screenshot plus complet de la carte globale.
  - vérif de cohérence entre les POI de twinpedia et ceux de help-odyssey.
  - vérif de cohérence entre les îles de twinpedia et les îles indiquées dans la partie "items" de help-odyssey.
@@ -75,3 +78,6 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - mettre l'île en incertain, si indiqué comme tel dans img_778N9.py
  - tester les intersections en excluant les bords droits et bas, car là ça fait trop d'hésitation.
  - finir de saisir les îles et mers de img_778N9.png.
+ - couche "mer texte" et "île texte", utilisant la même source de donnée que "mer" et "île", mais n'affichant quel es étiquettes. Comme ça on peut cacher uniquement les étiquettes.
+ - carroyage.
+ - ajouter les îles et mers qui sont mentionnées dans twinpedia, mais pas dans l'image de carte.
