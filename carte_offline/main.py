@@ -8,8 +8,17 @@ from __future__ import (unicode_literals, absolute_import,
                         print_function, division)
 import logging
 info = logging.info
-logging.basicConfig(format="%(message)s", level=logging.INFO)
+debug = logging.debug
+logging.basicConfig(format="%(message)s", level=logging.DEBUG)
 
+# TODO : ne marche pas pour l'instant. Mais ça viendra peut-être plus tard.
+#import sys, imp
+#def reload_all_modules(pakage_name):
+#    modules_reloaded = [
+#        imp.reload(v) for k, v in sys.modules.items()
+#        if k.startswith(pakage_name) and v is not None
+#    ]
+#    info(modules_reloaded)
 
 def test_coord_rect():
     import my_scripts.coord_rect
@@ -53,14 +62,14 @@ def make_map():
 
 def main():
     #function_to_call = test_coords
-    #function_to_call = test_coord_rect
+    function_to_call = test_coord_rect
     #function_to_call = test_reader_data_from_img
     #function_to_call = test_reader_twinpedia
     #function_to_call = test_data_merger
     #function_to_call = test_qgis_recher_api
     #function_to_call = test_geom_tools
     #function_to_call = test_populate_map
-    function_to_call = make_map
+    #function_to_call = make_map
     function_to_call()
 
 if __name__ == "__main__":
