@@ -10,6 +10,7 @@ ici : http://qgiscloud.com/Recher/odyssey_map
 ## TODO ##
 
  - texte détaillé des mers : carte et XP. (L'or, on verra plus tard).
+ - pour les nombres de cartes : afficher des points d'interrogation au lieu des "-1"
  - regrouper les erreurs relevés dans twinpedia, et les corriger ou demander leur correction.
  - lister les îles incertaines pour cause de "même coordonnée". Essayer de connaître leur position précise. (Soit en demandant, soit en y allant soi-même).
  - classe générique POI.

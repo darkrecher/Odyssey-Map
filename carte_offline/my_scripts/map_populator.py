@@ -37,7 +37,15 @@ def _add_sea(sea, recher_api, layer):
     recher_api.add_feature(
         layer,
         qgis_points,
-        {"identifier" : 12, "nom":sea.name, "carte_req":3, "carte_tot":6, "or_tot":0}) # TODO
+        {
+            # Toutes les données sont castées dans le type attendu par QGIS.
+            # Comme ça, si on envoie de la merde, on s'en rend compte au
+            # moment du cast. Et pas au moment de l'envoyer à QGIS, car je ne
+            # sais pas comment il pourrait réagir.
+            "identifier" : 12,
+            "nom":unicode(sea.name),
+            "carte_req":int(sea.maps_required),
+            "carte_tot":int(sea.maps_total)})
 
 def _add_island(island, recher_api, layer):
     qgis_points = coords_qgis_from_odyssey(geom_tools.points_from_coord_rect(
@@ -48,7 +56,9 @@ def _add_island(island, recher_api, layer):
         layer,
         qgis_points,
         # TODO : homégénéité des majuscules dans les noms de champs.
-        {"identifier" : 13, "Nom":island_name}) # TODO
+        {
+            "identifier" : 13,
+            "Nom":unicode(island_name)})
 
 
 def populate():

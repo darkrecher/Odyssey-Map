@@ -103,10 +103,11 @@ class Sea(object):
         self.name = sea_twinpedia.name
         self.xp_min = sea_twinpedia.xp_min
         self.xp_max = sea_twinpedia.xp_max
-        self.total_maps_required = sea_twinpedia.total_maps_required
+        self.maps_required = sea_twinpedia.maps_required
         self.warning = sea_twinpedia.warning
         self.warning += warning
         self.islands = None
+        self.maps_total = None
 
         if sea_img is None:
             self.coord_rect = None
@@ -116,6 +117,15 @@ class Sea(object):
         else:
             self.coord_rect = sea_img.coord_rect
             self.geom_ok = True
+
+    def determine_maps_total(self):
+        nb_maps_all_islands = [ island.nb_maps for island in self.islands ]
+        if None in nb_maps_all_islands or -1 in nb_maps_all_islands:
+            # Il y a une incertitude pour au moins une île.
+            # On la propage sur l'ensemble de la mer.
+            self.maps_total = -1
+        else:
+            self.maps_total = sum(nb_maps_all_islands)
 
     def __unicode__(self):
         sea_desc = join_unicode(self.name)
@@ -340,6 +350,8 @@ def build_data():
     seas_twinpedia = reader_twinpedia.parse_islands_and_seas()
     seas_img = reader_data_from_img.parse_data_from_img()
     seas = _merge_twinpedia_img(seas_twinpedia, seas_img)
+    for sea in seas:
+        sea.determine_maps_total()
     return seas
 
 
