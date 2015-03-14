@@ -132,6 +132,7 @@ def _twinpedia_candidates_of_island_img(seas_twinpedia, island_img):
                 if island_img.supposed_name in island_twinpedia.name:
                     # TODO : pas de "in" car il y a plein de noms semblables
                     # (par exemple : Aralmi)
+                    #
                     # On renvoie direct un seul résultat,
                     # sans chercher plus loin.
                     twinpedia_candidates.append((sea, island_twinpedia))
@@ -165,6 +166,8 @@ def _check_coherency_one_sea(sea_twinpedia, sea_img):
             for island_twinpedia in islands_twinpedia:
                 # TODO : pas de "in" car il y a plein de noms semblables
                 # (par exemple : Aralmi)
+                # Ou peut-être que si, parce que comme on ne travaille que
+                # sur une seule mer, il y a moins de risques.
                 if island_img.supposed_name in island_twinpedia.name:
                     island_twinpedia_found = island_twinpedia
 

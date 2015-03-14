@@ -8,6 +8,7 @@ from __future__ import (unicode_literals, absolute_import,
                         print_function, division)
 import logging
 info = logging.info
+debug = logging.debug
 from fractions import Fraction
 
 from . import coords
@@ -81,20 +82,24 @@ class CoordRect(object):
         return (
             (
                 (ORI.LEFT in bnds_incl and coord.x >= self.coord_up_left.x)
-                or coord.x > self.coord_up_left.x)
+                or coord.x > self.coord_up_left.x
+            )
             and
             (
                 (ORI.UP in bnds_incl and coord.y >= self.coord_up_left.y)
-                or coord.y > self.coord_up_left.y)
+                or coord.y > self.coord_up_left.y
+            )
             and
             (
                 (ORI.RIGHT in bnds_incl and coord.x <= self.coord_down_right.x)
-                or coord.x < self.coord_down_right.x)
+                or coord.x < self.coord_down_right.x
+            )
             and
             (
                 (ORI.DOWN in bnds_incl and coord.y <= self.coord_down_right.y)
-                or coord.y < self.coord_down_right.y)
+                or coord.y < self.coord_down_right.y
             )
+        )
 
     def includes(self, geom):
         if isinstance(geom, Coord):
@@ -121,13 +126,18 @@ class CoordRect(object):
                     geom._contains_point(self.coord_up_left) or
                     geom._contains_point(self.coord_down_right))
             else:
+                bnds_ul = (ORI.UP, ORI.LEFT)
+                bnds_dr = (ORI.DOWN, ORI.RIGHT)
                 return (
-                    self._contains_point(geom.coord_up_left, (ORI.UP, ORI.LEFT)) or
-                    self._contains_point(geom.coord_down_right, (ORI.DOWN, ORI.RIGHT)) or
-                    geom._contains_point(self.coord_up_left, (ORI.UP, ORI.LEFT)) or
-                    geom._contains_point(self.coord_down_right, (ORI.DOWN, ORI.RIGHT)))
-
+                    self._contains_point(geom.coord_up_left, bnds_ul) or
+                    self._contains_point(geom.coord_down_right, bnds_dr) or
+                    geom._contains_point(self.coord_up_left, bnds_ul) or
+                    geom._contains_point(self.coord_down_right, bnds_dr))
         else:
+            debug("aaaargh")
+            debug("type(geom) : " + str(type(geom)))
+            debug("CoordRect : " + str(CoordRect))
+            debug("isinstance : " + str(isinstance(geom, CoordRect)))
             raise Exception("type attendu : Coord ou CoordRect")
 
     def move(self, vector):
@@ -151,6 +161,11 @@ class CoordRect(object):
     def __str__(self):
         coord_size = Coord(x=self.w, y=self.h)
         return ", ".join((str(self.coord_up_left), str(coord_size)))
+
+    @staticmethod
+    def bounding_rect(rects):
+        # TODO : accepter des Coord, en plus des CoordRect.
+        for rect in rects
 
 
 def test():
@@ -191,6 +206,11 @@ def test():
     info(rect.intersects(CoordRect("1/, 2/, 1 2/, 2 1/")))
     info(rect.includes(CoordRect("1/, 2/, 12 2/, 2 1/")))
     info(rect.intersects(CoordRect("1/, 2/, 12 2/, 2 1/")))
+
+    try:
+        rect.intersects("hahaha")
+    except:
+        pass
 
     rect = CoordRect("-4, -5 1/, 1/, 2/")
     info(rect)
