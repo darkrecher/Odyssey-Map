@@ -9,7 +9,6 @@ ici : http://qgiscloud.com/Recher/odyssey_map
 
 ## TODO ##
 
- - texte détaillé des mers : carte et XP. (L'or, on verra plus tard).
  - pour les nombres de cartes : afficher des points d'interrogation au lieu des "-1"
  - regrouper les erreurs relevés dans twinpedia, et les corriger ou demander leur correction.
  - lister les îles incertaines pour cause de "même coordonnée". Essayer de connaître leur position précise. (Soit en demandant, soit en y allant soi-même).
@@ -44,7 +43,6 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - fonction d'agrégation pour l'or. afficher l'or pour chaque mer (total des îles, en séparant ruines et pas-ruines)
  - apparence de la carte :
     * quel texte s'affiche à quelle échelle, et à quelle taille.
-    * hachurage des îles selon leur difficulté (nombre d'XP).
     * même symbole mais avec une couleur différente, pour les PNJ, les autels, les héros, [les boss]
  - gros carré pour faire un fond, avec le lien vers github et mon blog.
  - annoncer sur le forum de twinoid.
@@ -64,6 +62,7 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - mettre les quêtes. une quête par répertoire de layer. avec un linéaire indiquant le chemin le plus court passant par tous les points de la quête. (Extraire manuellement les infos des quêtes à partir des indications du site help-odyssey)
  - possibilité de faire le plan détaillé d'une île : les chemins, les listes de monstres, ...
  - doc de conception du code.
+ - tous les TODO dans le code.
 
 ## FINI ##
 
@@ -82,3 +81,5 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - couche "mer texte" et "île texte", utilisant la même source de donnée que "mer" et "île", mais n'affichant quel es étiquettes. Comme ça on peut cacher uniquement les étiquettes.
  - carroyage.
  - ajouter les îles et mers qui sont mentionnées dans twinpedia, mais pas dans l'image de carte.
+ - texte détaillé des mers : carte et XP. (L'or, on verra plus tard).
+ - apparence : hachurage des mers selon leur difficulté (nombre d'XP).
