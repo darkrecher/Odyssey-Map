@@ -45,7 +45,9 @@ def _add_sea(sea, recher_api, layer):
             "identifier" : 12,
             "nom":unicode(sea.name),
             "carte_req":int(sea.maps_required),
-            "carte_tot":int(sea.maps_total)})
+            "carte_tot":int(sea.maps_total),
+            "xp_min":int(sea.xp_min),
+            "xp_max":int(sea.xp_max)})
 
 def _add_island(island, recher_api, layer):
     qgis_points = coords_qgis_from_odyssey(geom_tools.points_from_coord_rect(
@@ -55,10 +57,9 @@ def _add_island(island, recher_api, layer):
     recher_api.add_feature(
         layer,
         qgis_points,
-        # TODO : homégénéité des majuscules dans les noms de champs.
         {
             "identifier" : 13,
-            "Nom":unicode(island_name)})
+            "nom":unicode(island_name)})
 
 
 def populate():

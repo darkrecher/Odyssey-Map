@@ -64,7 +64,7 @@ class SeaTwinpedia(object):
 def _parse_sea_line(data_line):
     xp_min = 0
     xp_max = 0
-    nb_maps = 0
+    nb_maps = -1
     warning = ""
 
     if ("Mer" not in data_line and
