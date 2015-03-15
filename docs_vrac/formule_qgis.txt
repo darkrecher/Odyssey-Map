@@ -1,0 +1,31 @@
+# -----------------------
+# Affichage du texte des mers
+# -----------------------
+
+CASE WHEN $scale > 120000
+THEN
+
+    CASE WHEN left(nom, 4) = 'Mer '
+    THEN
+
+        CASE WHEN left(nom, 6) = 'Mer du'
+        THEN
+            right(nom, length(nom)-6)
+        ELSE
+            right(nom, length(nom)-4)
+        END
+
+    ELSE
+        nom
+    END
+
+ELSE
+
+    concat(
+        nom, '\n',
+        'cartes : ', carte_req, '/', carte_tot, '\n',
+        'xp : ', xp_min, '-', xp_max)
+
+END
+
+# -----------------------

@@ -15,7 +15,7 @@
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="ile20150225194559474" name="ile">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="mer20150225083919517" name="mer_texte">
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="mer20150225083919517" name="mer_texte_hachure_xp">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="mer_copier20150312000438644" name="mer">
@@ -26,10 +26,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-26796.09098054979403969</xmin>
-            <ymin>-15535.99814418819005368</ymin>
-            <xmax>37369.59805622269050218</xmax>
-            <ymax>19121.00806745408772258</ymax>
+            <xmin>-19810.46140208026918117</xmin>
+            <ymin>-15204.34950598407522193</ymin>
+            <xmax>29740.72353623325761873</xmax>
+            <ymax>11559.10850375082372921</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -89,8 +89,8 @@
                 <legendlayerfile isInOverview="0" layerid="ile20150225194559474" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="mer_texte" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="mer_texte_hachure_xp" showFeatureCount="0">
+            <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="mer20150225083919517" visible="1"/>
             </filegroup>
         </legendlayer>
@@ -328,10 +328,10 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
@@ -345,7 +345,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1.7e+07" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1.7e+07" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>ile20150225194559474</id>
             <datasource>./ile.shp</datasource>
             <title></title>
@@ -374,7 +374,7 @@
                 <edittype widgetv2type="TextEdit" name="identifier">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="Nom">
+                <edittype widgetv2type="TextEdit" name="nom">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -426,7 +426,7 @@
                 <property key="labeling/distMapUnitMaxScale" value="0"/>
                 <property key="labeling/distMapUnitMinScale" value="0"/>
                 <property key="labeling/enabled" value="false"/>
-                <property key="labeling/fieldName" value="Nom"/>
+                <property key="labeling/fieldName" value="identifier"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Ebrima"/>
@@ -579,7 +579,7 @@
                 <edittype widgetv2type="TextEdit" name="identifier">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="Nom">
+                <edittype widgetv2type="TextEdit" name="nom">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -613,7 +613,7 @@
                 <edittype widgetv2type="TextEdit" name="identifier">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="Nom">
+                <edittype widgetv2type="TextEdit" name="nom">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -665,7 +665,7 @@
                 <property key="labeling/distMapUnitMaxScale" value="0"/>
                 <property key="labeling/distMapUnitMinScale" value="0"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="Nom"/>
+                <property key="labeling/fieldName" value="nom"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Ebrima"/>
@@ -818,12 +818,12 @@
                 <edittype widgetv2type="TextEdit" name="identifier">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="Nom">
+                <edittype widgetv2type="TextEdit" name="nom">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>mer20150225083919517</id>
             <datasource>./mer.shp</datasource>
             <title></title>
@@ -831,7 +831,7 @@
             <keywordList>
                 <value></value>
             </keywordList>
-            <layername>mer_texte</layername>
+            <layername>mer_texte_hachure_xp</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
@@ -861,30 +861,251 @@
                 <edittype widgetv2type="TextEdit" name="carte_tot">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="or_tot">
+                <edittype widgetv2type="TextEdit" name="xp_min">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="xp_max">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
-            <renderer-v2 symbollevels="0" type="singleSymbol">
+            <renderer-v2 attr="(xp_min+xp_max)/2" symbollevels="0" type="graduatedSymbol">
+                <ranges>
+                    <range render="true" symbol="0" lower="0.000000" upper="45.200000" label=" 0 - 45 "/>
+                    <range render="true" symbol="1" lower="45.200000" upper="90.400000" label=" 45 - 90 "/>
+                    <range render="true" symbol="2" lower="90.400000" upper="135.600000" label=" 90 - 136 "/>
+                    <range render="true" symbol="3" lower="135.600000" upper="180.800000" label=" 136 - 181 "/>
+                    <range render="true" symbol="4" lower="180.800000" upper="226.000000" label=" 181 - 226 "/>
+                </ranges>
                 <symbols>
                     <symbol alpha="1" type="fill" name="0">
-                        <layer pass="0" class="SimpleFill" locked="0">
-                            <prop k="border_width_map_unit_scale" v="0,0"/>
-                            <prop k="color" v="92,79,56,255"/>
-                            <prop k="joinstyle" v="bevel"/>
-                            <prop k="offset" v="0,0"/>
+                        <layer pass="0" class="LinePatternFill" locked="0">
+                            <prop k="angle" v="45"/>
+                            <prop k="color" v="115,79,56,255"/>
+                            <prop k="distance" v="16"/>
+                            <prop k="distance_map_unit_scale" v="0,0"/>
+                            <prop k="distance_unit" v="MM"/>
+                            <prop k="line_width" v="0.26"/>
+                            <prop k="line_width_map_unit_scale" v="0,0"/>
+                            <prop k="line_width_unit" v="MM"/>
+                            <prop k="offset" v="0"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="0,0,0,255"/>
-                            <prop k="outline_style" v="no"/>
-                            <prop k="outline_width" v="0.26"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
-                            <prop k="style" v="no"/>
+                            <symbol alpha="1" type="line" name="@0@0">
+                                <layer pass="0" class="SimpleLine" locked="0">
+                                    <prop k="capstyle" v="square"/>
+                                    <prop k="customdash" v="5;2"/>
+                                    <prop k="customdash_map_unit_scale" v="0,0"/>
+                                    <prop k="customdash_unit" v="MM"/>
+                                    <prop k="draw_inside_polygon" v="0"/>
+                                    <prop k="joinstyle" v="bevel"/>
+                                    <prop k="line_color" v="115,79,56,255"/>
+                                    <prop k="line_style" v="solid"/>
+                                    <prop k="line_width" v="1.26"/>
+                                    <prop k="line_width_unit" v="MM"/>
+                                    <prop k="offset" v="0"/>
+                                    <prop k="offset_map_unit_scale" v="0,0"/>
+                                    <prop k="offset_unit" v="MM"/>
+                                    <prop k="use_custom_dash" v="0"/>
+                                    <prop k="width_map_unit_scale" v="0,0"/>
+                                </layer>
+                            </symbol>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="fill" name="1">
+                        <layer pass="0" class="LinePatternFill" locked="0">
+                            <prop k="angle" v="45"/>
+                            <prop k="color" v="133,79,56,255"/>
+                            <prop k="distance" v="16"/>
+                            <prop k="distance_map_unit_scale" v="0,0"/>
+                            <prop k="distance_unit" v="MM"/>
+                            <prop k="line_width" v="0.26"/>
+                            <prop k="line_width_map_unit_scale" v="0,0"/>
+                            <prop k="line_width_unit" v="MM"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <symbol alpha="1" type="line" name="@1@0">
+                                <layer pass="0" class="SimpleLine" locked="0">
+                                    <prop k="capstyle" v="square"/>
+                                    <prop k="customdash" v="5;2"/>
+                                    <prop k="customdash_map_unit_scale" v="0,0"/>
+                                    <prop k="customdash_unit" v="MM"/>
+                                    <prop k="draw_inside_polygon" v="0"/>
+                                    <prop k="joinstyle" v="bevel"/>
+                                    <prop k="line_color" v="133,79,56,255"/>
+                                    <prop k="line_style" v="solid"/>
+                                    <prop k="line_width" v="1.26"/>
+                                    <prop k="line_width_unit" v="MM"/>
+                                    <prop k="offset" v="0"/>
+                                    <prop k="offset_map_unit_scale" v="0,0"/>
+                                    <prop k="offset_unit" v="MM"/>
+                                    <prop k="use_custom_dash" v="0"/>
+                                    <prop k="width_map_unit_scale" v="0,0"/>
+                                </layer>
+                            </symbol>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="fill" name="2">
+                        <layer pass="0" class="LinePatternFill" locked="0">
+                            <prop k="angle" v="45"/>
+                            <prop k="color" v="151,79,56,255"/>
+                            <prop k="distance" v="16"/>
+                            <prop k="distance_map_unit_scale" v="0,0"/>
+                            <prop k="distance_unit" v="MM"/>
+                            <prop k="line_width" v="0.26"/>
+                            <prop k="line_width_map_unit_scale" v="0,0"/>
+                            <prop k="line_width_unit" v="MM"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <symbol alpha="1" type="line" name="@2@0">
+                                <layer pass="0" class="SimpleLine" locked="0">
+                                    <prop k="capstyle" v="square"/>
+                                    <prop k="customdash" v="5;2"/>
+                                    <prop k="customdash_map_unit_scale" v="0,0"/>
+                                    <prop k="customdash_unit" v="MM"/>
+                                    <prop k="draw_inside_polygon" v="0"/>
+                                    <prop k="joinstyle" v="bevel"/>
+                                    <prop k="line_color" v="151,79,56,255"/>
+                                    <prop k="line_style" v="solid"/>
+                                    <prop k="line_width" v="1.26"/>
+                                    <prop k="line_width_unit" v="MM"/>
+                                    <prop k="offset" v="0"/>
+                                    <prop k="offset_map_unit_scale" v="0,0"/>
+                                    <prop k="offset_unit" v="MM"/>
+                                    <prop k="use_custom_dash" v="0"/>
+                                    <prop k="width_map_unit_scale" v="0,0"/>
+                                </layer>
+                            </symbol>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="fill" name="3">
+                        <layer pass="0" class="LinePatternFill" locked="0">
+                            <prop k="angle" v="45"/>
+                            <prop k="color" v="169,79,56,255"/>
+                            <prop k="distance" v="16"/>
+                            <prop k="distance_map_unit_scale" v="0,0"/>
+                            <prop k="distance_unit" v="MM"/>
+                            <prop k="line_width" v="0.26"/>
+                            <prop k="line_width_map_unit_scale" v="0,0"/>
+                            <prop k="line_width_unit" v="MM"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <symbol alpha="1" type="line" name="@3@0">
+                                <layer pass="0" class="SimpleLine" locked="0">
+                                    <prop k="capstyle" v="square"/>
+                                    <prop k="customdash" v="5;2"/>
+                                    <prop k="customdash_map_unit_scale" v="0,0"/>
+                                    <prop k="customdash_unit" v="MM"/>
+                                    <prop k="draw_inside_polygon" v="0"/>
+                                    <prop k="joinstyle" v="bevel"/>
+                                    <prop k="line_color" v="169,79,56,255"/>
+                                    <prop k="line_style" v="solid"/>
+                                    <prop k="line_width" v="1.26"/>
+                                    <prop k="line_width_unit" v="MM"/>
+                                    <prop k="offset" v="0"/>
+                                    <prop k="offset_map_unit_scale" v="0,0"/>
+                                    <prop k="offset_unit" v="MM"/>
+                                    <prop k="use_custom_dash" v="0"/>
+                                    <prop k="width_map_unit_scale" v="0,0"/>
+                                </layer>
+                            </symbol>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="fill" name="4">
+                        <layer pass="0" class="LinePatternFill" locked="0">
+                            <prop k="angle" v="45"/>
+                            <prop k="color" v="188,79,56,255"/>
+                            <prop k="distance" v="16"/>
+                            <prop k="distance_map_unit_scale" v="0,0"/>
+                            <prop k="distance_unit" v="MM"/>
+                            <prop k="line_width" v="0.26"/>
+                            <prop k="line_width_map_unit_scale" v="0,0"/>
+                            <prop k="line_width_unit" v="MM"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <symbol alpha="1" type="line" name="@4@0">
+                                <layer pass="0" class="SimpleLine" locked="0">
+                                    <prop k="capstyle" v="square"/>
+                                    <prop k="customdash" v="5;2"/>
+                                    <prop k="customdash_map_unit_scale" v="0,0"/>
+                                    <prop k="customdash_unit" v="MM"/>
+                                    <prop k="draw_inside_polygon" v="0"/>
+                                    <prop k="joinstyle" v="bevel"/>
+                                    <prop k="line_color" v="188,79,56,255"/>
+                                    <prop k="line_style" v="solid"/>
+                                    <prop k="line_width" v="1.26"/>
+                                    <prop k="line_width_unit" v="MM"/>
+                                    <prop k="offset" v="0"/>
+                                    <prop k="offset_map_unit_scale" v="0,0"/>
+                                    <prop k="offset_unit" v="MM"/>
+                                    <prop k="use_custom_dash" v="0"/>
+                                    <prop k="width_map_unit_scale" v="0,0"/>
+                                </layer>
+                            </symbol>
                         </layer>
                     </symbol>
                 </symbols>
+                <source-symbol>
+                    <symbol alpha="1" type="fill" name="0">
+                        <layer pass="0" class="LinePatternFill" locked="0">
+                            <prop k="angle" v="45"/>
+                            <prop k="color" v="77,197,77,255"/>
+                            <prop k="distance" v="16"/>
+                            <prop k="distance_map_unit_scale" v="0,0"/>
+                            <prop k="distance_unit" v="MM"/>
+                            <prop k="line_width" v="0.26"/>
+                            <prop k="line_width_map_unit_scale" v="0,0"/>
+                            <prop k="line_width_unit" v="MM"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <symbol alpha="1" type="line" name="@0@0">
+                                <layer pass="0" class="SimpleLine" locked="0">
+                                    <prop k="capstyle" v="square"/>
+                                    <prop k="customdash" v="5;2"/>
+                                    <prop k="customdash_map_unit_scale" v="0,0"/>
+                                    <prop k="customdash_unit" v="MM"/>
+                                    <prop k="draw_inside_polygon" v="0"/>
+                                    <prop k="joinstyle" v="bevel"/>
+                                    <prop k="line_color" v="77,197,77,255"/>
+                                    <prop k="line_style" v="solid"/>
+                                    <prop k="line_width" v="1.26"/>
+                                    <prop k="line_width_unit" v="MM"/>
+                                    <prop k="offset" v="0"/>
+                                    <prop k="offset_map_unit_scale" v="0,0"/>
+                                    <prop k="offset_unit" v="MM"/>
+                                    <prop k="use_custom_dash" v="0"/>
+                                    <prop k="width_map_unit_scale" v="0,0"/>
+                                </layer>
+                            </symbol>
+                        </layer>
+                    </symbol>
+                </source-symbol>
+                <colorramp type="gradient" name="[source]">
+                    <prop k="color1" v="115,79,56,255"/>
+                    <prop k="color2" v="188,79,56,255"/>
+                    <prop k="discrete" v="0"/>
+                </colorramp>
+                <invertedcolorramp value="0"/>
+                <mode name="equal"/>
                 <rotation/>
                 <sizescale scalemethod="area"/>
+                <labelformat format=" %1 - %2 " trimtrailingzeroes="false" decimalplaces="0"/>
             </renderer-v2>
             <customproperties>
                 <property key="labeling" value="pal"/>
@@ -913,7 +1134,7 @@
                 <property key="labeling/distMapUnitMaxScale" value="0"/>
                 <property key="labeling/distMapUnitMinScale" value="0"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="CASE WHEN $scale > 120000&#xd;&#xa;THEN &#xd;&#xa;    nom&#xd;&#xa;ELSE &#xd;&#xa;    concat(&#xd;&#xa;        nom, '\n', &#xd;&#xa;        'cartes : ', carte_req, '/', carte_tot, '\n',&#xd;&#xa;    &#x9;'or : ', or_tot)&#xd;&#xa;END"/>
+                <property key="labeling/fieldName" value="CASE WHEN $scale > 120000&#xd;&#xa;THEN &#xd;&#xa;&#xd;&#xa;    CASE WHEN left(nom, 4) = 'Mer ' &#xd;&#xa;&#x9;THEN &#xd;&#xa;&#x9;&#xd;&#xa;        CASE WHEN left(nom, 6) = 'Mer du' &#xd;&#xa;&#x9;    THEN &#xd;&#xa;&#x9;        right(nom, length(nom)-6) &#xd;&#xa;&#x9;    ELSE &#xd;&#xa;&#x9;        right(nom, length(nom)-4) &#xd;&#xa;&#x9;    END&#xd;&#xa;&#x9;&#xd;&#xa;&#x9;ELSE &#xd;&#xa;&#x9;    nom &#xd;&#xa;&#x9;END&#xd;&#xa;&#x9;&#xd;&#xa;ELSE &#xd;&#xa;&#xd;&#xa;    concat(&#xd;&#xa;        nom, '\n', &#xd;&#xa;        'cartes : ', carte_req, '/', carte_tot, '\n',&#xd;&#xa;&#x9;&#x9;'xp : ', xp_min, '-', xp_max)&#xd;&#xa;&#x9;&#x9;&#xd;&#xa;END"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Ebrima"/>
@@ -1031,7 +1252,7 @@
             </customproperties>
             <blendMode>0</blendMode>
             <featureBlendMode>0</featureBlendMode>
-            <layerTransparency>0</layerTransparency>
+            <layerTransparency>28</layerTransparency>
             <displayfield>identifier</displayfield>
             <label>0</label>
             <labelattributes>
@@ -1075,7 +1296,10 @@
                 <edittype widgetv2type="TextEdit" name="carte_tot">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="or_tot">
+                <edittype widgetv2type="TextEdit" name="xp_min">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="xp_max">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -1118,7 +1342,10 @@
                 <edittype widgetv2type="TextEdit" name="carte_tot">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="or_tot">
+                <edittype widgetv2type="TextEdit" name="xp_min">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="xp_max">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -1333,12 +1560,15 @@
                 <edittype widgetv2type="TextEdit" name="carte_tot">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="or_tot">
+                <edittype widgetv2type="TextEdit" name="xp_min">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="xp_max">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>ruines20150226002220285</id>
             <datasource>./ruines.shp</datasource>
             <title></title>
@@ -1379,13 +1609,13 @@
                     <symbol alpha="1" type="marker" name="0">
                         <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="color" v="#000000"/>
+                            <prop k="color" v="#1f78b4"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="gnap.svg"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="#000000"/>
+                            <prop k="outline_color" v="#fb9a99"/>
                             <prop k="outline_width" v="1"/>
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
