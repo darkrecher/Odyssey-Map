@@ -9,6 +9,7 @@ ici : http://qgiscloud.com/Recher/odyssey_map
 
 ## TODO ##
 
+ - incrémenter le champ "identifier" lors de la création des objets.
  - pour les nombres de cartes : afficher des points d'interrogation au lieu des "-1"
  - regrouper les erreurs relevés dans twinpedia, et les corriger ou demander leur correction.
  - lister les îles incertaines pour cause de "même coordonnée". Essayer de connaître leur position précise. (Soit en demandant, soit en y allant soi-même).

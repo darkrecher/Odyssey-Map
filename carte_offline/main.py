@@ -38,7 +38,7 @@ def test_reader_twinpedia():
 
 def test_data_merger():
     import my_scripts.data_merger
-    my_scripts.data_merger.test()
+    my_scripts.data_merger.test(2)
 
 def test_qgis_recher_api():
     import my_scripts.qgis_recher_api

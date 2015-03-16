@@ -156,12 +156,6 @@ class Coord(object):
             STRINGED_THIRD = { 0:"", 1:".333", 2:".666", 3:""}
             return "".join((sign, str(abs(int_part)), STRINGED_THIRD[third]))
 
-    def __str__(self):
-        return ", ".join((
-            self._as_notation_recher(self.x),
-            self._as_notation_recher(self.y)
-        ))
-
     def as_notation_odyssey(self):
         return "".join((
             self._as_notation_odyssey(self.x),
@@ -169,6 +163,21 @@ class Coord(object):
             self._as_notation_odyssey(self.y),
             "'"
         ))
+
+    def __str__(self):
+        return ", ".join((
+            self._as_notation_recher(self.x),
+            self._as_notation_recher(self.y)
+        ))
+
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+    def __hash__(self):
+        return hash((self.x, self.y))
 
 
 def test():

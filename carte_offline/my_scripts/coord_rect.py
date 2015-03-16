@@ -171,6 +171,19 @@ class CoordRect(object):
         coord_size = Coord(x=self.w, y=self.h)
         return ", ".join((str(self.coord_up_left), str(coord_size)))
 
+    def __eq__(self, other):
+        return (
+            self.x == other.x and
+            self.y == other.y and
+            self.w == other.w and
+            self.h == other.h)
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+    def __hash__(self):
+        return hash((self.x, self.y, self.w, self.h))
+
     @staticmethod
     def bounding_rect(rects):
         # TODO : accepter des Coord, en plus des CoordRect.

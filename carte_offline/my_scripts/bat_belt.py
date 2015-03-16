@@ -13,6 +13,8 @@ from __future__ import (unicode_literals, absolute_import,
 
 
 def join_unicode(*param):
+    # TODO : bon, c'est pas pratique comme truc, parce qu'on peut pas définir
+    # le séparateur. Faut qu'on voye.
     param_unicoded = [ unicode(p) for p in param ]
     return "".join(param_unicoded)
 

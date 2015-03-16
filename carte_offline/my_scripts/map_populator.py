@@ -19,6 +19,7 @@ from . import geom_tools
 reload(geom_tools)
 
 # TODO : ce sera mieux avec une classe. Pour stocker les layer et l'api.
+# et incrémenter les identifieurs.
 
 def coords_qgis_from_odyssey(points):
     """
