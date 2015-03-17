@@ -23,7 +23,7 @@ class PointOfInterest(object):
     qui sont positionnés au même endroit.
     """
 
-    def __init__(self, kind, attributes):
+    def __init__(self, kind, attributes={}):
         self.kind = kind
         self.attributes = attributes
         self.pos = None

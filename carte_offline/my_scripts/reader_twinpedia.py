@@ -186,6 +186,7 @@ def parse_islands_and_seas(data=twinpedia.ISLANDS_AND_SEAS):
     seas = []
     current_sea = None
 
+    # mettre dans un itérateur générique le split, le strip et le check != ""
     for data_line in data.split("\n"):
         data_line = data_line.strip()
         if data_line != "":
@@ -218,12 +219,29 @@ def parse_islands_and_seas(data=twinpedia.ISLANDS_AND_SEAS):
 
     return _manual_correction_after(seas)
 
+def parse_temples(data=twinpedia.TEMPLES):
+
+    temple_coords = []
+    for data_line in data.split("\n"):
+        data_line = data_line.strip()
+        if data_line != "":
+            before, coord, after = Coord.partition_odyssey_coord(data_line)
+            if before.strip() != "":
+                raise Exception("ligne de temple mal foutue : " + data_line)
+            if after.strip() != "":
+                raise Exception("ligne de temple mal foutue : " + data_line)
+            temple_coords.append(Coord(odyssey_n=coord))
+    return temple_coords
+
 
 def test():
     seas = parse_islands_and_seas()
     for sea in seas:
         info(unicode(sea))
         info("-" * 10)
+    temple_coords = parse_temples()
+    for coord in temple_coords:
+        info(unicode(coord))
 
 if __name__ == "__main__":
     test()

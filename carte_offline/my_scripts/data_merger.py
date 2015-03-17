@@ -155,7 +155,7 @@ class DataMerger(object):
         #   coordonnée, mais on ne sait pas exactement où, ni dans quelle île.
         #   les POI qu'on sait où placer ne sont pas dans ce dictionnaire,
         #   mais dans l'île elle-même.
-        self.poi_unplaced = collections.defaultdict(list)
+        self.pois_unplaced = collections.defaultdict(list)
 
     def _twinpedia_candidates_of_island_img(self, seas_twinpedia, island_img):
         twinpedia_candidates = []
@@ -370,21 +370,29 @@ class DataMerger(object):
         self.seas = seas_ok
 
     def _spread_poi_coords(self):
-        # TODO : répartir les points dans les rectangle englobant.
-        for raw_coord, pois in self.poi_unplaced.items():
+        # TODO : répartir les points dans les rectangles englobant.
+        for raw_coord, pois in self.pois_unplaced.items():
+            raw_coord_middle = Coord(
+                x=raw_coord.x + Fraction(1, 2),
+                y=raw_coord.y + Fraction(1, 2))
             for poi in pois:
-                poi.pos = raw_coord
+                poi.pos = raw_coord_middle
+
 
 def build_data():
     seas_twinpedia = reader_twinpedia.parse_islands_and_seas()
     seas_img = reader_data_from_img.parse_data_from_img()
     data_merger = DataMerger(seas_twinpedia, seas_img)
-    seas = data_merger.seas
-    return seas
+    temple_coords = reader_twinpedia.parse_temples()
+    for coord in temple_coords:
+        poi = PointOfInterest("temple")
+        data_merger.pois_unplaced[coord].append(poi)
+    data_merger._spread_poi_coords()
+    return data_merger.seas, data_merger.pois_unplaced
 
 
 def test_0():
-    seas = build_data()
+    seas, pois_unplaced = build_data()
     for sea in seas:
         info(unicode(sea))
         info("-" * 10)
@@ -414,14 +422,14 @@ def test_2():
     seas_twinpedia = reader_twinpedia.parse_islands_and_seas()
     seas_img = reader_data_from_img.parse_data_from_img()
     data_merger = DataMerger(seas_twinpedia, seas_img)
-    data_merger.poi_unplaced[Coord(x=1, y=1)].append(
+    data_merger.pois_unplaced[Coord(x=1, y=1)].append(
         PointOfInterest("ruines", {}))
-    data_merger.poi_unplaced[Coord(x=1, y=2)].append(
+    data_merger.pois_unplaced[Coord(x=1, y=2)].append(
         PointOfInterest("temple", {}))
-    data_merger.poi_unplaced[Coord(x=1, y=1)].append(
+    data_merger.pois_unplaced[Coord(x=1, y=1)].append(
         PointOfInterest("ruines", {}))
     data_merger._spread_poi_coords()
-    for k, v in data_merger.poi_unplaced.items():
+    for k, v in data_merger.pois_unplaced.items():
         info(unicode(k))
         info(" ; ".join( (unicode(elem) for elem in v) ))
         info("--------")

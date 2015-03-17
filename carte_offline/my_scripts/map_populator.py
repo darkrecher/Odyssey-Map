@@ -54,29 +54,49 @@ def _add_island(island, recher_api, layer):
     qgis_points = coords_qgis_from_odyssey(geom_tools.points_from_coord_rect(
         island.coord_rect,
         not island.geom_ok))
-    island_name = island.name
     recher_api.add_feature(
         layer,
         qgis_points,
         {
             "identifier" : 13,
-            "nom":unicode(island_name)})
+            "nom":unicode(island.name)})
 
+def _layer_of_poi(poi, recher_api):
+    layer_name = poi.kind
+    return recher_api.layers[layer_name]
 
-def populate():
+def _add_poi(poi, recher_api, layer):
+    qgis_points = coords_qgis_from_odyssey( [ (poi.pos.x, poi.pos.y) ] )
+    attributes = dict(poi.attributes)
+    attributes["identifier"] = 14
+    recher_api.add_feature(layer, qgis_points, attributes)
+
+def populate(add_seas_islands=False, add_pois=False):
 
     recher_api = QgisRecherApi()
-    layer_mer = recher_api.layers["mer"]
-    layer_ile = recher_api.layers["ile"]
-    seas = data_merger.build_data()
-    recher_api.delete_all_features(layer_mer)
-    recher_api.delete_all_features(layer_ile)
+    seas, pois_unplaced = data_merger.build_data()
 
-    for sea in seas:
-        _add_sea(sea, recher_api, layer_mer)
-        for island in sea.islands:
-            _add_island(island, recher_api, layer_ile)
+    if add_seas_islands:
+        layer_mer = recher_api.layers["mer"]
+        layer_ile = recher_api.layers["ile"]
+        recher_api.delete_all_features(layer_mer)
+        recher_api.delete_all_features(layer_ile)
+        for sea in seas:
+            _add_sea(sea, recher_api, layer_mer)
+            for island in sea.islands:
+                _add_island(island, recher_api, layer_ile)
 
+    if add_pois:
+        layers_cleaned = []
+        # TODO : demander à la fonction build_data de balancer les poi
+        # sous forme d'une liste simple.
+        for raw_coord, pois_in_coord in pois_unplaced.items():
+            for poi in pois_in_coord:
+                layer = _layer_of_poi(poi, recher_api)
+                if layer not in layers_cleaned:
+                    recher_api.delete_all_features(layer)
+                    layers_cleaned.append(layer)
+                _add_poi(poi, recher_api, layer)
 
 def test():
     pass
