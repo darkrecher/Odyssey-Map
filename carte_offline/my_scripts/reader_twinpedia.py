@@ -181,67 +181,90 @@ def _manual_correction_after(seas):
         sea_magaos.islands.append(island_forgotten)
     return seas
 
+def iterate_not_empty_lines(data):
+    # FUTURE : le jour où on aura un split qui renvoie un générateur,
+    # faudra l'utiliser.
+    for data_line in data.split("\n"):
+        data_line = data_line.strip()
+        if data_line != "":
+            yield data_line
+
 def parse_islands_and_seas(data=twinpedia.ISLANDS_AND_SEAS):
 
     seas = []
     current_sea = None
 
-    # mettre dans un itérateur générique le split, le strip et le check != ""
-    for data_line in data.split("\n"):
-        data_line = data_line.strip()
-        if data_line != "":
-            data_line = _manual_correction_before(data_line)
-            before, coord, after = Coord.partition_odyssey_coord(data_line)
+    for data_line in iterate_not_empty_lines(data):
+        data_line = _manual_correction_before(data_line)
+        before, coord, after = Coord.partition_odyssey_coord(data_line)
 
-            if coord == "":
-                new_sea = _parse_sea_line(data_line)
-                if new_sea is None:
-                    # TODO : si on a une ligne pourrie, ça peut provoquer
-                    # des incertitudes sur l'ensemble de la mer en cours
-                    # (notammente le nombre total de cartes).
-                    info("Mer incorrecte (à moins que ce soit une île) :")
-                    info(data_line)
-                    info("-" * 10)
-                else:
-                    if current_sea is not None:
-                        seas.append(current_sea)
-                    current_sea = new_sea
-
+        if coord == "":
+            new_sea = _parse_sea_line(data_line)
+            if new_sea is None:
+                # TODO : si on a une ligne pourrie, ça peut provoquer
+                # des incertitudes sur l'ensemble de la mer en cours
+                # (notammente le nombre total de cartes).
+                info("Mer incorrecte (à moins que ce soit une île) :")
+                info(data_line)
+                info("-" * 10)
             else:
-                if current_sea is None: raise Exception("fail current sea")
-                new_island = _parse_island_line(before, coord, after)
-                if new_island is None:
-                    info("Île incorrecte :")
-                    info(data_line)
-                    info("-" * 10)
-                else:
-                    current_sea.islands.append(new_island)
+                if current_sea is not None:
+                    seas.append(current_sea)
+                current_sea = new_sea
+
+        else:
+            if current_sea is None: raise Exception("fail current sea")
+            new_island = _parse_island_line(before, coord, after)
+            if new_island is None:
+                info("Île incorrecte :")
+                info(data_line)
+                info("-" * 10)
+            else:
+                current_sea.islands.append(new_island)
 
     return _manual_correction_after(seas)
 
 def parse_temples(data=twinpedia.TEMPLES):
-
     temple_coords = []
-    for data_line in data.split("\n"):
-        data_line = data_line.strip()
-        if data_line != "":
-            before, coord, after = Coord.partition_odyssey_coord(data_line)
-            if before.strip() != "":
-                raise Exception("ligne de temple mal foutue : " + data_line)
-            if after.strip() != "":
-                raise Exception("ligne de temple mal foutue : " + data_line)
-            temple_coords.append(Coord(odyssey_n=coord))
+    for data_line in iterate_not_empty_lines(data):
+        before, coord, after = Coord.partition_odyssey_coord(data_line)
+        if before.strip() != "":
+            raise Exception("ligne de temple mal foutue : " + data_line)
+        if after.strip() != "":
+            raise Exception("ligne de temple mal foutue : " + data_line)
+        temple_coords.append(Coord(odyssey_n=coord))
     return temple_coords
 
+def parse_ruins(data=twinpedia.RUINS):
+    ruin_data = []
+    for data_line in iterate_not_empty_lines(data):
+        if "Nom de l'ile" in data and "Gain en or" in data_line:
+            # C'est une ligne d'en-tête. On s'en fout.
+            pass
+        else:
+            before, coord, after = Coord.partition_odyssey_coord(data_line)
+            if before.strip() != "":
+                raise Exception("ligne de 'ruine' mal foutue : " + data_line)
+            # TODO : décomposer la description pour récupérer les attributs.
+            description, gold, monsters = after.partition(" or ")
+            description += gold
+            description = description.strip()
+            ruin_data.append( (Coord(odyssey_n=coord), description, monsters) )
+    return ruin_data
 
 def test():
     seas = parse_islands_and_seas()
     for sea in seas:
         info(unicode(sea))
         info("-" * 10)
+    info("*" * 20)
     temple_coords = parse_temples()
     for coord in temple_coords:
         info(unicode(coord))
+    info("*" * 20)
+    ruin_data = parse_ruins()
+    for coord, description in ruin_data:
+        info(unicode(coord) + " : " + description)
 
 if __name__ == "__main__":
     test()

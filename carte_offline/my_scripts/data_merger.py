@@ -383,10 +383,19 @@ def build_data():
     seas_twinpedia = reader_twinpedia.parse_islands_and_seas()
     seas_img = reader_data_from_img.parse_data_from_img()
     data_merger = DataMerger(seas_twinpedia, seas_img)
+
     temple_coords = reader_twinpedia.parse_temples()
     for coord in temple_coords:
         poi = PointOfInterest("temple")
         data_merger.pois_unplaced[coord].append(poi)
+
+    ruin_data = reader_twinpedia.parse_ruins()
+    for coord, description, monsters in ruin_data:
+        poi = PointOfInterest(
+            "ruine",
+            {"descrip":description, "monstres":monsters})
+        data_merger.pois_unplaced[coord].append(poi)
+
     data_merger._spread_poi_coords()
     return data_merger.seas, data_merger.pois_unplaced
 
