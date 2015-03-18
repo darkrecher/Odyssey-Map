@@ -32,10 +32,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-31481.75196402229630621</xmin>
-            <ymin>-20967.99381198567061801</ymin>
-            <xmax>33778.59486596687202109</xmax>
-            <ymax>25683.20790424060760415</ymax>
+            <xmin>-38682.31330238289228873</xmin>
+            <ymin>-32816.98704680500668474</ymin>
+            <xmax>47267.45507696881395532</xmax>
+            <ymax>28623.99782221041823504</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -2120,7 +2120,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>temple20150315162702124</id>
             <datasource>./temple.shp</datasource>
             <title></title>
@@ -2153,32 +2153,74 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
-            <renderer-v2 symbollevels="0" type="singleSymbol">
+            <renderer-v2 symbollevels="0" type="RuleRenderer">
+                <rules key="{888fd6d5-c63f-4cfd-acb9-453cc285849a}">
+                    <rule key="{66ae054b-6240-4b7d-8769-4c6a27674beb}" symbol="0" scalemindenom="100000"/>
+                    <rule scalemaxdenom="100000" key="{984ace7c-1f2b-4e98-b095-4ba9caef5efa}" symbol="1" scalemindenom="50000"/>
+                    <rule scalemaxdenom="50000" key="{984ace7c-1f2b-4e98-b095-4ba9caef5efa}" symbol="2"/>
+                </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
-                        <layer pass="0" class="SimpleMarker" locked="0">
+                        <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="color" v="169,232,182,255"/>
+                            <prop k="color" v="#000000"/>
                             <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="circle"/>
-                            <prop k="offset" v="0,0"/>
+                            <prop k="name" v="temple.svg"/>
+                            <prop k="offset" v="0,-2.6"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="0,0,0,255"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_color" v="#000000"/>
+                            <prop k="outline_width" v="1"/>
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
+                            <prop k="size" v="10"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="1">
+                        <layer pass="0" class="SvgMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="#000000"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="temple.svg"/>
+                            <prop k="offset" v="0,-2.6"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="#000000"/>
+                            <prop k="outline_width" v="1"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="12.5"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="2">
+                        <layer pass="0" class="SvgMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="#000000"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="temple.svg"/>
+                            <prop k="offset" v="0,-2.6"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="#000000"/>
+                            <prop k="outline_width" v="1"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="20"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
                     </symbol>
                 </symbols>
-                <rotation/>
-                <sizescale scalemethod="area"/>
             </renderer-v2>
             <customproperties>
                 <property key="labeling" value="pal"/>

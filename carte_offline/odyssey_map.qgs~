@@ -21,7 +21,7 @@
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="mer20150225083919517" name="mer_hachure_xp">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="mer_texte_hachure_xp_copier20150317212851191" name="mer_texte">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="mer_texte_hachure_xp_copier20150317212851191" name="mer_texte">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="mer_copier20150312000438644" name="mer">
@@ -32,10 +32,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-31481.75196402229630621</xmin>
-            <ymin>-20967.99381198567061801</ymin>
-            <xmax>33778.59486596687202109</xmax>
-            <ymax>25683.20790424060760415</ymax>
+            <xmin>-32720.18196891475236043</xmin>
+            <ymin>-21622.96992303776278277</ymin>
+            <xmax>53229.58641043695388362</xmax>
+            <ymax>25028.23179318852999131</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -109,9 +109,9 @@
                 <legendlayerfile isInOverview="0" layerid="mer20150225083919517" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="mer_texte" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="mer_texte" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="mer_texte_hachure_xp_copier20150317212851191" visible="0"/>
+                <legendlayerfile isInOverview="0" layerid="mer_texte_hachure_xp_copier20150317212851191" visible="1"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="mer" showFeatureCount="0">
