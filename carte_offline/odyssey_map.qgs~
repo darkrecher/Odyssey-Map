@@ -1,41 +1,50 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
 <qgis projectname="" version="2.6.1-Brighton">
     <title></title>
-    <layer-tree-group expanded="1" checked="Qt::Checked" name="">
+    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
         <customproperties/>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="ruines20150226002220285" name="ruine">
+        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="lieux_interessants">
             <customproperties/>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="temple20150315162702124" name="temple">
-            <customproperties/>
-        </layer-tree-layer>
+            <layer-tree-layer expanded="0" checked="Qt::Checked" id="temple20150315162702124" name="temple">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ruines20150226002220285" name="ruine">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="grid20150314004346549" name="carroyage">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="ile_copier20150313234430084" name="ile_texte">
+        <layer-tree-group expanded="1" checked="Qt::Checked" name="ile">
             <customproperties/>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="ile20150225194559474" name="ile">
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="ile_copier20150313234430084" name="ile_texte">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="ile20150225194559474" name="ile_pos">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+        <layer-tree-group expanded="1" checked="Qt::Checked" name="mer">
             <customproperties/>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="mer20150225083919517" name="mer_hachure_xp">
-            <customproperties/>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="mer_texte_hachure_xp_copier20150317212851191" name="mer_texte">
-            <customproperties/>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="mer_copier20150312000438644" name="mer">
-            <customproperties/>
-        </layer-tree-layer>
+            <layer-tree-layer expanded="0" checked="Qt::Checked" id="mer20150225083919517" name="mer_hachure_xp">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="mer_texte_hachure_xp_copier20150317212851191" name="mer_texte">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="mer_copier20150312000438644" name="mer_pos">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
     </layer-tree-group>
     <relations/>
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-14628.91105035654254607</xmin>
-            <ymin>-6957.9044476286162535</ymin>
-            <xmax>9941.91759064919097</xmax>
-            <ymax>6378.47451976092634141</ymax>
+            <xmin>-41051.00787682648660848</xmin>
+            <ymin>-30559.30880228201931459</ymin>
+            <xmax>57232.30668719653476728</xmax>
+            <ymax>39698.28184476295427885</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -79,46 +88,52 @@
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ruine" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="ruines20150226002220285" visible="1"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="temple" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="temple20150315162702124" visible="1"/>
-            </filegroup>
-        </legendlayer>
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="lieux_interessants">
+            <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="temple" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="temple20150315162702124" visible="1"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ruine" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="ruines20150226002220285" visible="0"/>
+                </filegroup>
+            </legendlayer>
+        </legendgroup>
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="carroyage" showFeatureCount="0">
             <filegroup open="true" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="grid20150314004346549" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ile_texte" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="ile_copier20150313234430084" visible="1"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ile" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="ile20150225194559474" visible="1"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="mer_hachure_xp" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="mer20150225083919517" visible="1"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="mer_texte" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="mer_texte_hachure_xp_copier20150317212851191" visible="1"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="mer" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="mer_copier20150312000438644" visible="1"/>
-            </filegroup>
-        </legendlayer>
+        <legendgroup open="true" checked="Qt::Checked" name="ile">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ile_texte" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="ile_copier20150313234430084" visible="1"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ile_pos" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="ile20150225194559474" visible="1"/>
+                </filegroup>
+            </legendlayer>
+        </legendgroup>
+        <legendgroup open="true" checked="Qt::Checked" name="mer">
+            <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="mer_hachure_xp" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="mer20150225083919517" visible="1"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="mer_texte" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="mer_texte_hachure_xp_copier20150317212851191" visible="1"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="mer_pos" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="mer_copier20150312000438644" visible="1"/>
+                </filegroup>
+            </legendlayer>
+        </legendgroup>
     </legend>
     <projectlayers layercount="8">
         <maplayer minimumScale="-4.65661e-10" maximumScale="600000" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
@@ -373,7 +388,7 @@
             <keywordList>
                 <value></value>
             </keywordList>
-            <layername>ile</layername>
+            <layername>ile_pos</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
@@ -1332,7 +1347,7 @@
             <keywordList>
                 <value></value>
             </keywordList>
-            <layername>mer</layername>
+            <layername>mer_pos</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=eqc +lat_ts=60 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
@@ -2446,6 +2461,7 @@
                 <value>ile_copier20150313234430084</value>
                 <value>mer20150225083919517</value>
                 <value>mer_copier20150312000438644</value>
+                <value>mer_texte_hachure_xp_copier20150317212851191</value>
                 <value>ruines20150226002220285</value>
                 <value>temple20150315162702124</value>
             </LayerSnappingList>
@@ -2457,9 +2473,11 @@
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
+                <value>disabled</value>
             </LayerSnappingEnabledList>
             <AvoidIntersectionsList type="QStringList"/>
             <LayerSnappingToleranceUnitList type="QStringList">
+                <value>0</value>
                 <value>0</value>
                 <value>0</value>
                 <value>0</value>
@@ -2476,8 +2494,10 @@
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
             </LayerSnapToList>
             <LayerSnappingToleranceList type="QStringList">
+                <value>0.000000</value>
                 <value>0.000000</value>
                 <value>0.000000</value>
                 <value>0.000000</value>
