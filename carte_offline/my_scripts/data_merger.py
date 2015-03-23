@@ -403,11 +403,28 @@ def build_data():
         poi = PointOfInterest("lieu__fontaine")
         data_merger.pois_unplaced[coord].append(poi)
 
+    pot_distillers_coords = reader_twinpedia.parse_potion_distillers()
+    for coord in pot_distillers_coords:
+        poi = PointOfInterest("lieu__distillateur")
+        data_merger.pois_unplaced[coord].append(poi)
+
+    food_bags_coords = reader_twinpedia.parse_food_bags()
+    for coord in food_bags_coords:
+        poi = PointOfInterest("lieu__sac_nourriture")
+        data_merger.pois_unplaced[coord].append(poi)
+
     ruin_data = reader_twinpedia.parse_ruins()
     for coord, description, monsters in ruin_data:
         poi = PointOfInterest(
             "lieu__ruines",
             {"descrip":description, "monstres":monsters})
+        data_merger.pois_unplaced[coord].append(poi)
+
+    inn_data = reader_twinpedia.parse_inns()
+    for coord, cost in inn_data:
+        poi = PointOfInterest(
+            "lieu__auberge",
+            {"prix":cost})
         data_merger.pois_unplaced[coord].append(poi)
 
     data_merger._spread_poi_coords()

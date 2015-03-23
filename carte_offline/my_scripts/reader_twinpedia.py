@@ -10,6 +10,7 @@ from __future__ import (unicode_literals, absolute_import,
                         print_function, division)
 import logging
 info = logging.info
+debug = logging.debug
 
 from . import bat_belt
 reload(bat_belt)
@@ -244,6 +245,12 @@ def parse_libraries(data=twinpedia.LIBRARIES):
 def parse_fountains(data=twinpedia.FOUNTAINS):
     return _parse_coords_only(data)
 
+def parse_potion_distillers(data=twinpedia.POTION_DISTILLERS):
+    return _parse_coords_only(data)
+
+def parse_food_bags(data=twinpedia.FOOD_BAGS):
+    return _parse_coords_only(data)
+
 def parse_ruins(data=twinpedia.RUINS):
     ruin_data = []
     for data_line in iterate_not_empty_lines(data):
@@ -261,6 +268,23 @@ def parse_ruins(data=twinpedia.RUINS):
             ruin_data.append( (Coord(odyssey_n=coord), description, monsters) )
     return ruin_data
 
+def parse_inns(data=twinpedia.INNS):
+    inn_data = []
+    for data_line in iterate_not_empty_lines(data):
+        before, coord, after = Coord.partition_odyssey_coord(data_line)
+        if before.strip() != "":
+            raise Exception("ligne de 'auberge' mal foutue : " + data_line)
+        after = after.strip()
+        after = after.lstrip("-")
+        after = after.lstrip()
+        cost, space, _ = after.partition(" ")
+        if space != "":
+            cost = int(cost)
+        else:
+            cost = -1
+        inn_data.append( (Coord(odyssey_n=coord), cost) )
+    return inn_data
+
 def test():
     seas = parse_islands_and_seas()
     for sea in seas:
@@ -272,8 +296,9 @@ def test():
         info(unicode(coord))
     info("*" * 20)
     ruin_data = parse_ruins()
-    for coord, description in ruin_data:
-        info(unicode(coord) + " : " + description)
+    for coord, description, monsters in ruin_data:
+        info(" : ".join( (unicode(coord), description, monsters) ))
+    inn_data = parse_inns()
 
 if __name__ == "__main__":
     test()

@@ -48,6 +48,8 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - gros carré pour faire un fond, avec le lien vers github et mon blog.
  - annoncer sur le forum de twinoid.
  - doc pour expliquer comment reconstruire la carte et la publier.
+    * il faut que toutes les couches soient visibles.
+    * il faut : my_scripts.map_populator.populate(True, True). Les 2 True sont importants.
  - doc sur le module qgis_recher_api
  - mini-docs d'utilisation, et remerciements dans la carte elle-même. (avec le gros carré)
 
