@@ -139,6 +139,8 @@ class Sea(object):
         return "\n".join(all_desc)
 
 class DataMerger(object):
+    # TODO : revérifier la limite des 80 caractères, maintenant que j'ai
+    # tout foutu dans une classe.
 
     def __init__(self, seas_twinpedia, seas_img):
         self.seas_twinpedia = seas_twinpedia
@@ -238,8 +240,9 @@ class DataMerger(object):
                 logging.debug("deb ******")
 
                 for island_twinpedia in islands_twinpedia:
-                    # On met des longueurs/largeurs de 1. Mais on considère que ça
-                    # s'intersecte pas quand y'a que les bords qui se touchent.
+                    # On met des longueurs/largeurs de 1. Mais on considère
+                    # que ça s'intersecte pas quand y'a que les bords qui
+                    # se touchent.
                     rect_candidate = CoordRect(
                         coord_up_left=island_twinpedia.coord, w=1, h=1)
                     logging.debug("deb " + island_twinpedia.name + " " + unicode(rect_candidate))
@@ -250,15 +253,15 @@ class DataMerger(object):
                     logging.debug("deb -----")
 
                 if not intersecting_islands_twinpedia:
-                    # Il manque une île dans twinpedia. On considère que tout est
-                    # foiré. On se casse.
+                    # Il manque une île dans twinpedia. On considère que tout
+                    # est foiré. On se casse.
                     sea_twinpedia.warning += (";test échoué avec mer " +
                         str(sea_img.coord_rect))
                     info(sea_twinpedia.warning)
                     info(island_img.coord_rect)
                     return None
                 elif len(intersecting_islands_twinpedia) == 1:
-                    # Correspondance super top. 1 pour 1. On crée une île finale.
+                    # Correspondance top. 1 pour 1. On crée une île finale.
                     island_twinpedia_found = intersecting_islands_twinpedia[0]
                     islands_ok.append(Island(
                         island_twinpedia_found,
@@ -361,7 +364,7 @@ class DataMerger(object):
                 added_sea = False
 
         # On prend toutes les mers de twinpedia qui restent,
-        # on crée des mers finales, en leur mettant des coordonnées incertaines.
+        # on crée des mers finales, en leur mettant des coords incertaines.
         for sea_twinpedia in seas_twinpedia_copy:
             sea = self._sea_from_twinpedia_only(sea_twinpedia)
             if sea is not None:
@@ -384,15 +387,26 @@ def build_data():
     seas_img = reader_data_from_img.parse_data_from_img()
     data_merger = DataMerger(seas_twinpedia, seas_img)
 
+    # TODO : factoriser ça.
     temple_coords = reader_twinpedia.parse_temples()
     for coord in temple_coords:
-        poi = PointOfInterest("temple")
+        poi = PointOfInterest("lieu__temple")
+        data_merger.pois_unplaced[coord].append(poi)
+
+    library_coords = reader_twinpedia.parse_libraries()
+    for coord in library_coords:
+        poi = PointOfInterest("lieu__librairie")
+        data_merger.pois_unplaced[coord].append(poi)
+
+    fountain_coords = reader_twinpedia.parse_fountains()
+    for coord in fountain_coords:
+        poi = PointOfInterest("lieu__fontaine")
         data_merger.pois_unplaced[coord].append(poi)
 
     ruin_data = reader_twinpedia.parse_ruins()
     for coord, description, monsters in ruin_data:
         poi = PointOfInterest(
-            "ruine",
+            "lieu__ruines",
             {"descrip":description, "monstres":monsters})
         data_merger.pois_unplaced[coord].append(poi)
 

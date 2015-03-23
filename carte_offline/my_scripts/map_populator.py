@@ -77,8 +77,8 @@ def populate(add_seas_islands=False, add_pois=False):
     seas, pois_unplaced = data_merger.build_data()
 
     if add_seas_islands:
-        layer_mer = recher_api.layers["mer"]
-        layer_ile = recher_api.layers["ile"]
+        layer_mer = recher_api.layers["mer__pos"]
+        layer_ile = recher_api.layers["ile__pos"]
         recher_api.delete_all_features(layer_mer)
         recher_api.delete_all_features(layer_ile)
         for sea in seas:

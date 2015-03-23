@@ -224,16 +224,25 @@ def parse_islands_and_seas(data=twinpedia.ISLANDS_AND_SEAS):
 
     return _manual_correction_after(seas)
 
-def parse_temples(data=twinpedia.TEMPLES):
-    temple_coords = []
+def _parse_coords_only(data):
+    coords = []
     for data_line in iterate_not_empty_lines(data):
         before, coord, after = Coord.partition_odyssey_coord(data_line)
         if before.strip() != "":
-            raise Exception("ligne de temple mal foutue : " + data_line)
+            raise Exception("ligne mal foutue : " + data_line)
         if after.strip() != "":
-            raise Exception("ligne de temple mal foutue : " + data_line)
-        temple_coords.append(Coord(odyssey_n=coord))
-    return temple_coords
+            raise Exception("ligne mal foutue : " + data_line)
+        coords.append(Coord(odyssey_n=coord))
+    return coords
+
+def parse_temples(data=twinpedia.TEMPLES):
+    return _parse_coords_only(data)
+
+def parse_libraries(data=twinpedia.LIBRARIES):
+    return _parse_coords_only(data)
+
+def parse_fountains(data=twinpedia.FOUNTAINS):
+    return _parse_coords_only(data)
 
 def parse_ruins(data=twinpedia.RUINS):
     ruin_data = []
