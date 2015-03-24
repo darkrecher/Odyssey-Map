@@ -57,7 +57,7 @@ def test_populate_map():
 def make_map():
     import my_scripts.map_populator
     reload(my_scripts.map_populator)
-    my_scripts.map_populator.populate(False, True)
+    my_scripts.map_populator.populate(True, True)
 
 
 def main():
