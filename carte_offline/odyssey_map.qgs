@@ -964,7 +964,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>global_emprise20150323230903486</id>
             <datasource>./global_emprise.shp</datasource>
             <title></title>
@@ -1045,7 +1045,7 @@
                 <property key="labeling/distMapUnitMaxScale" value="0"/>
                 <property key="labeling/distMapUnitMinScale" value="0"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="'Carte du jeu vidéo Odyssey,̛ de la Motion Twin.&#xd;&#xa;&#xd;&#xa;Décochez la case &quot;texte__aide&quot; dans la liste à gauche pour enlever ce texte.&#xd;&#xa;Cocher/décocher les autres cases pour afficher/masquer des éléments de la carte.&#xd;&#xa;&#xd;&#xa;Déplacement : souris. &#xd;&#xa;Zoom/dézoom : molette.&#xd;&#xa;&#xd;&#xa;Zoomez en dessous de l''échelle 1:50 000 pour avoir &#xd;&#xa;plus d''information sur certains lieux (ruines, auberges).&#xd;&#xa;&#xd;&#xa;Les mers et les îles aux bords dentelés ont des positions incertaines.&#xd;&#xa;La carte n''est pas finie. Il y a encore beaucoup d''éléments &#xd;&#xa;à ajouter, à préciser ou à corriger.&#xd;&#xa;&#xd;&#xa;Les coordonnées sont affichées en bas de la fenêtre.&#xd;&#xa;Conversion de coordonnées carte -> jeu :&#xd;&#xa;Axe des X : divisez par 1000.&#xd;&#xa;Axe des Y : divisez par 1000 et prenez l''opposé.&#xd;&#xa;&#xd;&#xa;Afficher les détails d''un objet : bouton &quot;curseur&quot; en haut de la fenêtre, &#xd;&#xa;puis cliquez sur l''objet à examiner.&#xd;&#xa;'"/>
+                <property key="labeling/fieldName" value="'Carte du jeu vidéo Odyssey, de la Motion Twin. &#xd;&#xa;&#xd;&#xa;Décochez la case &quot;texte__aide&quot; dans la liste à gauche pour enlever ce texte. &#xd;&#xa;Cocher/décocher les autres cases pour afficher/masquer des éléments de la carte. &#xd;&#xa;&#xd;&#xa;Déplacement : souris. &#xd;&#xa;Zoom/dézoom : molette. &#xd;&#xa;&#xd;&#xa;Zoomez en dessous de l''échelle 1:50 000 pour avoir &#xd;&#xa;plus d''information sur certains lieux (ruines, auberges). &#xd;&#xa;&#xd;&#xa;Les mers et les îles aux bords dentelés ont des positions incertaines. &#xd;&#xa;La carte n''est pas finie. Il y a encore beaucoup d''éléments &#xd;&#xa;à ajouter, à préciser ou à corriger. &#xd;&#xa;&#xd;&#xa;Les coordonnées sont affichées en bas de la fenêtre. &#xd;&#xa;Conversion de coordonnées carte -> jeu : &#xd;&#xa;Axe des X : divisez par 1000. &#xd;&#xa;Axe des Y : divisez par 1000 et prenez l''opposé. &#xd;&#xa;&#xd;&#xa;Afficher les détails d''un objet : bouton &quot;curseur&quot; en haut de la fenêtre, &#xd;&#xa;puis cliquez sur l''objet à examiner. &#xd;&#xa;'"/>
                 <property key="labeling/fontBold" value="true"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="MS Shell Dlg 2"/>
@@ -3973,7 +3973,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>texte__aide_copier20150324221002314</id>
             <datasource>./global_emprise.shp</datasource>
             <title></title>
@@ -4054,7 +4054,7 @@
                 <property key="labeling/distMapUnitMaxScale" value="0"/>
                 <property key="labeling/distMapUnitMinScale" value="0"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="'Remerciements&#xd;&#xa;&#xd;&#xa;Site Twinpedia : &#xd;&#xa;http://www.twinpedia.com/muxxu/odyssey&#xd;&#xa;&#xd;&#xa;Site Help-Odyssey : &#xd;&#xa;http://muxxu.com/g/help-odyssey&#xd;&#xa;&#xd;&#xa;Carte des auberges, faite par 3l3ktr0 : &#xd;&#xa;http://muxxu.com/g/help-odyssey?page=37633&#xd;&#xa;'"/>
+                <property key="labeling/fieldName" value="'Remerciements &#xd;&#xa;&#xd;&#xa;Site Twinpedia : &#xd;&#xa;http://www.twinpedia.com/muxxu/odyssey &#xd;&#xa;&#xd;&#xa;Site Help-Odyssey : &#xd;&#xa;http://muxxu.com/g/help-odyssey &#xd;&#xa;&#xd;&#xa;Carte des auberges, faite par 3l3ktr0 : &#xd;&#xa;http://muxxu.com/g/help-odyssey?page=37633 &#xd;&#xa;'"/>
                 <property key="labeling/fontBold" value="true"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="MS Shell Dlg 2"/>

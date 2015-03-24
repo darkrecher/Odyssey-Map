@@ -13,14 +13,11 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - pour les nombres de cartes : afficher des points d'interrogation au lieu des "-1"
  - regrouper les erreurs relevés dans twinpedia, et les corriger ou demander leur correction.
  - lister les îles incertaines pour cause de "même coordonnée". Essayer de connaître leur position précise. (Soit en demandant, soit en y allant soi-même).
- - classe générique POI.
- - possibilité d'ajouter des attributs spécifique à un POI, genre le prix pour les auberges, afin de les exporter dans la carte.
  - symbole des POI en SVG :
     * boss
     * objets de quêtes et objets divers
     * cartes
     * ruines
-    * temples
     * bibliothèques
     * fontaines
     * remplisseurs de potion
@@ -29,29 +26,26 @@ ici : http://qgiscloud.com/Recher/odyssey_map
     * autels
     * PNJ (à prendre depuis help-odyssey)
     * héros
- - récupérer les POI simples depuis twinpedia, sans leurs attributs.
  - déterminer les attributs de chaque type de POI, et les parser.
- - récupérer les POI compliqués (objets divers)
- - récupérer les POI compliqués (PNJ, depuis help-odyssey)
- - placement du POI au milieu de la coordonnée.
+ - récupérer les POI compliqués : objets divers
+ - récupérer les POI compliqués : PNJ, depuis help-odyssey.
  - Répartir correctement les POI présent sur une même coordonnée, pour qu'ils ne soient pas superposés.
- - placement du POI sur une île, quand c'est possible (une seule île possible).
+ - placement du POI sur une île, quand c'est possible et qu'il n'ya pas d'ambigüité.
  - lorsqu'il y a plusieurs îles sur une même coordonnée, les POI seront incertains. Lever les incertitudes levables à l'aide des descriptions d'île dans twinpedia.
- - Adapter le processur de répartition des POI, pour que ça marche avec les îles et les coordonnées.
+ - Adapter le processus de répartition des POI, pour que ça marche avec les îles et les coordonnées.
  - trouver un moyen de représenter les POI incertains dans la carte (symbole grisé, ou un truc du genre).
- - noms courts et noms longs pour : mers, héros, PNJ.
+ - noms courts et noms longs pour : héros, PNJ.
  - attributs or pour les îles. Parser et afficher dans la carte.
  - fonction d'agrégation pour l'or. afficher l'or pour chaque mer (total des îles, en séparant ruines et pas-ruines)
- - apparence de la carte :
-    * quel texte s'affiche à quelle échelle, et à quelle taille.
-    * même symbole mais avec une couleur différente, pour les PNJ, les autels, les héros, [les boss]
+ - apparence carte : même symbole mais avec une couleur différente, pour les PNJ, les autels, les héros, [les boss]
  - gros carré pour faire un fond, avec le lien vers github et mon blog.
  - annoncer sur le forum de twinoid.
  - doc pour expliquer comment reconstruire la carte et la publier.
     * il faut que toutes les couches soient visibles.
     * il faut : my_scripts.map_populator.populate(True, True). Les 2 True sont importants.
  - doc sur le module qgis_recher_api
- - mini-docs d'utilisation, et remerciements dans la carte elle-même. (avec le gros carré)
+ - couches texte__XXX :  trouver le moyen d'avoir des sauts de ligne qui ne font pas des caractères carrés dans la version online. antislash-n ??
+ - ajouter un gros carré pour faire le fond de couleur. (La couleur de fond personnalisée marche pas dans la version online).
 
 ## FUTURE (TODO, mais que si on est vraiment motivé) ##
 
@@ -86,3 +80,12 @@ ici : http://qgiscloud.com/Recher/odyssey_map
  - ajouter les îles et mers qui sont mentionnées dans twinpedia, mais pas dans l'image de carte.
  - texte détaillé des mers : carte et XP. (L'or, on verra plus tard).
  - apparence : hachurage des mers selon leur difficulté (nombre d'XP).
+ - classe générique POI.
+ - possibilité d'ajouter des attributs spécifique à un POI, genre le prix pour les auberges, afin de les exporter dans la carte.
+ - symbole des POI en SVG :
+    * temples
+ - récupérer les POI simples depuis twinpedia, sans leurs attributs.
+ - placement du POI au milieu de la coordonnée.
+ - noms courts et noms longs pour les mers.
+ - apparence carte : quel texte s'affiche à quelle échelle, et à quelle taille.
+ - mini-docs d'utilisation, et remerciements dans la carte elle-même. (avec le gros carré)
