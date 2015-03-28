@@ -1,19 +1,96 @@
-Carte du jeu vidéo Odyssey (Motion Twin)
-Réalisée avec QGis.
+# Odyssey-Map #
 
-Sera publiée dans le cloud de QGis, quand elle sera potable.
+Carte du jeu vidéo Odyssey, de la Motion Twin.
 
-ici : http://qgiscloud.com/Recher/odyssey_map
+Consultable dans le cloud de QGIS.
+http://qgiscloud.com/Recher/odyssey_map
 
-# Liste des tâches #
 
-## TODO ##
+## Copies d'écran ##
 
- - incrémenter le champ "identifier" lors de la création des objets.
- - pour les nombres de cartes : afficher des points d'interrogation au lieu des "-1"
- - regrouper les erreurs relevés dans twinpedia, et les corriger ou demander leur correction.
+![screenshot map Odyssey vue globale](https://raw.githubusercontent.com/darkrecher/Odyssey-Map/master/docs_vrac/screenshot_001.png)
+
+![screenshot map Odyssey vue détaillée](https://raw.githubusercontent.com/darkrecher/Odyssey-Map/master/docs_vrac/screenshot_002.png)
+
+![screenshot map Odyssey examiner objet](https://raw.githubusercontent.com/darkrecher/Odyssey-Map/master/docs_vrac/screenshot_003.png)
+
+
+## Afficher de l'aide utilisateur ##
+
+L'aide est intégré dans la carte.
+
+À gauche de la carte se trouve la liste des layers. Cocher la case de "texte__aide". Le mode d'emplois s'affichera par-dessus la carte. Décocher la case pour revenir à un affichage normal.
+
+![screenshot map Odyssey afficher aide](https://raw.githubusercontent.com/darkrecher/Odyssey-Map/master/docs_vrac/afficher_aide.png)
+
+
+## État actuel du projet ##
+
+Il reste beaucoup d'infos à ajouter, à corriger, à vérifier, à corréler, etc.
+
+Je n'ai pas prévu de retravailler sur cette carte d'ici le mois de juillet. En attendant, vous pouvez forker ce repository et créer votre propre carte à partir de celle-ci. Mais il faudra vous débrouiller un peu tout seul.
+
+
+## Modifier et publier sa propre carte ##
+
+TODO : cette partie est à détailler. Il y a un début de documentation ici :
+
+https://github.com/darkrecher/Odyssey-Map/blob/master/docs_vrac/edition_et_mise_en_ligne.md
+
+
+## Credits ##
+
+### La carte ###
+
+Créée par Réchèr.
+
+La configuration de la carte, son apparence, le code source permettant de la générer et cette documentation sont sous une double licence : Art Libre ou Creative Commons CC-BY-SA (au choix).
+
+Mon compte twinoid : http://twinoid.com/user/12910
+Mon blog : http://recher.wordpress.com
+Repository : https://github.com/darkrecher/Odyssey-Map
+
+Les dons en crypto-monnaies diverses sont acceptés
+Bitcoin (BTC) : 12wF4PWLeVAoaU1ozD1cnQprSiKr6dYW1G
+Litecoin (LTC) : LQfceQahHPwXS9ByKF8NtdT4TJeQoDWTaF
+Dogecoin (Ð) : DKQUVP7on5K6stnLffKp3mHJor3nzYTLnS
+Next (NXT) : 12693681966999686910
+
+Vous pouvez faire un don sans dépenser d'argent. Allez sur ce lien (attention, c'est de la pub).
+http://cur.lv/yns
+Attendez quelques secondes, que le bouton "Skip ad" apparaisse en haut à droite, puis cliquez dessus.
+
+### Le jeu Odyssey ###
+
+Créé par la Motion Twin :
+http://odyssey.muxxu.com/
+
+Les informations du jeu (images, personnages, ...) sont sous licence copyright.
+
+
+### Le recensement des données ###
+
+Les données permettant de réaliser cette carte ont été collectés par les joueurs. Un grand merci aux sites et aux joueurs suivants :
+
+Site Twinpedia :
+http://www.twinpedia.com/muxxu/odyssey
+
+Site Help-Odyssey :
+http://muxxu.com/g/help-odyssey
+
+Carte des auberges, faite par 3l3ktr0 :
+http://muxxu.com/g/help-odyssey?page=37633
+
+
+## Tâches restantes ##
+
+### Priorité haute ###
+
+ - Afficher des points d'interrogation au lieu de "-1" lorsque le nombre de carte d'une mer est inconnu.
+ - Incrémenter le champ "identifier" lors de la création des objets.
+ - Regrouper les erreurs relevées dans twinpedia, les corriger ou demander leur correction.
  - lister les îles incertaines pour cause de "même coordonnée". Essayer de connaître leur position précise. (Soit en demandant, soit en y allant soi-même).
- - symbole des POI en SVG :
+ - dessiner les symboles des POI (Point Of Interests) au format SVG :
     * boss
     * objets de quêtes et objets divers
     * cartes
@@ -24,68 +101,43 @@ ici : http://qgiscloud.com/Recher/odyssey_map
     * sacs de nourriture
     * auberges
     * autels
-    * PNJ (à prendre depuis help-odyssey)
+    * PNJ
     * héros
- - déterminer les attributs de chaque type de POI, et les parser.
- - récupérer les POI compliqués : objets divers
- - récupérer les POI compliqués : PNJ, depuis help-odyssey.
+ - Déterminer les attributs de chaque type de POI, et les parser.
+ - Récupérer les POI compliqués : objets divers.
+ - Récupérer les POI compliqués : PNJ, depuis help-odyssey.
  - Répartir correctement les POI présent sur une même coordonnée, pour qu'ils ne soient pas superposés.
- - placement du POI sur une île, quand c'est possible et qu'il n'ya pas d'ambigüité.
- - lorsqu'il y a plusieurs îles sur une même coordonnée, les POI seront incertains. Lever les incertitudes levables à l'aide des descriptions d'île dans twinpedia.
- - Adapter le processus de répartition des POI, pour que ça marche avec les îles et les coordonnées.
- - trouver un moyen de représenter les POI incertains dans la carte (symbole grisé, ou un truc du genre).
- - noms courts et noms longs pour : héros, PNJ.
- - attributs or pour les îles. Parser et afficher dans la carte.
- - fonction d'agrégation pour l'or. afficher l'or pour chaque mer (total des îles, en séparant ruines et pas-ruines)
- - apparence carte : même symbole mais avec une couleur différente, pour les PNJ, les autels, les héros, [les boss]
- - gros carré pour faire un fond, avec le lien vers github et mon blog.
- - annoncer sur le forum de twinoid.
- - doc pour expliquer comment reconstruire la carte et la publier.
-    * il faut que toutes les couches soient visibles.
-    * il faut : my_scripts.map_populator.populate(True, True). Les 2 True sont importants.
- - doc sur le module qgis_recher_api
- - couches texte__XXX :  trouver le moyen d'avoir des sauts de ligne qui ne font pas des caractères carrés dans la version online. antislash-n ??
- - ajouter un gros carré pour faire le fond de couleur. (La couleur de fond personnalisée marche pas dans la version online).
+ - Placer les POI sur leur île, quand c'est possible et qu'il n'ya pas d'ambigüité (une seule île sur la coordonnée).
+ - Trouver un moyen de représenter les POI incertains (symbole grisé, ou un truc du genre).
+ - Supprimer les incertitudes des POI à l'aide des descriptions d'île de twinpedia.
+ - Adapter la répartition des POI dans une zone, pour que ça marche avec les îles et les coordonnées.
+ - Noms courts et noms longs pour : héros, PNJ.
+ - Ajouter l'attribut "or" pour les îles. Le parser et l'afficher dans la carte.
+ - Afficher l'or de chaque mer (égal au total des îles, en séparant ruines et pas-ruines).
+ - Mettre un symbole avec une couleur variable pour : les PNJ, les autels, les héros, [les boss].
+ - Écrire la doc pour expliquer comment reconstruire la carte et la publier.
+    * il faut que toutes les couches soient visibles
+    * il faut : my_scripts.map_populator.populate(True, True). Les 2 True sont importants
+ - Écrire les docstrings du module qgis_recher_api.
+ - Screenshots sans bavure sur les côtés.
+ - Dans l'aide utilisateur, expliquer le "Object Identification = Active Layer". Sinon, on examine les infos de l'objet "texte__lien" et pas des objets en-dessous.
 
-## FUTURE (TODO, mais que si on est vraiment motivé) ##
+### Priorité basse ###
 
- - carte mer+île en "ascii art", pour que ce soit plus facile à mettre à jour et à saisir.
- - POI des rumeurs
- - les îles incertaines dans la même coordonnée ne doivent pas se superposer. À répartir aussi.
- - trouver un screenshot plus complet de la carte globale.
- - vérif de cohérence entre les POI de twinpedia et ceux de help-odyssey.
- - vérif de cohérence entre les îles de twinpedia et les îles indiquées dans la partie "items" de help-odyssey.
- - vérif de cohérence entre la description des îles de twinpedia et tout le reste.
- - mettre les quêtes. une quête par répertoire de layer. avec un linéaire indiquant le chemin le plus court passant par tous les points de la quête. (Extraire manuellement les infos des quêtes à partir des indications du site help-odyssey)
- - possibilité de faire le plan détaillé d'une île : les chemins, les listes de monstres, ...
- - doc de conception du code.
- - tous les TODO dans le code.
+À ne faire que si la motivation est grande.
 
-## FINI ##
+ - Gérer une carte des mers et des îles en "ascii art", parsée par le script, afin que les mers et les îles soient plus facile à mettre à jour et à saisir.
+ - Ajouter les POI des rumeurs, avec le texte.
+ - Répartir les îles incertaines présentes dans la même coordonnée.
+ - Trouver un screenshot plus complet de la carte globale.
+ - Faire des vérifs de cohérence entre les POI de twinpedia et ceux de help-odyssey.
+ - Faire des vérifs de cohérence entre les îles de twinpedia et les îles indiquées dans la partie "items" de help-odyssey.
+ - Faire des vérifs de cohérence entre la description des îles de twinpedia et tout le reste.
+ - Ajouter les quêtes, sous forme d'un linéaire indiquant le chemin le plus court passant par tous les points de la quête. Il faudra extraire manuellement les infos des quêtes à partir des indications du site help-odyssey.
+ - Coder la fonction de génération de plan détaillé d'une île : avec les chemins, les listes de monstres, ....
+ - Écrire la doc de conception du code.
+ - Régler tous les TODO présents dans le code.
 
- - récupération des mers et des îles de twinpedia.
- - récupération des mers et des îles depuis une saisie manuelle d'un screenshot de carte globale.
- - vérif de cohérence entre ces deux sources de données.
- - création des mers et des îles dans la carte.
- - publication de la carte (à refaire manuellement à chaque mise à jour)
- - contraindre les îles incertaines dans les limites de leur mer.
- - les îles incertaines ont une taille de 1 par défaut.
- - bords en zigouigoui pour les îles et mers incertaines.
- - permettre d'indiquer directement le nom de l'île dans img_778N9.py
- - mettre l'île en incertain, si indiqué comme tel dans img_778N9.py
- - tester les intersections en excluant les bords droits et bas, car là ça fait trop d'hésitation.
- - finir de saisir les îles et mers de img_778N9.png.
- - couche "mer texte" et "île texte", utilisant la même source de donnée que "mer" et "île", mais n'affichant quel es étiquettes. Comme ça on peut cacher uniquement les étiquettes.
- - carroyage.
- - ajouter les îles et mers qui sont mentionnées dans twinpedia, mais pas dans l'image de carte.
- - texte détaillé des mers : carte et XP. (L'or, on verra plus tard).
- - apparence : hachurage des mers selon leur difficulté (nombre d'XP).
- - classe générique POI.
- - possibilité d'ajouter des attributs spécifique à un POI, genre le prix pour les auberges, afin de les exporter dans la carte.
- - symbole des POI en SVG :
-    * temples
- - récupérer les POI simples depuis twinpedia, sans leurs attributs.
- - placement du POI au milieu de la coordonnée.
- - noms courts et noms longs pour les mers.
- - apparence carte : quel texte s'affiche à quelle échelle, et à quelle taille.
- - mini-docs d'utilisation, et remerciements dans la carte elle-même. (avec le gros carré)
+### Tâches terminées ###
+
+https://github.com/darkrecher/Odyssey-Map/blob/master/docs_vrac/taches_realisees.md

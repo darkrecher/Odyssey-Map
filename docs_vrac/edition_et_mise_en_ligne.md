@@ -1,6 +1,23 @@
 # Mettre en ligne sa propre version de la carte #
 
-Bla-bla pas très détaillé. Work in progress.
+TODO :ce  bla-bla n'est pas très détaillé. Work in progress.
+
+## Reconstruire la carte ##
+
+La carte est réalisée avec le logiciel QGis 2.6.1-Brighton.
+
+Ce repository contient un script en python permettant de reconstruir entièrement la carte, à partir de données présentes dans des fichiers textes. Pour le lancer, ouvrir une console python dans QGIS.
+    import main
+    main.main()
+
+Pour relancer le script, si jamais on j'a modifié alors que QGIS était toujours ouvert :
+    reload(main)
+    main.main()
+
+Le fichier `main.py` se trouve dans le même répertoire que la carte QGIS. Les autres fichiers de code sont dans le répertoire `my_scripts`.
+
+
+## Publier la carte ##
 
  - Installer QGIS Cloud plugin.
  - Ouvrir les options de QGIS Cloud. Menu - Extension - Cloud - Cloud Settings.
@@ -18,5 +35,8 @@ Bla-bla pas très détaillé. Work in progress.
  - on peut changer des infos dans la configuration de la carte, et refaire "Publish map". Si on change des infos dans les données, il faut tout recommencer. (Désolé, pas de meilleure solution).
 
 
+## Visualiser la carte ##
+
 http://qgiscloud.com/Recher/odyssey_map
+
 http://m.qgiscloud.com/Recher/odyssey_map
