@@ -4,6 +4,7 @@ Bla-bla pas très détaillé. Work in progress.
 
  - Installer QGIS Cloud plugin.
  - Ouvrir les options de QGIS Cloud. Menu - Extension - Cloud - Cloud Settings.
+ - se connecter avec son login et mot de passe de QGIS.
  - onglet "Account". Sélectionner la database.
  - bouton "Delete database". (C'est long, et des fois ça se bloque tout seul. Faut redémarrer QGIS)
  - onglet "Upload Data". bouton Refresh layers.
