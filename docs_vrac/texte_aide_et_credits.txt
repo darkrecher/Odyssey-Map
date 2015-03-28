@@ -1,0 +1,57 @@
+# Liens #
+
+'http://recher.wordpress.com \n' +
+'https://github.com/darkrecher/Odyssey-Map'
+
+
+# Credits #
+
+'** Carte créée par Réchèr ** \n' +
+' \n' +
+'http://twinoid.com/user/12910 \n' +
+' \n' +
+'Les dons en crypto-monnaies diverses sont acceptés \n' +
+'Bitcoin (BTC) : 12wF4PWLeVAoaU1ozD1cnQprSiKr6dYW1G \n' +
+'Litecoin (LTC) : LQfceQahHPwXS9ByKF8NtdT4TJeQoDWTaF \n' +
+'Dogecoin (Ð) : DKQUVP7on5K6stnLffKp3mHJor3nzYTLnS \n' +
+'Next (NXT) : 12693681966999686910 \n' +
+' \n' +
+'** Remerciements  ** \n' +
+' \n' +
+'La Motion-Twin et leurs jeux : \n' +
+'http://twinoid.com \n' +
+' \n' +
+'Site Twinpedia : \n' +
+'http://www.twinpedia.com/muxxu/odyssey \n' +
+' \n' +
+'Site Help-Odyssey : \n' +
+'http://muxxu.com/g/help-odyssey \n' +
+' \n' +
+'Carte des auberges, faite par 3l3ktr0 : \n' +
+'http://muxxu.com/g/help-odyssey?page=37633 \n'
+
+
+# Aide #
+
+'Carte du jeu vidéo Odyssey, de la Motion Twin. \n' +
+' \n' +
+'Cochez/décochez les cases dans la liste à gauche \n' +
+'pour afficher/masquer des éléments de la carte. \n' +
+' \n' +
+'Pour se déplacer : souris. \n' +
+'Pour zoomer/dézoomer : molette. \n' +
+' \n' +
+'Zoomez en dessous de l''échelle 1:50 000 pour avoir \n' +
+'plus d''information sur certains lieux (ruines, auberges). \n' +
+' \n' +
+'Les mers et les îles aux bords dentelés ont des positions incertaines. \n' +
+'La carte n''est pas finie. Il y a encore beaucoup d''éléments \n' +
+'à ajouter, à préciser ou à corriger. \n' +
+' \n' +
+'Les coordonnées sont affichées en bas de la fenêtre. \n' +
+'Conversion de coordonnées carte -> jeu : \n' +
+'Axe des X : divisez par 1000. \n' +
+'Axe des Y : divisez par 1000 et prenez l''opposé. \n' +
+' \n' +
+'Pour afficher les détails d''un objet : bouton "curseur" en haut de la fenêtre, \n' +
+'puis cliquez sur l''objet à examiner. \n'
