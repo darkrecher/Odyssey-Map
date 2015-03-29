@@ -7,10 +7,12 @@ TODO :ce  bla-bla n'est pas très détaillé. Work in progress.
 La carte est réalisée avec le logiciel QGis 2.6.1-Brighton.
 
 Ce repository contient un script en python permettant de reconstruir entièrement la carte, à partir de données présentes dans des fichiers textes. Pour le lancer, ouvrir une console python dans QGIS.
+
     import main
     main.main()
 
-Pour relancer le script, si jamais on j'a modifié alors que QGIS était toujours ouvert :
+Pour relancer le script, si on l'a modifié alors que QGIS est toujours ouvert :
+
     reload(main)
     main.main()
 
