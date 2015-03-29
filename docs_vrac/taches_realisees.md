@@ -14,7 +14,7 @@
  - finir de saisir les îles et mers de img_778N9.png.
  - couche "mer texte" et "île texte", utilisant la même source de donnée que "mer" et "île", mais n'affichant quel es étiquettes. Comme ça on peut cacher uniquement les étiquettes.
  - carroyage.
- - ajouter les îles et mers qui sont mentionnées dans twinpedia, mais pas dans l'image de carte.
+ - ajouter les îles et mers qui sont mentionnées dans twinpedia, mais pas dans img_778N9.
  - texte détaillé des mers : carte et XP. (L'or, on verra plus tard).
  - apparence : hachurage des mers selon leur difficulté (nombre d'XP).
  - classe générique POI.
