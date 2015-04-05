@@ -88,6 +88,7 @@ http://muxxu.com/g/help-odyssey?page=37633
 
 ### Priorité haute ###
 
+ - Il y a toute la carte des îles et des mers ici : http://twd.io/e/xNdF0w/436
  - Afficher des points d'interrogation au lieu de "-1" lorsque le nombre de carte d'une mer est inconnu.
  - Incrémenter le champ "identifier" lors de la création des objets.
  - Regrouper les erreurs relevées dans Twinpedia, les corriger ou demander leur correction.
