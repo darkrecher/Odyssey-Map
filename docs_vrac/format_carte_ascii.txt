@@ -1,0 +1,55 @@
+Format de fichier pour décrire la carte d'Odyssey en Ascii art.
+Ce sera beaucoup moins chiant à faire que de lister les coordonnées, comme j'ai fait dans le fichier img_778N9.py.
+
+
+http://asciiflow.com/
+
++--------------------------------+
+|                                |
+|                                |
+|      0000                      |
+|      0000                      |
+|           "Mer du Bidule"      |
+|                                |+----------------+
+|                 11             ||                |
+|                 11             ||                |
+|                                ||    11          |
+|    "1=Ile de Phéniphliphli"    ||    11          |
+|                                ||    11          |
++--------------------------------+|                |
+                                  |                |
+                                  | _1AAA          |
+                                  |   __ABCD       |
+                                  |                |
+                                  +----------------+
+                                  +-------------------------------------+
+                                  |                                     |
+                                  |   "_1AAA=Ile de ici-on-a-la-place"  |
+                                  |                                     |
+                                  |   "__ABCD=Mer de ici-on-peut-ecrire"|
+                                  |                                     |
+                                  +-------------------------------------+
+
+
+
+000 : île incertaine (une île ou plusieurs îles côte à côte).
+
+1..9 : île dont on est sûr de la géométrie (1)
+
+A..Z : île dont on est sûr de la géométrie (2)
+
+"1=Ile de Phéniphliphli" : Nommage d'une île. Obligatoirement dans la même mer. Guillemet obligatoire, sinon ce sera chiant à parser.
+
+"Mer du Bidule" : Nommage d'une mer (pas de "=" dans le texte).
+
+_1AAA : Référence pour nommer une île, quand on n'a pas la place d'écrire le nom dans la même mer.
+    "_" : indicateur de référence
+    "1" : numéro de l'île dans la mer
+    "AAAA" : identifant (texte libre)
+
+"_1AAA=Ile de ici-on-a-la-place" : nommage d'une île là où il y a de la place pour écrire.
+
+__ABCD : Référence pour nommer une mer. Fonctionne pareil que pour les îles, sauf qu'on met deux underscore, et pas de numéro d'île.
+
+Pour délimiter les mers, seuls les "+" sont nécessaires. Les bords sont juste là pour améliorer la lisiblité.
+Donc on peut avoir des noms d'île qui dépasse sur la mer d'à côté. Il faut juste que le guillemet de gauche soit dans la bonne mer.
