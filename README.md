@@ -119,8 +119,6 @@ http://muxxu.com/g/help-odyssey?page=37633
  - Afficher l'or de chaque mer (égal au total des îles, en séparant ruines et pas-ruines).
  - Mettre un symbole avec une couleur variable pour : PNJ, autels, héros, [boss].
  - Terminer la doc expliquant comment reconstruire la carte et la publier.
-    * il faut que toutes les couches soient visibles
-    * il faut : `my_scripts.map_populator.populate(True, True)`. Les 2 True sont importants
  - Écrire les docstrings du module qgis_recher_api.
  - Enlever les bavure des screenshots.
  - Expliquer le "Object Identification = Active Layer" dans l'aide utilisateur. Sinon, on examine les infos de l'objet "texte__lien" et pas des objets en-dessous.
