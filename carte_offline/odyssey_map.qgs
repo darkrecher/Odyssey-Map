@@ -15,22 +15,22 @@
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="temple20150315162702124" name="lieu__temple">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ruines20150226002220285" name="lieu__ruines">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="ruines20150226002220285" name="lieu__ruines">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="library20150323155901909" name="lieu__librairie">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="fountain20150323162336858" name="lieu__fontaine">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="fountain20150323162336858" name="lieu__fontaine">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="distiller20150323164937606" name="lieu__distillateur">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="distiller20150323164937606" name="lieu__distillateur">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="food_bag20150323170320980" name="lieu__sac_nourriture">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="inns20150323190132123" name="lieu__auberge">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="inns20150323190132123" name="lieu__auberge">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="grid20150314004346549" name="carroyage">
@@ -59,10 +59,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-35646.28257501612824854</xmin>
-            <ymin>-30797.4274790044510155</ymin>
-            <xmax>42400.50917125835258048</xmax>
-            <ymax>27939.65078139051911421</ymax>
+            <xmin>-17113.5436594808488735</xmin>
+            <ymin>-9675.64145699995424366</ymin>
+            <xmax>20375.52276602912024828</xmax>
+            <ymax>5008.62810809878828877</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -144,9 +144,9 @@
                 <legendlayerfile isInOverview="0" layerid="temple20150315162702124" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="lieu__ruines" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="lieu__ruines" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="ruines20150226002220285" visible="0"/>
+                <legendlayerfile isInOverview="0" layerid="ruines20150226002220285" visible="1"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="lieu__librairie" showFeatureCount="0">
@@ -154,14 +154,14 @@
                 <legendlayerfile isInOverview="0" layerid="library20150323155901909" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="lieu__fontaine" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="lieu__fontaine" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="fountain20150323162336858" visible="0"/>
+                <legendlayerfile isInOverview="0" layerid="fountain20150323162336858" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="lieu__distillateur" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="lieu__distillateur" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="distiller20150323164937606" visible="0"/>
+                <legendlayerfile isInOverview="0" layerid="distiller20150323164937606" visible="1"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="lieu__sac_nourriture" showFeatureCount="0">
@@ -169,9 +169,9 @@
                 <legendlayerfile isInOverview="0" layerid="food_bag20150323170320980" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="lieu__auberge" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="lieu__auberge" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="inns20150323190132123" visible="0"/>
+                <legendlayerfile isInOverview="0" layerid="inns20150323190132123" visible="1"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="carroyage" showFeatureCount="0">
@@ -488,6 +488,12 @@
                 <edittype widgetv2type="TextEdit" name="identifier">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
+                <edittype widgetv2type="TextEdit" name="lien_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="lien_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
@@ -691,6 +697,12 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="identifier">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="lien_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="lien_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -1255,6 +1267,12 @@
                 <edittype widgetv2type="TextEdit" name="identifier">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
+                <edittype widgetv2type="TextEdit" name="lien_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="lien_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
@@ -1458,6 +1476,12 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="identifier">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="lien_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="lien_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -4264,6 +4288,12 @@
                 <edittype widgetv2type="TextEdit" name="identifier">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
+                <edittype widgetv2type="TextEdit" name="lien_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="lien_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
@@ -4467,6 +4497,12 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="identifier">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="lien_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="lien_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>

@@ -6,12 +6,21 @@ TODO :ce  bla-bla n'est pas très détaillé. Work in progress.
 
 La carte est réalisée avec le logiciel QGis 2.6.1-Brighton.
 
-Ce repository contient un script en python permettant de reconstruir entièrement la carte, à partir de données présentes dans des fichiers textes. Pour le lancer, ouvrir une console python dans QGIS.
+Ce repository contient un script en python permettant de reconstruir entièrement la carte, à partir de données présentes dans des fichiers textes.
+
+Avant de lancer le script, il faut s'assurer que tous les layers sont visibles. Sinon, on risque d'obtenir un message d'erreur de ce type dans la console :
+
+    File "C:/Recher/projets/git/Odyssey-Map/carte_offline\my_scripts\map_populator.py", line 66, in _layer_of_poi
+        return recher_api.layers[layer_name]
+    KeyError: u'lieu__ruines'
+
+
+Pour lancer le script la première fois, ouvrir une console python dans QGIS.
 
     import main
     main.main()
 
-Pour relancer le script, si on l'a modifié alors que QGIS est toujours ouvert :
+Le script peut être modifié pendant que QGIS est ouvert, les modifications seront prises en compte. Pour relancer le script les fois suivantes, utiliser les commandes :
 
     reload(main)
     main.main()

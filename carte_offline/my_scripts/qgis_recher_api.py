@@ -21,6 +21,8 @@ class QgisRecherApi(object):
         self._fill_layer_dict()
 
     def _fill_layer_dict(self):
+        # Attention, on ne récupère que les layers visibles.
+        # Ceux qui sont cochés dans QGIS.
         list_layers = self.iface.mapCanvas().layers()
         for layer in list_layers:
             if layer.type() == qgis._core.QgsMapLayer.VectorLayer:
