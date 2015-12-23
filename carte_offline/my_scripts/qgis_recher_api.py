@@ -86,7 +86,7 @@ def test():
         ]
 
     recher = QgisRecherApi()
-    layer = recher.layers["mer"]
+    layer = recher.layers["mer__pos"]
     recher.delete_all_features(layer)
 
     recher.add_feature(
@@ -105,7 +105,7 @@ def test():
         {
             "identifier":2, "nom":"Arème", "carte_req":3, "carte_tot":6})
 
-    layer = recher.layers["ile"]
+    layer = recher.layers["ile__pos"]
     recher.delete_all_features(layer)
 
     recher.add_feature(
@@ -133,7 +133,7 @@ def test():
         square_coords(1 + 1.0/3.0, -(1), 1.0/3.0, -1.0/3.0),
         {"identifier" : 100, "nom" : "Île Ganes"})
 
-    layer = recher.layers["temple"]
+    layer = recher.layers["lieu__temple"]
     recher.delete_all_features(layer)
     recher.add_feature(
         layer,
